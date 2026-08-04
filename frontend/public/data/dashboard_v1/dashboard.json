@@ -1,0 +1,261 @@
+{
+  "product": {
+    "name": "Quant Buddy",
+    "page": "strategy-workbench",
+    "language": "zh-CN",
+    "dataMode": "historical-demo",
+    "version": "dashboard_v1"
+  },
+  "asOf": {
+    "backtestHoldingDate": "2026-07-29",
+    "latestSignalDate": "2026-07-30",
+    "generatedFrom": "D:\\QuantBuddy\\outputs\\backtest\\v2"
+  },
+  "modelSetup": {
+    "model": "LightGBM",
+    "featureSet": "Qlib Alpha158",
+    "market": "当前沪深300固定股票池",
+    "benchmark": "沪深300（SH000300）",
+    "strategy": "TopkDropoutStrategy",
+    "topk": 5,
+    "nDrop": 1,
+    "onlyTradable": true,
+    "riskDegree": 0.95,
+    "trainingPeriod": [
+      "2015-01-01",
+      "2021-12-31"
+    ],
+    "validationPeriod": [
+      "2022-01-01",
+      "2023-12-31"
+    ],
+    "testPeriod": [
+      "2024-01-01",
+      "2026-07-30"
+    ],
+    "backtestPeriod": [
+      "2024-01-02",
+      "2026-07-29"
+    ]
+  },
+  "performance": {
+    "initialCapital": 100000,
+    "endingAccountValue": 361315.2850636854,
+    "totalReturn": 2.6131528506,
+    "cagr": 0.6827697194,
+    "annualizedVolatility": 0.3568424177,
+    "sharpeRf0": 1.6361429504,
+    "maxDrawdown": -0.2228434146,
+    "benchmarkTotalReturn": 0.3584700941,
+    "benchmarkCagr": 0.1321514702,
+    "benchmarkMaxDrawdown": -0.1566368937,
+    "qlibAnnualizedExcessReturnAfterCost": 0.4223915161
+  },
+  "signalQuality": {
+    "IC": 0.0189129347,
+    "ICIR": 0.1209619535,
+    "rankIC": 0.0079306965,
+    "rankICIR": 0.0511621261,
+    "interpretation": "模型存在弱正向预测能力，但排序稳定性仍然偏低。"
+  },
+  "currentPortfolio": {
+    "date": "2026-07-29",
+    "status": "historical-backtest-position",
+    "accountValue": 361315.2850636854,
+    "cash": 3300.4232288279,
+    "cashRatio": 0.0091344689,
+    "holdingCount": 5,
+    "holdings": [
+      {
+        "instrument": "SZ300476",
+        "name": "胜宏科技",
+        "weight": 0.335768442,
+        "amount": 2972.4898955337,
+        "referencePrice": 40.8136863708,
+        "marketValue": 121318.2703368303,
+        "holdDays": 5
+      },
+      {
+        "instrument": "SH600522",
+        "name": "中天科技",
+        "weight": 0.2118974829,
+        "amount": 15842.7928445725,
+        "referencePrice": 4.8325948715,
+        "marketValue": 76561.7994512504,
+        "holdDays": 4
+      },
+      {
+        "instrument": "SH600118",
+        "name": "中国卫星",
+        "weight": 0.1756193742,
+        "amount": 30186.4785628047,
+        "referencePrice": 2.1020658016,
+        "marketValue": 63453.9642582216,
+        "holdDays": 2
+      },
+      {
+        "instrument": "SZ000988",
+        "name": "华工科技",
+        "weight": 0.1664917019,
+        "amount": 6792.4638913349,
+        "referencePrice": 8.8562850952,
+        "marketValue": 60155.9967206146,
+        "holdDays": 1
+      },
+      {
+        "instrument": "SZ300394",
+        "name": "天孚通信",
+        "weight": 0.1010885301,
+        "amount": 493.8991929605,
+        "referencePrice": 73.9519958496,
+        "marketValue": 36524.8310679406,
+        "holdDays": 7
+      }
+    ]
+  },
+  "latestSignals": {
+    "date": "2026-07-30",
+    "status": "historical-model-output",
+    "top5": [
+      {
+        "rank": 1,
+        "instrument": "SZ000657",
+        "name": "中钨高新",
+        "score": 0.1966143399,
+        "scorePercentile": 0.9983333333,
+        "currentlyHeld": false
+      },
+      {
+        "rank": 2,
+        "instrument": "SZ301308",
+        "name": "江波龙",
+        "score": 0.1966143399,
+        "scorePercentile": 0.9983333333,
+        "currentlyHeld": false
+      },
+      {
+        "rank": 3,
+        "instrument": "SH600522",
+        "name": "中天科技",
+        "score": 0.1869729041,
+        "scorePercentile": 0.9933333333,
+        "currentlyHeld": true
+      },
+      {
+        "rank": 4,
+        "instrument": "SH600549",
+        "name": "厦门钨业",
+        "score": 0.1848849629,
+        "scorePercentile": 0.99,
+        "currentlyHeld": false
+      },
+      {
+        "rank": 5,
+        "instrument": "SH688396",
+        "name": "华润微",
+        "score": 0.1578256196,
+        "scorePercentile": 0.9866666667,
+        "currentlyHeld": false
+      }
+    ]
+  },
+  "todayOperation": {
+    "type": "REPLACE_ONE",
+    "label": "建议观察一换一",
+    "buyCandidate": {
+      "rank": 1,
+      "instrument": "SZ000657",
+      "name": "中钨高新",
+      "score": 0.1966143399,
+      "scorePercentile": 0.9983333333,
+      "currentlyHeld": false
+    },
+    "sellCandidate": {
+      "instrument": "SZ300394",
+      "name": "天孚通信",
+      "score": 0.1069992057,
+      "rank": 25
+    },
+    "previewOnly": true,
+    "note": "这是历史模型信号预览，尚未接入实时行情、富途模拟盘和正式订单约束。"
+  },
+  "riskPanel": {
+    "overall": "high",
+    "overallLabel": "偏高",
+    "method": "Quant Buddy Demo启发式风险标签",
+    "factors": [
+      {
+        "key": "concentration",
+        "label": "持仓集中度",
+        "severity": "high",
+        "value": "约5只股票",
+        "reason": "Top-5组合对单只股票波动较敏感。"
+      },
+      {
+        "key": "turnover",
+        "label": "换手风险",
+        "severity": "high",
+        "value": 0.3938146849,
+        "reason": "平均每日换手率较高，实盘滑点可能高于当前假设。"
+      },
+      {
+        "key": "drawdown",
+        "label": "历史回撤",
+        "severity": "medium",
+        "value": -0.2228434146,
+        "reason": "历史最大回撤超过20%。"
+      },
+      {
+        "key": "model_signal",
+        "label": "模型排序稳定性",
+        "severity": "high",
+        "value": 0.0079306965,
+        "reason": "Rank IC偏低，模型排序能力仍需继续验证。"
+      },
+      {
+        "key": "execution",
+        "label": "执行完整度",
+        "severity": "medium",
+        "value": {
+          "underfilledDays": 31,
+          "highCashDays": 17,
+          "tradingDays": 622
+        },
+        "reason": "少量日期因不可交易或100股一手约束未持满5只。"
+      }
+    ]
+  },
+  "dataQuality": {
+    "tradingDays": 622,
+    "underfilledDays": 31,
+    "underfilledDayRate": 0.0498392283,
+    "highCashDays": 17,
+    "highCashDayRate": 0.0273311897,
+    "zeroHoldingDays": 1,
+    "missingCloseCells": 1332,
+    "symbolsWithMissingClose": 29,
+    "heldPositionsWithMissingPrice": 0
+  },
+  "trading": {
+    "averageDailyTurnoverRate": 0.3938146849,
+    "medianDailyTurnoverRate": 0.3834231383,
+    "cumulativeTurnover": 53662260.23190884,
+    "cumulativeCost": 53649.891389161,
+    "averageCashRatio": 0.0408185738,
+    "averageHoldingCount": 4.9437299035
+  },
+  "communityEntry": {
+    "enabled": true,
+    "status": "frontend-placeholder",
+    "title": "社区",
+    "description": "发现并讨论其他用户分享的策略、因子与研究观点。",
+    "featuredPosts": []
+  },
+  "disclosures": [
+    "本页面展示历史模拟回测，不代表真实交易结果或未来收益。",
+    "股票池使用当前沪深300固定成分股，历史结果存在幸存者偏差。",
+    "当前回测采用收盘价成交假设，尚未完全模拟T+1临近收盘执行。",
+    "组合仅持有约5只股票，集中度和波动均较高。",
+    "平均每日换手率较高，真实交易中的滑点可能高于当前假设。"
+  ]
+}

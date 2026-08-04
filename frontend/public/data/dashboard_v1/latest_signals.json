@@ -1,0 +1,46 @@
+{
+  "date": "2026-07-30",
+  "status": "historical-model-output",
+  "top5": [
+    {
+      "rank": 1,
+      "instrument": "SZ000657",
+      "name": "中钨高新",
+      "score": 0.1966143399,
+      "scorePercentile": 0.9983333333,
+      "currentlyHeld": false
+    },
+    {
+      "rank": 2,
+      "instrument": "SZ301308",
+      "name": "江波龙",
+      "score": 0.1966143399,
+      "scorePercentile": 0.9983333333,
+      "currentlyHeld": false
+    },
+    {
+      "rank": 3,
+      "instrument": "SH600522",
+      "name": "中天科技",
+      "score": 0.1869729041,
+      "scorePercentile": 0.9933333333,
+      "currentlyHeld": true
+    },
+    {
+      "rank": 4,
+      "instrument": "SH600549",
+      "name": "厦门钨业",
+      "score": 0.1848849629,
+      "scorePercentile": 0.99,
+      "currentlyHeld": false
+    },
+    {
+      "rank": 5,
+      "instrument": "SH688396",
+      "name": "华润微",
+      "score": 0.1578256196,
+      "scorePercentile": 0.9866666667,
+      "currentlyHeld": false
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# JavaScript dependencies and build caches
+node_modules/
+.next/
+.pnpm-store/
+*.tsbuildinfo
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local datasets and generated experiment artifacts
+/data/
+/artifacts/
+/outputs/
+/mlruns/
+/work/
+
+# Runtime logs
+*.log
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

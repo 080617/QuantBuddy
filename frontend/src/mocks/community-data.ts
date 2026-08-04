@@ -1,0 +1,105 @@
+import { DEMO_BACKTEST_ID, STRATEGY_MODULE_STAGE_MAP } from "@/lib/community-constants";
+import type { BacktestMetrics, StrategyConfig } from "@/types/dashboard";
+import type { CommunityAuthor, CommunityEngagement, CommunityPost } from "@/types/community";
+
+export const ANNA_ZHANG: CommunityAuthor = {
+  id: "author-anna-zhang",
+  displayName: "Anna Zhang",
+  handle: "@annazhang",
+  bio: "QuantBuddy Demo 社区作者",
+  followerCount: 128,
+  following: false,
+};
+
+const engagement = (values: Partial<CommunityEngagement> = {}): CommunityEngagement => ({
+  starCount: 0, answerCount: 0, bookmarkCount: 0, forkCount: 0, useCount: 0, starred: false, bookmarked: false, ...values,
+});
+
+export function createCommunitySeedPosts(strategy: StrategyConfig, metrics: BacktestMetrics): CommunityPost[] {
+  return [
+    {
+      id: "post-complete-strategy-lightgbm",
+      type: "complete_strategy",
+      author: ANNA_ZHANG,
+      title: "沪深300 LightGBM Top-5：一次面向初学者的 Qlib 实验",
+      summary: "基于现有 QuantBuddy Qlib Demo 数据生成的完整策略快照。",
+      tags: ["Qlib", "LightGBM", "沪深300"],
+      createdAt: "2026-07-31T09:00:00.000Z",
+      updatedAt: "2026-07-31T09:00:00.000Z",
+      engagement: engagement({ starCount: 36, bookmarkCount: 14, forkCount: 8 }),
+      status: "published",
+      sourceStrategyId: strategy.strategyId,
+      communityTitle: "沪深300 LightGBM Top-5：一次面向初学者的 Qlib 实验",
+      oneLineIntroduction: "用真实 Qlib Demo 回测快照理解一个完整量化策略。",
+      detailedDescription: "该内容复用 QuantBuddy 现有 Dashboard/DataService 中的 Demo 策略配置与回测结果。",
+      configurationSnapshot: {
+        strategyId: strategy.strategyId,
+        strategyName: strategy.strategyName,
+        universe: strategy.universe,
+        featureSet: { name: strategy.featureSet },
+        model: strategy.model,
+        stockSelectionModule: `Top-${strategy.portfolioRule.topK}`,
+        rebalanceModule: strategy.portfolioRule.name,
+      },
+      backtestSnapshot: {
+        backtestId: DEMO_BACKTEST_ID,
+        version: "v1",
+        dateFrom: strategy.backtestPeriod[0],
+        dateTo: strategy.backtestPeriod[1],
+        totalReturn: metrics.totalReturn,
+        cagr: metrics.cagr,
+        sharpe: metrics.sharpe,
+        maxDrawdown: metrics.maxDrawdown,
+      },
+    },
+    {
+      id: "post-factor-volatility-20d",
+      type: "factor",
+      author: ANNA_ZHANG,
+      title: "过去20日波动率",
+      summary: "用于演示 Community 因子数据结构的公式示例，未连接多用户后端。",
+      tags: ["波动率", "风险"],
+      createdAt: "2026-07-30T10:00:00.000Z",
+      updatedAt: "2026-07-30T10:00:00.000Z",
+      engagement: engagement({ starCount: 18, bookmarkCount: 7, useCount: 5 }),
+      status: "published",
+      factorName: "过去20日波动率",
+      factorType: "波动率因子",
+      expression: "Std($close / Ref($close, 1) - 1, 20)",
+      description: "Demo 公式内容，仅以文本保存，不在浏览器中执行。",
+      requiredFields: ["$close"],
+      verification: { verificationStatus: "not_verified" },
+    },
+    {
+      id: "post-module-trend-risk-control",
+      type: "strategy_module",
+      author: ANNA_ZHANG,
+      title: "市场趋势降仓模块",
+      summary: "非 Qlib 实测的架构演示内容，用于验证策略模块保存流程。",
+      tags: ["风险控制", "趋势"],
+      createdAt: "2026-07-29T11:00:00.000Z",
+      updatedAt: "2026-07-29T11:00:00.000Z",
+      engagement: engagement({ starCount: 12, bookmarkCount: 4, useCount: 3 }),
+      status: "published",
+      moduleName: "市场趋势降仓模块",
+      moduleType: "risk_control",
+      applicableStage: STRATEGY_MODULE_STAGE_MAP.risk_control,
+      ruleSummary: "当市场趋势转弱时降低组合目标仓位。",
+      ruleExpression: "market_trend < 0 ? target_weight * 0.5 : target_weight",
+      description: "Phase 0 Demo 规则文本，不执行任意代码。",
+    },
+    {
+      id: "post-question-high-return-low-rankic",
+      type: "question",
+      author: ANNA_ZHANG,
+      title: "为什么我的策略收益很高，但 Rank IC 很低？",
+      summary: "讨论组合收益与模型横截面排序能力之间的差异。",
+      tags: ["Rank IC", "新手问题"],
+      createdAt: "2026-07-28T12:00:00.000Z",
+      updatedAt: "2026-07-28T12:00:00.000Z",
+      engagement: engagement({ starCount: 9, answerCount: 1, bookmarkCount: 3 }),
+      status: "published",
+      content: "组合收益较高是否一定意味着模型排序能力很强？应该如何一起理解收益、IC 与 Rank IC？",
+    },
+  ];
+}

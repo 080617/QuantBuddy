@@ -1,0 +1,55 @@
+{
+  "date": "2026-07-29",
+  "status": "historical-backtest-position",
+  "accountValue": 361315.2850636854,
+  "cash": 3300.4232288279,
+  "cashRatio": 0.0091344689,
+  "holdingCount": 5,
+  "holdings": [
+    {
+      "instrument": "SZ300476",
+      "name": "胜宏科技",
+      "weight": 0.335768442,
+      "amount": 2972.4898955337,
+      "referencePrice": 40.8136863708,
+      "marketValue": 121318.2703368303,
+      "holdDays": 5
+    },
+    {
+      "instrument": "SH600522",
+      "name": "中天科技",
+      "weight": 0.2118974829,
+      "amount": 15842.7928445725,
+      "referencePrice": 4.8325948715,
+      "marketValue": 76561.7994512504,
+      "holdDays": 4
+    },
+    {
+      "instrument": "SH600118",
+      "name": "中国卫星",
+      "weight": 0.1756193742,
+      "amount": 30186.4785628047,
+      "referencePrice": 2.1020658016,
+      "marketValue": 63453.9642582216,
+      "holdDays": 2
+    },
+    {
+      "instrument": "SZ000988",
+      "name": "华工科技",
+      "weight": 0.1664917019,
+      "amount": 6792.4638913349,
+      "referencePrice": 8.8562850952,
+      "marketValue": 60155.9967206146,
+      "holdDays": 1
+    },
+    {
+      "instrument": "SZ300394",
+      "name": "天孚通信",
+      "weight": 0.1010885301,
+      "amount": 493.8991929605,
+      "referencePrice": 73.9519958496,
+      "marketValue": 36524.8310679406,
+      "holdDays": 7
+    }
+  ]
+}

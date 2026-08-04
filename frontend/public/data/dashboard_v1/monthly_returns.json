@@ -1,0 +1,157 @@
+[
+  {
+    "month": "2024-01",
+    "strategyReturn": -0.1223784192,
+    "benchmarkReturn": -0.062883556
+  },
+  {
+    "month": "2024-02",
+    "strategyReturn": 0.1941498006,
+    "benchmarkReturn": 0.09352958
+  },
+  {
+    "month": "2024-03",
+    "strategyReturn": 0.0325500643,
+    "benchmarkReturn": 0.006086111
+  },
+  {
+    "month": "2024-04",
+    "strategyReturn": -0.0486514028,
+    "benchmarkReturn": 0.018914342
+  },
+  {
+    "month": "2024-05",
+    "strategyReturn": 0.0634887559,
+    "benchmarkReturn": -0.0067887306
+  },
+  {
+    "month": "2024-06",
+    "strategyReturn": -0.0007277692,
+    "benchmarkReturn": -0.033034146
+  },
+  {
+    "month": "2024-07",
+    "strategyReturn": 0.0577046407,
+    "benchmarkReturn": -0.005656302
+  },
+  {
+    "month": "2024-08",
+    "strategyReturn": -0.0052980669,
+    "benchmarkReturn": -0.035051405
+  },
+  {
+    "month": "2024-09",
+    "strategyReturn": 0.3635421721,
+    "benchmarkReturn": 0.20967507
+  },
+  {
+    "month": "2024-10",
+    "strategyReturn": 0.0157982503,
+    "benchmarkReturn": -0.031561673
+  },
+  {
+    "month": "2024-11",
+    "strategyReturn": -0.0225832203,
+    "benchmarkReturn": 0.006563902
+  },
+  {
+    "month": "2024-12",
+    "strategyReturn": -0.0356169639,
+    "benchmarkReturn": 0.004680276
+  },
+  {
+    "month": "2025-01",
+    "strategyReturn": 0.0574970939,
+    "benchmarkReturn": -0.029945314
+  },
+  {
+    "month": "2025-02",
+    "strategyReturn": 0.096060184,
+    "benchmarkReturn": 0.01911664
+  },
+  {
+    "month": "2025-03",
+    "strategyReturn": -0.0003035453,
+    "benchmarkReturn": -0.0007044673
+  },
+  {
+    "month": "2025-04",
+    "strategyReturn": 0.0080153667,
+    "benchmarkReturn": -0.030031502
+  },
+  {
+    "month": "2025-05",
+    "strategyReturn": 0.013360352,
+    "benchmarkReturn": 0.01847434
+  },
+  {
+    "month": "2025-06",
+    "strategyReturn": 0.1061793938,
+    "benchmarkReturn": 0.024959326
+  },
+  {
+    "month": "2025-07",
+    "strategyReturn": 0.2443951033,
+    "benchmarkReturn": 0.03544414
+  },
+  {
+    "month": "2025-08",
+    "strategyReturn": 0.205135207,
+    "benchmarkReturn": 0.10333955
+  },
+  {
+    "month": "2025-09",
+    "strategyReturn": 0.1511044388,
+    "benchmarkReturn": 0.032007337
+  },
+  {
+    "month": "2025-10",
+    "strategyReturn": -0.0225134753,
+    "benchmarkReturn": -4.0531e-06
+  },
+  {
+    "month": "2025-11",
+    "strategyReturn": -0.0737045792,
+    "benchmarkReturn": -0.024567604
+  },
+  {
+    "month": "2025-12",
+    "strategyReturn": 0.037056391,
+    "benchmarkReturn": 0.022815943
+  },
+  {
+    "month": "2026-01",
+    "strategyReturn": 0.0401840471,
+    "benchmarkReturn": 0.016501307
+  },
+  {
+    "month": "2026-02",
+    "strategyReturn": 0.095262782,
+    "benchmarkReturn": 0.000915885
+  },
+  {
+    "month": "2026-03",
+    "strategyReturn": -0.0834594394,
+    "benchmarkReturn": -0.055321217
+  },
+  {
+    "month": "2026-04",
+    "strategyReturn": 0.1185554414,
+    "benchmarkReturn": 0.08028185
+  },
+  {
+    "month": "2026-05",
+    "strategyReturn": 0.0826781288,
+    "benchmarkReturn": 0.017642021
+  },
+  {
+    "month": "2026-06",
+    "strategyReturn": -0.0712222476,
+    "benchmarkReturn": 0.017846942
+  },
+  {
+    "month": "2026-07",
+    "strategyReturn": -0.0354355929,
+    "benchmarkReturn": -0.07614708
+  }
+]

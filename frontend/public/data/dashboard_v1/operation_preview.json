@@ -1,0 +1,20 @@
+{
+  "type": "REPLACE_ONE",
+  "label": "建议观察一换一",
+  "buyCandidate": {
+    "rank": 1,
+    "instrument": "SZ000657",
+    "name": "中钨高新",
+    "score": 0.1966143399,
+    "scorePercentile": 0.9983333333,
+    "currentlyHeld": false
+  },
+  "sellCandidate": {
+    "instrument": "SZ300394",
+    "name": "天孚通信",
+    "score": 0.1069992057,
+    "rank": 25
+  },
+  "previewOnly": true,
+  "note": "这是历史模型信号预览，尚未接入实时行情、富途模拟盘和正式订单约束。"
+}

@@ -1,0 +1,4356 @@
+[
+  {
+    "date": "2024-01-02",
+    "strategyNav": 1,
+    "benchmarkNav": 0.9869547,
+    "excessNav": 1.013045311,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2024-01-03",
+    "strategyNav": 0.999681995,
+    "benchmarkNav": 0.9846085,
+    "excessNav": 1.015131381,
+    "strategyDrawdown": -0.000318005
+  },
+  {
+    "date": "2024-01-04",
+    "strategyNav": 0.9865643614,
+    "benchmarkNav": 0.97550064,
+    "excessNav": 1.0112012159,
+    "strategyDrawdown": -0.0134356386
+  },
+  {
+    "date": "2024-01-05",
+    "strategyNav": 0.9619532157,
+    "benchmarkNav": 0.970272,
+    "excessNav": 0.991395457,
+    "strategyDrawdown": -0.0380467843
+  },
+  {
+    "date": "2024-01-08",
+    "strategyNav": 0.9474950637,
+    "benchmarkNav": 0.95772505,
+    "excessNav": 0.9893149259,
+    "strategyDrawdown": -0.0525049363
+  },
+  {
+    "date": "2024-01-09",
+    "strategyNav": 0.9455368963,
+    "benchmarkNav": 0.959602,
+    "excessNav": 0.9853314703,
+    "strategyDrawdown": -0.0544631037
+  },
+  {
+    "date": "2024-01-10",
+    "strategyNav": 0.9500381478,
+    "benchmarkNav": 0.9551224,
+    "excessNav": 0.9946218657,
+    "strategyDrawdown": -0.0499618522
+  },
+  {
+    "date": "2024-01-11",
+    "strategyNav": 0.9511296859,
+    "benchmarkNav": 0.96052593,
+    "excessNav": 0.9901376199,
+    "strategyDrawdown": -0.0488703141
+  },
+  {
+    "date": "2024-01-12",
+    "strategyNav": 0.9369151869,
+    "benchmarkNav": 0.95717424,
+    "excessNav": 0.9787951733,
+    "strategyDrawdown": -0.0630848131
+  },
+  {
+    "date": "2024-01-15",
+    "strategyNav": 0.9484523616,
+    "benchmarkNav": 0.95622706,
+    "excessNav": 0.9918166312,
+    "strategyDrawdown": -0.0515476384
+  },
+  {
+    "date": "2024-01-16",
+    "strategyNav": 0.9533029596,
+    "benchmarkNav": 0.96204436,
+    "excessNav": 0.9908551805,
+    "strategyDrawdown": -0.0466970404
+  },
+  {
+    "date": "2024-01-17",
+    "strategyNav": 0.9327008944,
+    "benchmarkNav": 0.9411182,
+    "excessNav": 0.9909944105,
+    "strategyDrawdown": -0.0672991056
+  },
+  {
+    "date": "2024-01-18",
+    "strategyNav": 0.9532565433,
+    "benchmarkNav": 0.9544229,
+    "excessNav": 0.9988249456,
+    "strategyDrawdown": -0.0467434567
+  },
+  {
+    "date": "2024-01-19",
+    "strategyNav": 0.9365913284,
+    "benchmarkNav": 0.95298016,
+    "excessNav": 0.9828729427,
+    "strategyDrawdown": -0.0634086716
+  },
+  {
+    "date": "2024-01-22",
+    "strategyNav": 0.9101340022,
+    "benchmarkNav": 0.9381511,
+    "excessNav": 0.9704024068,
+    "strategyDrawdown": -0.0898659978
+  },
+  {
+    "date": "2024-01-23",
+    "strategyNav": 0.9362429424,
+    "benchmarkNav": 0.9419488,
+    "excessNav": 0.9943120827,
+    "strategyDrawdown": -0.0637570576
+  },
+  {
+    "date": "2024-01-24",
+    "strategyNav": 0.9482946831,
+    "benchmarkNav": 0.95511645,
+    "excessNav": 0.9932116316,
+    "strategyDrawdown": -0.0517053169
+  },
+  {
+    "date": "2024-01-25",
+    "strategyNav": 0.9625463605,
+    "benchmarkNav": 0.97429687,
+    "excessNav": 0.9881929182,
+    "strategyDrawdown": -0.0374536395
+  },
+  {
+    "date": "2024-01-26",
+    "strategyNav": 0.934065033,
+    "benchmarkNav": 0.9716447,
+    "excessNav": 0.9616427237,
+    "strategyDrawdown": -0.065934967
+  },
+  {
+    "date": "2024-01-29",
+    "strategyNav": 0.9070283982,
+    "benchmarkNav": 0.96294194,
+    "excessNav": 0.9424210236,
+    "strategyDrawdown": -0.0929716018
+  },
+  {
+    "date": "2024-01-30",
+    "strategyNav": 0.8916593633,
+    "benchmarkNav": 0.94576967,
+    "excessNav": 0.9432585838,
+    "strategyDrawdown": -0.1083406367
+  },
+  {
+    "date": "2024-01-31",
+    "strategyNav": 0.8776215808,
+    "benchmarkNav": 0.93711644,
+    "excessNav": 0.9370386765,
+    "strategyDrawdown": -0.1223784192
+  },
+  {
+    "date": "2024-02-01",
+    "strategyNav": 0.8860932665,
+    "benchmarkNav": 0.9378043,
+    "excessNav": 0.945396156,
+    "strategyDrawdown": -0.1139067335
+  },
+  {
+    "date": "2024-02-02",
+    "strategyNav": 0.8536299969,
+    "benchmarkNav": 0.9267058,
+    "excessNav": 0.9219485911,
+    "strategyDrawdown": -0.1463700031
+  },
+  {
+    "date": "2024-02-05",
+    "strategyNav": 0.8289602733,
+    "benchmarkNav": 0.93276507,
+    "excessNav": 0.8892763044,
+    "strategyDrawdown": -0.1710397267
+  },
+  {
+    "date": "2024-02-06",
+    "strategyNav": 0.8891514423,
+    "benchmarkNav": 0.9651949,
+    "excessNav": 0.9229292314,
+    "strategyDrawdown": -0.1108485577
+  },
+  {
+    "date": "2024-02-07",
+    "strategyNav": 0.9173981569,
+    "benchmarkNav": 0.9745038,
+    "excessNav": 0.9433476958,
+    "strategyDrawdown": -0.0826018431
+  },
+  {
+    "date": "2024-02-08",
+    "strategyNav": 0.9729992026,
+    "benchmarkNav": 0.9807117,
+    "excessNav": 0.9945120602,
+    "strategyDrawdown": -0.0270007974
+  },
+  {
+    "date": "2024-02-19",
+    "strategyNav": 0.9821057393,
+    "benchmarkNav": 0.9920433,
+    "excessNav": 0.9923288716,
+    "strategyDrawdown": -0.0178942607
+  },
+  {
+    "date": "2024-02-20",
+    "strategyNav": 0.9836140054,
+    "benchmarkNav": 0.99409515,
+    "excessNav": 0.9918004227,
+    "strategyDrawdown": -0.0163859946
+  },
+  {
+    "date": "2024-02-21",
+    "strategyNav": 1.0075021119,
+    "benchmarkNav": 1.0075077,
+    "excessNav": 1.002505749,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2024-02-22",
+    "strategyNav": 1.0219307433,
+    "benchmarkNav": 1.0161929,
+    "excessNav": 1.0082207251,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2024-02-23",
+    "strategyNav": 1.0313237373,
+    "benchmarkNav": 1.0170877,
+    "excessNav": 1.0165999866,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2024-02-26",
+    "strategyNav": 1.0316009838,
+    "benchmarkNav": 1.0064847,
+    "excessNav": 1.0274711797,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2024-02-27",
+    "strategyNav": 1.0542402633,
+    "benchmarkNav": 1.0185596,
+    "excessNav": 1.0376932717,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2024-02-28",
+    "strategyNav": 1.0236357416,
+    "benchmarkNav": 1.0055813,
+    "excessNav": 1.0207912543,
+    "strategyDrawdown": -0.0290299306
+  },
+  {
+    "date": "2024-02-29",
+    "strategyNav": 1.0480116358,
+    "benchmarkNav": 1.0247645,
+    "excessNav": 1.0256259572,
+    "strategyDrawdown": -0.005908167
+  },
+  {
+    "date": "2024-03-01",
+    "strategyNav": 1.0727177161,
+    "benchmarkNav": 1.0310948,
+    "excessNav": 1.0434687066,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2024-03-04",
+    "strategyNav": 1.0778189303,
+    "benchmarkNav": 1.0319895,
+    "excessNav": 1.0475253865,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2024-03-05",
+    "strategyNav": 1.0776250374,
+    "benchmarkNav": 1.0391707,
+    "excessNav": 1.0400475041,
+    "strategyDrawdown": -0.0001798938
+  },
+  {
+    "date": "2024-03-06",
+    "strategyNav": 1.0767680962,
+    "benchmarkNav": 1.0349563,
+    "excessNav": 1.0434383577,
+    "strategyDrawdown": -0.0009749635
+  },
+  {
+    "date": "2024-03-07",
+    "strategyNav": 1.0642093863,
+    "benchmarkNav": 1.0287397,
+    "excessNav": 1.0375359612,
+    "strategyDrawdown": -0.0126269299
+  },
+  {
+    "date": "2024-03-08",
+    "strategyNav": 1.1226659826,
+    "benchmarkNav": 1.0331669,
+    "excessNav": 1.0900624073,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2024-03-11",
+    "strategyNav": 1.1310569134,
+    "benchmarkNav": 1.0460927,
+    "excessNav": 1.0845719982,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2024-03-12",
+    "strategyNav": 1.1530423981,
+    "benchmarkNav": 1.0484915,
+    "excessNav": 1.1031669956,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2024-03-13",
+    "strategyNav": 1.1492942192,
+    "benchmarkNav": 1.0411673,
+    "excessNav": 1.1072870374,
+    "strategyDrawdown": -0.0032506861
+  },
+  {
+    "date": "2024-03-14",
+    "strategyNav": 1.1272145651,
+    "benchmarkNav": 1.038212,
+    "excessNav": 1.0891574296,
+    "strategyDrawdown": -0.0223997253
+  },
+  {
+    "date": "2024-03-15",
+    "strategyNav": 1.1263112468,
+    "benchmarkNav": 1.0404766,
+    "excessNav": 1.0859088393,
+    "strategyDrawdown": -0.0231831469
+  },
+  {
+    "date": "2024-03-18",
+    "strategyNav": 1.1273444241,
+    "benchmarkNav": 1.0502517,
+    "excessNav": 1.0767029673,
+    "strategyDrawdown": -0.0222871024
+  },
+  {
+    "date": "2024-03-19",
+    "strategyNav": 1.1196812159,
+    "benchmarkNav": 1.0427032,
+    "excessNav": 1.0771227213,
+    "strategyDrawdown": -0.0289331791
+  },
+  {
+    "date": "2024-03-20",
+    "strategyNav": 1.1325615966,
+    "benchmarkNav": 1.0449619,
+    "excessNav": 1.0871801856,
+    "strategyDrawdown": -0.017762401
+  },
+  {
+    "date": "2024-03-21",
+    "strategyNav": 1.1325540831,
+    "benchmarkNav": 1.0437115,
+    "excessNav": 1.088473853,
+    "strategyDrawdown": -0.0177689172
+  },
+  {
+    "date": "2024-03-22",
+    "strategyNav": 1.1398351613,
+    "benchmarkNav": 1.0331931,
+    "excessNav": 1.1064411324,
+    "strategyDrawdown": -0.0114542508
+  },
+  {
+    "date": "2024-03-25",
+    "strategyNav": 1.1156060593,
+    "benchmarkNav": 1.0275856,
+    "excessNav": 1.0889269313,
+    "strategyDrawdown": -0.0324674434
+  },
+  {
+    "date": "2024-03-26",
+    "strategyNav": 1.1024200464,
+    "benchmarkNav": 1.0328288,
+    "excessNav": 1.0705001185,
+    "strategyDrawdown": -0.0439032873
+  },
+  {
+    "date": "2024-03-27",
+    "strategyNav": 1.0710107975,
+    "benchmarkNav": 1.020891,
+    "excessNav": 1.0523735252,
+    "strategyDrawdown": -0.0711436116
+  },
+  {
+    "date": "2024-03-28",
+    "strategyNav": 1.0917258852,
+    "benchmarkNav": 1.0261866,
+    "excessNav": 1.067269189,
+    "strategyDrawdown": -0.053178021
+  },
+  {
+    "date": "2024-03-29",
+    "strategyNav": 1.0821244819,
+    "benchmarkNav": 1.0310013,
+    "excessNav": 1.0528754195,
+    "strategyDrawdown": -0.0615050378
+  },
+  {
+    "date": "2024-04-01",
+    "strategyNav": 1.1275661482,
+    "benchmarkNav": 1.047955,
+    "excessNav": 1.0797753802,
+    "strategyDrawdown": -0.0220948075
+  },
+  {
+    "date": "2024-04-02",
+    "strategyNav": 1.1075274453,
+    "benchmarkNav": 1.043592,
+    "excessNav": 1.0650815178,
+    "strategyDrawdown": -0.0394737894
+  },
+  {
+    "date": "2024-04-03",
+    "strategyNav": 1.0805054291,
+    "benchmarkNav": 1.0398381,
+    "excessNav": 1.042926303,
+    "strategyDrawdown": -0.0629091949
+  },
+  {
+    "date": "2024-04-08",
+    "strategyNav": 1.0867001674,
+    "benchmarkNav": 1.0306895,
+    "excessNav": 1.0580813864,
+    "strategyDrawdown": -0.0575366793
+  },
+  {
+    "date": "2024-04-09",
+    "strategyNav": 1.0813410011,
+    "benchmarkNav": 1.0298384,
+    "excessNav": 1.0537370175,
+    "strategyDrawdown": -0.0621845278
+  },
+  {
+    "date": "2024-04-10",
+    "strategyNav": 1.0538487047,
+    "benchmarkNav": 1.0214504,
+    "excessNav": 1.0355291934,
+    "strategyDrawdown": -0.0860277936
+  },
+  {
+    "date": "2024-04-11",
+    "strategyNav": 1.0526213213,
+    "benchmarkNav": 1.0213134,
+    "excessNav": 1.0344620214,
+    "strategyDrawdown": -0.0870922673
+  },
+  {
+    "date": "2024-04-12",
+    "strategyNav": 1.0559700789,
+    "benchmarkNav": 1.0130361,
+    "excessNav": 1.0461368086,
+    "strategyDrawdown": -0.0841879877
+  },
+  {
+    "date": "2024-04-15",
+    "strategyNav": 1.0685244982,
+    "benchmarkNav": 1.0343819,
+    "excessNav": 1.0365310917,
+    "strategyDrawdown": -0.0732999064
+  },
+  {
+    "date": "2024-04-16",
+    "strategyNav": 1.0226966612,
+    "benchmarkNav": 1.0233155,
+    "excessNav": 1.0031647417,
+    "strategyDrawdown": -0.1130450511
+  },
+  {
+    "date": "2024-04-17",
+    "strategyNav": 1.0527922501,
+    "benchmarkNav": 1.0391384,
+    "excessNav": 1.0171742185,
+    "strategyDrawdown": -0.0869440258
+  },
+  {
+    "date": "2024-04-18",
+    "strategyNav": 1.0522950812,
+    "benchmarkNav": 1.0404208,
+    "excessNav": 1.0154386213,
+    "strategyDrawdown": -0.0873752059
+  },
+  {
+    "date": "2024-04-19",
+    "strategyNav": 1.0292272517,
+    "benchmarkNav": 1.0322194,
+    "excessNav": 1.0011832117,
+    "strategyDrawdown": -0.1073812607
+  },
+  {
+    "date": "2024-04-22",
+    "strategyNav": 1.0331471594,
+    "benchmarkNav": 1.0290834,
+    "excessNav": 1.0080380141,
+    "strategyDrawdown": -0.1039816393
+  },
+  {
+    "date": "2024-04-23",
+    "strategyNav": 1.0377008004,
+    "benchmarkNav": 1.0218904,
+    "excessNav": 1.0195268864,
+    "strategyDrawdown": -0.1000323994
+  },
+  {
+    "date": "2024-04-24",
+    "strategyNav": 1.0434896317,
+    "benchmarkNav": 1.0263788,
+    "excessNav": 1.0207364222,
+    "strategyDrawdown": -0.0950119151
+  },
+  {
+    "date": "2024-04-25",
+    "strategyNav": 1.0405053309,
+    "benchmarkNav": 1.0289028,
+    "excessNav": 1.0153070311,
+    "strategyDrawdown": -0.097600112
+  },
+  {
+    "date": "2024-04-26",
+    "strategyNav": 1.0698986015,
+    "benchmarkNav": 1.0446382,
+    "excessNav": 1.0284610183,
+    "strategyDrawdown": -0.0721081868
+  },
+  {
+    "date": "2024-04-29",
+    "strategyNav": 1.0623931726,
+    "benchmarkNav": 1.0561912,
+    "excessNav": 1.0098721123,
+    "strategyDrawdown": -0.078617426
+  },
+  {
+    "date": "2024-04-30",
+    "strategyNav": 1.0294776078,
+    "benchmarkNav": 1.0505021,
+    "excessNav": 0.9840234273,
+    "strategyDrawdown": -0.1071641342
+  },
+  {
+    "date": "2024-05-06",
+    "strategyNav": 1.0480214522,
+    "benchmarkNav": 1.0660919,
+    "excessNav": 0.9871452452,
+    "strategyDrawdown": -0.0910815995
+  },
+  {
+    "date": "2024-05-07",
+    "strategyNav": 1.0493579873,
+    "benchmarkNav": 1.0664212,
+    "excessNav": 0.9880992445,
+    "strategyDrawdown": -0.0899224616
+  },
+  {
+    "date": "2024-05-08",
+    "strategyNav": 1.0377494425,
+    "benchmarkNav": 1.0580302,
+    "excessNav": 0.9849430272,
+    "strategyDrawdown": -0.0999902135
+  },
+  {
+    "date": "2024-05-09",
+    "strategyNav": 1.0488813921,
+    "benchmarkNav": 1.0680387,
+    "excessNav": 0.9861914576,
+    "strategyDrawdown": -0.0903357987
+  },
+  {
+    "date": "2024-05-10",
+    "strategyNav": 1.0254279384,
+    "benchmarkNav": 1.06854,
+    "excessNav": 0.9636769324,
+    "strategyDrawdown": -0.1106762942
+  },
+  {
+    "date": "2024-05-13",
+    "strategyNav": 1.0152975136,
+    "benchmarkNav": 1.0680765,
+    "excessNav": 0.9545745473,
+    "strategyDrawdown": -0.1194621158
+  },
+  {
+    "date": "2024-05-14",
+    "strategyNav": 1.01087647,
+    "benchmarkNav": 1.0658498,
+    "excessNav": 0.9524079498,
+    "strategyDrawdown": -0.1232963578
+  },
+  {
+    "date": "2024-05-15",
+    "strategyNav": 1.0082503816,
+    "benchmarkNav": 1.0568178,
+    "excessNav": 0.9580045074,
+    "strategyDrawdown": -0.1255738876
+  },
+  {
+    "date": "2024-05-16",
+    "strategyNav": 1.0597200308,
+    "benchmarkNav": 1.0609856,
+    "excessNav": 1.0031311162,
+    "strategyDrawdown": -0.0809357639
+  },
+  {
+    "date": "2024-05-17",
+    "strategyNav": 1.0849558336,
+    "benchmarkNav": 1.071947,
+    "excessNav": 1.0166555893,
+    "strategyDrawdown": -0.059049489
+  },
+  {
+    "date": "2024-05-20",
+    "strategyNav": 1.0906482819,
+    "benchmarkNav": 1.075733,
+    "excessNav": 1.018399048,
+    "strategyDrawdown": -0.0541125949
+  },
+  {
+    "date": "2024-05-21",
+    "strategyNav": 1.0742703469,
+    "benchmarkNav": 1.0714195,
+    "excessNav": 1.0071896173,
+    "strategyDrawdown": -0.0683166997
+  },
+  {
+    "date": "2024-05-22",
+    "strategyNav": 1.0824386765,
+    "benchmarkNav": 1.0738356,
+    "excessNav": 1.0125765961,
+    "strategyDrawdown": -0.0612325459
+  },
+  {
+    "date": "2024-05-23",
+    "strategyNav": 1.0598397587,
+    "benchmarkNav": 1.0614023,
+    "excessNav": 1.0031602412,
+    "strategyDrawdown": -0.0808319274
+  },
+  {
+    "date": "2024-05-24",
+    "strategyNav": 1.0409449915,
+    "benchmarkNav": 1.049654,
+    "excessNav": 0.996379635,
+    "strategyDrawdown": -0.0972188072
+  },
+  {
+    "date": "2024-05-27",
+    "strategyNav": 1.0648264056,
+    "benchmarkNav": 1.0596304,
+    "excessNav": 1.0097686004,
+    "strategyDrawdown": -0.0765071541
+  },
+  {
+    "date": "2024-05-28",
+    "strategyNav": 1.0583269727,
+    "benchmarkNav": 1.0518954,
+    "excessNav": 1.010976316,
+    "strategyDrawdown": -0.0821439225
+  },
+  {
+    "date": "2024-05-29",
+    "strategyNav": 1.0717914109,
+    "benchmarkNav": 1.0531632,
+    "excessNav": 1.0226199065,
+    "strategyDrawdown": -0.0704666085
+  },
+  {
+    "date": "2024-05-30",
+    "strategyNav": 1.0653686473,
+    "benchmarkNav": 1.0475644,
+    "excessNav": 1.0219281945,
+    "strategyDrawdown": -0.0760368837
+  },
+  {
+    "date": "2024-05-31",
+    "strategyNav": 1.0948378604,
+    "benchmarkNav": 1.0433705,
+    "excessNav": 1.0542871139,
+    "strategyDrawdown": -0.0504790958
+  },
+  {
+    "date": "2024-06-03",
+    "strategyNav": 1.0878621572,
+    "benchmarkNav": 1.045944,
+    "excessNav": 1.044969316,
+    "strategyDrawdown": -0.0565289194
+  },
+  {
+    "date": "2024-06-04",
+    "strategyNav": 1.0994159781,
+    "benchmarkNav": 1.0537899,
+    "excessNav": 1.0482290159,
+    "strategyDrawdown": -0.046508628
+  },
+  {
+    "date": "2024-06-05",
+    "strategyNav": 1.0914691322,
+    "benchmarkNav": 1.0477045,
+    "excessNav": 1.0467054705,
+    "strategyDrawdown": -0.0534006954
+  },
+  {
+    "date": "2024-06-06",
+    "strategyNav": 1.0971222403,
+    "benchmarkNav": 1.0469642,
+    "excessNav": 1.0528663474,
+    "strategyDrawdown": -0.0484979198
+  },
+  {
+    "date": "2024-06-07",
+    "strategyNav": 1.093979543,
+    "benchmarkNav": 1.0416772,
+    "excessNav": 1.0551671485,
+    "strategyDrawdown": -0.0512234894
+  },
+  {
+    "date": "2024-06-11",
+    "strategyNav": 1.1015125007,
+    "benchmarkNav": 1.0325752,
+    "excessNav": 1.0716527556,
+    "strategyDrawdown": -0.0446903752
+  },
+  {
+    "date": "2024-06-12",
+    "strategyNav": 1.1059826267,
+    "benchmarkNav": 1.0329367,
+    "excessNav": 1.0756266289,
+    "strategyDrawdown": -0.0408135654
+  },
+  {
+    "date": "2024-06-13",
+    "strategyNav": 1.1085453009,
+    "benchmarkNav": 1.0276935,
+    "excessNav": 1.0835788364,
+    "strategyDrawdown": -0.038591033
+  },
+  {
+    "date": "2024-06-14",
+    "strategyNav": 1.1361127119,
+    "benchmarkNav": 1.0321819,
+    "excessNav": 1.1057930093,
+    "strategyDrawdown": -0.0146826224
+  },
+  {
+    "date": "2024-06-17",
+    "strategyNav": 1.1445852559,
+    "benchmarkNav": 1.0306284,
+    "excessNav": 1.1157036163,
+    "strategyDrawdown": -0.0073346324
+  },
+  {
+    "date": "2024-06-18",
+    "strategyNav": 1.1447526469,
+    "benchmarkNav": 1.0333651,
+    "excessNav": 1.1129041586,
+    "strategyDrawdown": -0.0071894591
+  },
+  {
+    "date": "2024-06-19",
+    "strategyNav": 1.1254186562,
+    "benchmarkNav": 1.0284572,
+    "excessNav": 1.0993938433,
+    "strategyDrawdown": -0.0239572646
+  },
+  {
+    "date": "2024-06-20",
+    "strategyNav": 1.1128550559,
+    "benchmarkNav": 1.0210339,
+    "excessNav": 1.095056068,
+    "strategyDrawdown": -0.0348533083
+  },
+  {
+    "date": "2024-06-21",
+    "strategyNav": 1.1116374877,
+    "benchmarkNav": 1.0188013,
+    "excessNav": 1.096252354,
+    "strategyDrawdown": -0.0359092696
+  },
+  {
+    "date": "2024-06-24",
+    "strategyNav": 1.0858600009,
+    "benchmarkNav": 1.0133191,
+    "excessNav": 1.0767306154,
+    "strategyDrawdown": -0.0582653312
+  },
+  {
+    "date": "2024-06-25",
+    "strategyNav": 1.0665627182,
+    "benchmarkNav": 1.0078077,
+    "excessNav": 1.0634518308,
+    "strategyDrawdown": -0.0750013009
+  },
+  {
+    "date": "2024-06-26",
+    "strategyNav": 1.1319272814,
+    "benchmarkNav": 1.0143247,
+    "excessNav": 1.1217490496,
+    "strategyDrawdown": -0.0183125241
+  },
+  {
+    "date": "2024-06-27",
+    "strategyNav": 1.0972839729,
+    "benchmarkNav": 1.0067061,
+    "excessNav": 1.0958426643,
+    "strategyDrawdown": -0.0483576539
+  },
+  {
+    "date": "2024-06-28",
+    "strategyNav": 1.0940410711,
+    "benchmarkNav": 1.0089036,
+    "excessNav": 1.0902119715,
+    "strategyDrawdown": -0.0511701279
+  },
+  {
+    "date": "2024-07-01",
+    "strategyNav": 1.109249077,
+    "benchmarkNav": 1.0137184,
+    "excessNav": 1.1001639254,
+    "strategyDrawdown": -0.0379806685
+  },
+  {
+    "date": "2024-07-02",
+    "strategyNav": 1.1069025505,
+    "benchmarkNav": 1.011856,
+    "excessNav": 1.0998578323,
+    "strategyDrawdown": -0.0400157424
+  },
+  {
+    "date": "2024-07-03",
+    "strategyNav": 1.1052434578,
+    "benchmarkNav": 1.0094136,
+    "excessNav": 1.1008640802,
+    "strategyDrawdown": -0.0414546251
+  },
+  {
+    "date": "2024-07-04",
+    "strategyNav": 1.0900293398,
+    "benchmarkNav": 1.004284,
+    "excessNav": 1.0913045216,
+    "strategyDrawdown": -0.0546493853
+  },
+  {
+    "date": "2024-07-05",
+    "strategyNav": 1.1002112648,
+    "benchmarkNav": 0.99998516,
+    "excessNav": 1.1061696953,
+    "strategyDrawdown": -0.0458188991
+  },
+  {
+    "date": "2024-07-08",
+    "strategyNav": 1.0840331825,
+    "benchmarkNav": 0.9914456,
+    "excessNav": 1.0993503286,
+    "strategyDrawdown": -0.0598496774
+  },
+  {
+    "date": "2024-07-09",
+    "strategyNav": 1.1220917267,
+    "benchmarkNav": 1.0025353,
+    "excessNav": 1.12564995,
+    "strategyDrawdown": -0.0268426134
+  },
+  {
+    "date": "2024-07-10",
+    "strategyNav": 1.1418721098,
+    "benchmarkNav": 0.99937606,
+    "excessNav": 1.1490403159,
+    "strategyDrawdown": -0.0096876648
+  },
+  {
+    "date": "2024-07-11",
+    "strategyNav": 1.1597440329,
+    "benchmarkNav": 1.0108008,
+    "excessNav": 1.1538886803,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2024-07-12",
+    "strategyNav": 1.1637913912,
+    "benchmarkNav": 1.0120337,
+    "excessNav": 1.1565082867,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2024-07-15",
+    "strategyNav": 1.1592274061,
+    "benchmarkNav": 1.0131558,
+    "excessNav": 1.1506905668,
+    "strategyDrawdown": -0.0039216522
+  },
+  {
+    "date": "2024-07-16",
+    "strategyNav": 1.1700819863,
+    "benchmarkNav": 1.0195764,
+    "excessNav": 1.1541729571,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2024-07-17",
+    "strategyNav": 1.1698102008,
+    "benchmarkNav": 1.0205382,
+    "excessNav": 1.1528161319,
+    "strategyDrawdown": -0.0002322791
+  },
+  {
+    "date": "2024-07-18",
+    "strategyNav": 1.1882304889,
+    "benchmarkNav": 1.0261778,
+    "excessNav": 1.1645982869,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2024-07-19",
+    "strategyNav": 1.1877930872,
+    "benchmarkNav": 1.03145,
+    "excessNav": 1.1581861101,
+    "strategyDrawdown": -0.0003681118
+  },
+  {
+    "date": "2024-07-22",
+    "strategyNav": 1.1885769687,
+    "benchmarkNav": 1.0244261,
+    "excessNav": 1.1668374348,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2024-07-23",
+    "strategyNav": 1.1593784277,
+    "benchmarkNav": 1.0025557,
+    "excessNav": 1.1630837043,
+    "strategyDrawdown": -0.0245659657
+  },
+  {
+    "date": "2024-07-24",
+    "strategyNav": 1.143326662,
+    "benchmarkNav": 0.9962283,
+    "excessNav": 1.1543212057,
+    "strategyDrawdown": -0.038070994
+  },
+  {
+    "date": "2024-07-25",
+    "strategyNav": 1.1279466286,
+    "benchmarkNav": 0.99071985,
+    "excessNav": 1.1451758439,
+    "strategyDrawdown": -0.0510108657
+  },
+  {
+    "date": "2024-07-26",
+    "strategyNav": 1.1381529426,
+    "benchmarkNav": 0.9936402,
+    "excessNav": 1.1521624367,
+    "strategyDrawdown": -0.0424238627
+  },
+  {
+    "date": "2024-07-29",
+    "strategyNav": 1.1291219087,
+    "benchmarkNav": 0.9882338,
+    "excessNav": 1.1492891673,
+    "strategyDrawdown": -0.0500220529
+  },
+  {
+    "date": "2024-07-30",
+    "strategyNav": 1.1217758192,
+    "benchmarkNav": 0.98200846,
+    "excessNav": 1.1490518114,
+    "strategyDrawdown": -0.0562026282
+  },
+  {
+    "date": "2024-07-31",
+    "strategyNav": 1.1571723181,
+    "benchmarkNav": 1.003197,
+    "excessNav": 1.1605162958,
+    "strategyDrawdown": -0.0264220589
+  },
+  {
+    "date": "2024-08-01",
+    "strategyNav": 1.1356293147,
+    "benchmarkNav": 0.99654895,
+    "excessNav": 1.1466015987,
+    "strategyDrawdown": -0.0445470975
+  },
+  {
+    "date": "2024-08-02",
+    "strategyNav": 1.1236348736,
+    "benchmarkNav": 0.9863832,
+    "excessNav": 1.146187726,
+    "strategyDrawdown": -0.0546385273
+  },
+  {
+    "date": "2024-08-05",
+    "strategyNav": 1.1110195362,
+    "benchmarkNav": 0.9744133,
+    "excessNav": 1.1472283397,
+    "strategyDrawdown": -0.0652523434
+  },
+  {
+    "date": "2024-08-06",
+    "strategyNav": 1.1205265578,
+    "benchmarkNav": 0.9743142,
+    "excessNav": 1.1571618575,
+    "strategyDrawdown": -0.0572536846
+  },
+  {
+    "date": "2024-08-07",
+    "strategyNav": 1.1339965205,
+    "benchmarkNav": 0.97387993,
+    "excessNav": 1.1715879911,
+    "strategyDrawdown": -0.0459208361
+  },
+  {
+    "date": "2024-08-08",
+    "strategyNav": 1.1223650475,
+    "benchmarkNav": 0.97430253,
+    "excessNav": 1.1590625624,
+    "strategyDrawdown": -0.0557068856
+  },
+  {
+    "date": "2024-08-09",
+    "strategyNav": 1.1474123626,
+    "benchmarkNav": 0.9710063,
+    "excessNav": 1.1888502022,
+    "strategyDrawdown": -0.0346335216
+  },
+  {
+    "date": "2024-08-12",
+    "strategyNav": 1.1512802412,
+    "benchmarkNav": 0.9693246,
+    "excessNav": 1.194916703,
+    "strategyDrawdown": -0.031379312
+  },
+  {
+    "date": "2024-08-13",
+    "strategyNav": 1.1653711495,
+    "benchmarkNav": 0.9718107,
+    "excessNav": 1.2064769849,
+    "strategyDrawdown": -0.0195240358
+  },
+  {
+    "date": "2024-08-14",
+    "strategyNav": 1.1691837736,
+    "benchmarkNav": 0.96448064,
+    "excessNav": 1.2195241482,
+    "strategyDrawdown": -0.0163163141
+  },
+  {
+    "date": "2024-08-15",
+    "strategyNav": 1.168191116,
+    "benchmarkNav": 0.97401404,
+    "excessNav": 1.2064343927,
+    "strategyDrawdown": -0.0171514789
+  },
+  {
+    "date": "2024-08-16",
+    "strategyNav": 1.1784949946,
+    "benchmarkNav": 0.97508657,
+    "excessNav": 1.2157471427,
+    "strategyDrawdown": -0.0084823906
+  },
+  {
+    "date": "2024-08-19",
+    "strategyNav": 1.1800491674,
+    "benchmarkNav": 0.9783916,
+    "excessNav": 1.2132296948,
+    "strategyDrawdown": -0.0071747994
+  },
+  {
+    "date": "2024-08-20",
+    "strategyNav": 1.1663102415,
+    "benchmarkNav": 0.97131807,
+    "excessNav": 1.2078758007,
+    "strategyDrawdown": -0.018733938
+  },
+  {
+    "date": "2024-08-21",
+    "strategyNav": 1.1794892766,
+    "benchmarkNav": 0.9680946,
+    "excessNav": 1.225533055,
+    "strategyDrawdown": -0.0076458592
+  },
+  {
+    "date": "2024-08-22",
+    "strategyNav": 1.1578334547,
+    "benchmarkNav": 0.96561724,
+    "excessNav": 1.2061680006,
+    "strategyDrawdown": -0.0258658167
+  },
+  {
+    "date": "2024-08-23",
+    "strategyNav": 1.1432747429,
+    "benchmarkNav": 0.9697122,
+    "excessNav": 1.185886467,
+    "strategyDrawdown": -0.0381146758
+  },
+  {
+    "date": "2024-08-26",
+    "strategyNav": 1.1398203749,
+    "benchmarkNav": 0.9688466,
+    "excessNav": 1.1833619177,
+    "strategyDrawdown": -0.0410209815
+  },
+  {
+    "date": "2024-08-27",
+    "strategyNav": 1.1279962033,
+    "benchmarkNav": 0.96334106,
+    "excessNav": 1.1778106163,
+    "strategyDrawdown": -0.0509691564
+  },
+  {
+    "date": "2024-08-28",
+    "strategyNav": 1.1138898742,
+    "benchmarkNav": 0.9578531,
+    "excessNav": 1.169791116,
+    "strategyDrawdown": -0.0628374068
+  },
+  {
+    "date": "2024-08-29",
+    "strategyNav": 1.1346244088,
+    "benchmarkNav": 0.9552825,
+    "excessNav": 1.1947055932,
+    "strategyDrawdown": -0.0453925672
+  },
+  {
+    "date": "2024-08-30",
+    "strategyNav": 1.1510415417,
+    "benchmarkNav": 0.9680335,
+    "excessNav": 1.1960452862,
+    "strategyDrawdown": -0.03158014
+  },
+  {
+    "date": "2024-09-02",
+    "strategyNav": 1.1073205469,
+    "benchmarkNav": 0.9515898,
+    "excessNav": 1.1709317,
+    "strategyDrawdown": -0.0683644594
+  },
+  {
+    "date": "2024-09-03",
+    "strategyNav": 1.1228227045,
+    "benchmarkNav": 0.9540438,
+    "excessNav": 1.1843047323,
+    "strategyDrawdown": -0.0553218394
+  },
+  {
+    "date": "2024-09-04",
+    "strategyNav": 1.107464572,
+    "benchmarkNav": 0.9478447,
+    "excessNav": 1.1758009448,
+    "strategyDrawdown": -0.0682432849
+  },
+  {
+    "date": "2024-09-05",
+    "strategyNav": 1.0957967851,
+    "benchmarkNav": 0.94947684,
+    "excessNav": 1.1613884906,
+    "strategyDrawdown": -0.0780598868
+  },
+  {
+    "date": "2024-09-06",
+    "strategyNav": 1.0740563526,
+    "benchmarkNav": 0.9417796,
+    "excessNav": 1.1477619056,
+    "strategyDrawdown": -0.0963510308
+  },
+  {
+    "date": "2024-09-09",
+    "strategyNav": 1.0890771166,
+    "benchmarkNav": 0.93058795,
+    "excessNav": 1.1774529416,
+    "strategyDrawdown": -0.0837134277
+  },
+  {
+    "date": "2024-09-10",
+    "strategyNav": 1.1057800509,
+    "benchmarkNav": 0.93140686,
+    "excessNav": 1.1944751142,
+    "strategyDrawdown": -0.0696605437
+  },
+  {
+    "date": "2024-09-11",
+    "strategyNav": 1.1119345242,
+    "benchmarkNav": 0.9286002,
+    "excessNav": 1.2047226386,
+    "strategyDrawdown": -0.0644825254
+  },
+  {
+    "date": "2024-09-12",
+    "strategyNav": 1.1195168725,
+    "benchmarkNav": 0.924619,
+    "excessNav": 1.218102725,
+    "strategyDrawdown": -0.0581031755
+  },
+  {
+    "date": "2024-09-13",
+    "strategyNav": 1.1272549468,
+    "benchmarkNav": 0.92076606,
+    "excessNav": 1.2315981538,
+    "strategyDrawdown": -0.0515928068
+  },
+  {
+    "date": "2024-09-18",
+    "strategyNav": 1.1143491891,
+    "benchmarkNav": 0.92419356,
+    "excessNav": 1.2129132508,
+    "strategyDrawdown": -0.0624509658
+  },
+  {
+    "date": "2024-09-19",
+    "strategyNav": 1.1312185106,
+    "benchmarkNav": 0.93148863,
+    "excessNav": 1.2217006002,
+    "strategyDrawdown": -0.0482580932
+  },
+  {
+    "date": "2024-09-20",
+    "strategyNav": 1.1426184404,
+    "benchmarkNav": 0.9329488,
+    "excessNav": 1.2320972287,
+    "strategyDrawdown": -0.0386668508
+  },
+  {
+    "date": "2024-09-23",
+    "strategyNav": 1.1515727016,
+    "benchmarkNav": 0.93636173,
+    "excessNav": 1.2372454729,
+    "strategyDrawdown": -0.0311332527
+  },
+  {
+    "date": "2024-09-24",
+    "strategyNav": 1.2148217328,
+    "benchmarkNav": 0.97691715,
+    "excessNav": 1.2516127758,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2024-09-25",
+    "strategyNav": 1.2231930599,
+    "benchmarkNav": 0.99137896,
+    "excessNav": 1.2417093439,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2024-09-26",
+    "strategyNav": 1.2802800098,
+    "benchmarkNav": 1.0332867,
+    "excessNav": 1.2471706586,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2024-09-27",
+    "strategyNav": 1.3817309201,
+    "benchmarkNav": 1.0794408,
+    "excessNav": 1.2902901197,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2024-09-30",
+    "strategyNav": 1.569493684,
+    "benchmarkNav": 1.171006,
+    "excessNav": 1.356176281,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2024-10-08",
+    "strategyNav": 1.7756209601,
+    "benchmarkNav": 1.2404442,
+    "excessNav": 1.4538693802,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2024-10-09",
+    "strategyNav": 1.7318869046,
+    "benchmarkNav": 1.1529739,
+    "excessNav": 1.5205801579,
+    "strategyDrawdown": -0.0246302879
+  },
+  {
+    "date": "2024-10-10",
+    "strategyNav": 1.6595357345,
+    "benchmarkNav": 1.1651595,
+    "excessNav": 1.4409857272,
+    "strategyDrawdown": -0.0653772557
+  },
+  {
+    "date": "2024-10-11",
+    "strategyNav": 1.5741704008,
+    "benchmarkNav": 1.1329191,
+    "excessNav": 1.4067349916,
+    "strategyDrawdown": -0.1134535826
+  },
+  {
+    "date": "2024-10-14",
+    "strategyNav": 1.6235234574,
+    "benchmarkNav": 1.154536,
+    "excessNav": 1.4239970786,
+    "strategyDrawdown": -0.0856587674
+  },
+  {
+    "date": "2024-10-15",
+    "strategyNav": 1.5864288706,
+    "benchmarkNav": 1.1238316,
+    "excessNav": 1.4293318285,
+    "strategyDrawdown": -0.1065498177
+  },
+  {
+    "date": "2024-10-16",
+    "strategyNav": 1.5524944292,
+    "benchmarkNav": 1.1167203,
+    "excessNav": 1.407802217,
+    "strategyDrawdown": -0.125661127
+  },
+  {
+    "date": "2024-10-17",
+    "strategyNav": 1.5291729222,
+    "benchmarkNav": 1.1040801,
+    "excessNav": 1.4025893257,
+    "strategyDrawdown": -0.1387954093
+  },
+  {
+    "date": "2024-10-18",
+    "strategyNav": 1.5676315705,
+    "benchmarkNav": 1.1440117,
+    "excessNav": 1.3871364151,
+    "strategyDrawdown": -0.1171361424
+  },
+  {
+    "date": "2024-10-21",
+    "strategyNav": 1.5847332631,
+    "benchmarkNav": 1.1469175,
+    "excessNav": 1.3987457241,
+    "strategyDrawdown": -0.1075047554
+  },
+  {
+    "date": "2024-10-22",
+    "strategyNav": 1.610542357,
+    "benchmarkNav": 1.1534984,
+    "excessNav": 1.4134999459,
+    "strategyDrawdown": -0.0929695058
+  },
+  {
+    "date": "2024-10-23",
+    "strategyNav": 1.6078292107,
+    "benchmarkNav": 1.1579955,
+    "excessNav": 1.4056080404,
+    "strategyDrawdown": -0.0944975044
+  },
+  {
+    "date": "2024-10-24",
+    "strategyNav": 1.6024937727,
+    "benchmarkNav": 1.1450609,
+    "excessNav": 1.4166440037,
+    "strategyDrawdown": -0.0975023337
+  },
+  {
+    "date": "2024-10-25",
+    "strategyNav": 1.5983650092,
+    "benchmarkNav": 1.153102,
+    "excessNav": 1.4030456924,
+    "strategyDrawdown": -0.0998275842
+  },
+  {
+    "date": "2024-10-28",
+    "strategyNav": 1.5826831964,
+    "benchmarkNav": 1.155358,
+    "excessNav": 1.3865353489,
+    "strategyDrawdown": -0.1086593187
+  },
+  {
+    "date": "2024-10-29",
+    "strategyNav": 1.55140906,
+    "benchmarkNav": 1.1438427,
+    "excessNav": 1.3729565235,
+    "strategyDrawdown": -0.1262723887
+  },
+  {
+    "date": "2024-10-30",
+    "strategyNav": 1.569762893,
+    "benchmarkNav": 1.1335837,
+    "excessNav": 1.4015130822,
+    "strategyDrawdown": -0.1159358172
+  },
+  {
+    "date": "2024-10-31",
+    "strategyNav": 1.594288938,
+    "benchmarkNav": 1.134047,
+    "excessNav": 1.4228374901,
+    "strategyDrawdown": -0.1021231592
+  },
+  {
+    "date": "2024-11-01",
+    "strategyNav": 1.556031517,
+    "benchmarkNav": 1.1337498,
+    "excessNav": 1.3890672105,
+    "strategyDrawdown": -0.1236690983
+  },
+  {
+    "date": "2024-11-04",
+    "strategyNav": 1.5966030598,
+    "benchmarkNav": 1.1497037,
+    "excessNav": 1.4057386646,
+    "strategyDrawdown": -0.1008198846
+  },
+  {
+    "date": "2024-11-05",
+    "strategyNav": 1.6823525528,
+    "benchmarkNav": 1.1787934,
+    "excessNav": 1.44566941,
+    "strategyDrawdown": -0.0525272057
+  },
+  {
+    "date": "2024-11-06",
+    "strategyNav": 1.6870536596,
+    "benchmarkNav": 1.1728798,
+    "excessNav": 1.456961519,
+    "strategyDrawdown": -0.049879621
+  },
+  {
+    "date": "2024-11-07",
+    "strategyNav": 1.6912510479,
+    "benchmarkNav": 1.2082678,
+    "excessNav": 1.4166271829,
+    "strategyDrawdown": -0.0475157222
+  },
+  {
+    "date": "2024-11-08",
+    "strategyNav": 1.7277939682,
+    "benchmarkNav": 1.196129,
+    "excessNav": 1.4614684154,
+    "strategyDrawdown": -0.0269353612
+  },
+  {
+    "date": "2024-11-11",
+    "strategyNav": 1.6834637173,
+    "benchmarkNav": 1.2040215,
+    "excessNav": 1.4143280313,
+    "strategyDrawdown": -0.0519014164
+  },
+  {
+    "date": "2024-11-12",
+    "strategyNav": 1.6653324565,
+    "benchmarkNav": 1.1907924,
+    "excessNav": 1.4146351238,
+    "strategyDrawdown": -0.062112639
+  },
+  {
+    "date": "2024-11-13",
+    "strategyNav": 1.705295102,
+    "benchmarkNav": 1.1981224,
+    "excessNav": 1.4398740626,
+    "strategyDrawdown": -0.039606346
+  },
+  {
+    "date": "2024-11-14",
+    "strategyNav": 1.6521373954,
+    "benchmarkNav": 1.1773506,
+    "excessNav": 1.4199530591,
+    "strategyDrawdown": -0.0695438765
+  },
+  {
+    "date": "2024-11-15",
+    "strategyNav": 1.5641024373,
+    "benchmarkNav": 1.1567189,
+    "excessNav": 1.3691733365,
+    "strategyDrawdown": -0.1191236911
+  },
+  {
+    "date": "2024-11-18",
+    "strategyNav": 1.5491546898,
+    "benchmarkNav": 1.1513417,
+    "excessNav": 1.3624533354,
+    "strategyDrawdown": -0.1275420123
+  },
+  {
+    "date": "2024-11-19",
+    "strategyNav": 1.5861097565,
+    "benchmarkNav": 1.1590681,
+    "excessNav": 1.3858115355,
+    "strategyDrawdown": -0.1067295374
+  },
+  {
+    "date": "2024-11-20",
+    "strategyNav": 1.6073927589,
+    "benchmarkNav": 1.1616563,
+    "excessNav": 1.4013124716,
+    "strategyDrawdown": -0.0947433067
+  },
+  {
+    "date": "2024-11-21",
+    "strategyNav": 1.5958861016,
+    "benchmarkNav": 1.1626852,
+    "excessNav": 1.39003988,
+    "strategyDrawdown": -0.1012236635
+  },
+  {
+    "date": "2024-11-22",
+    "strategyNav": 1.5390340218,
+    "benchmarkNav": 1.1266618,
+    "excessNav": 1.3835883788,
+    "strategyDrawdown": -0.1332418031
+  },
+  {
+    "date": "2024-11-25",
+    "strategyNav": 1.5226105642,
+    "benchmarkNav": 1.1215293,
+    "excessNav": 1.3751265289,
+    "strategyDrawdown": -0.1424912195
+  },
+  {
+    "date": "2024-11-26",
+    "strategyNav": 1.521962374,
+    "benchmarkNav": 1.119224,
+    "excessNav": 1.3773677322,
+    "strategyDrawdown": -0.1428562693
+  },
+  {
+    "date": "2024-11-27",
+    "strategyNav": 1.5538142693,
+    "benchmarkNav": 1.1387104,
+    "excessNav": 1.3822126773,
+    "strategyDrawdown": -0.1249178151
+  },
+  {
+    "date": "2024-11-28",
+    "strategyNav": 1.5285004791,
+    "benchmarkNav": 1.1286582,
+    "excessNav": 1.3718962551,
+    "strategyDrawdown": -0.139174118
+  },
+  {
+    "date": "2024-11-29",
+    "strategyNav": 1.5582847598,
+    "benchmarkNav": 1.1414908,
+    "excessNav": 1.3830307344,
+    "strategyDrawdown": -0.1224001097
+  },
+  {
+    "date": "2024-12-02",
+    "strategyNav": 1.6137028761,
+    "benchmarkNav": 1.1505404,
+    "excessNav": 1.4212518409,
+    "strategyDrawdown": -0.0911895544
+  },
+  {
+    "date": "2024-12-03",
+    "strategyNav": 1.6150135659,
+    "benchmarkNav": 1.151782,
+    "excessNav": 1.4208723998,
+    "strategyDrawdown": -0.0904513957
+  },
+  {
+    "date": "2024-12-04",
+    "strategyNav": 1.6053672971,
+    "benchmarkNav": 1.1455654,
+    "excessNav": 1.4200547834,
+    "strategyDrawdown": -0.0958840129
+  },
+  {
+    "date": "2024-12-05",
+    "strategyNav": 1.6014124122,
+    "benchmarkNav": 1.1429511,
+    "excessNav": 1.4197971059,
+    "strategyDrawdown": -0.0981113379
+  },
+  {
+    "date": "2024-12-06",
+    "strategyNav": 1.6114488554,
+    "benchmarkNav": 1.1579754,
+    "excessNav": 1.4100317928,
+    "strategyDrawdown": -0.0924589811
+  },
+  {
+    "date": "2024-12-09",
+    "strategyNav": 1.6163046049,
+    "benchmarkNav": 1.1560606,
+    "excessNav": 1.416612345,
+    "strategyDrawdown": -0.0897243042
+  },
+  {
+    "date": "2024-12-10",
+    "strategyNav": 1.6110492984,
+    "benchmarkNav": 1.1645331,
+    "excessNav": 1.4016241598,
+    "strategyDrawdown": -0.0926840049
+  },
+  {
+    "date": "2024-12-11",
+    "strategyNav": 1.592715891,
+    "benchmarkNav": 1.1625483,
+    "excessNav": 1.3880628881,
+    "strategyDrawdown": -0.103009073
+  },
+  {
+    "date": "2024-12-12",
+    "strategyNav": 1.5941355886,
+    "benchmarkNav": 1.1741102,
+    "excessNav": 1.3754954994,
+    "strategyDrawdown": -0.1022095231
+  },
+  {
+    "date": "2024-12-13",
+    "strategyNav": 1.5719465115,
+    "benchmarkNav": 1.146329,
+    "excessNav": 1.3888959123,
+    "strategyDrawdown": -0.1147060398
+  },
+  {
+    "date": "2024-12-16",
+    "strategyNav": 1.5317598221,
+    "benchmarkNav": 1.1401095,
+    "excessNav": 1.3609244524,
+    "strategyDrawdown": -0.1373385106
+  },
+  {
+    "date": "2024-12-17",
+    "strategyNav": 1.5219598327,
+    "benchmarkNav": 1.1430794,
+    "excessNav": 1.3486724509,
+    "strategyDrawdown": -0.1428577005
+  },
+  {
+    "date": "2024-12-18",
+    "strategyNav": 1.5246731982,
+    "benchmarkNav": 1.1488677,
+    "excessNav": 1.3442475078,
+    "strategyDrawdown": -0.1413295785
+  },
+  {
+    "date": "2024-12-19",
+    "strategyNav": 1.5119557458,
+    "benchmarkNav": 1.1499081,
+    "excessNav": 1.3318177696,
+    "strategyDrawdown": -0.1484918348
+  },
+  {
+    "date": "2024-12-20",
+    "strategyNav": 1.5184717992,
+    "benchmarkNav": 1.1447437,
+    "excessNav": 1.3435388789,
+    "strategyDrawdown": -0.1448221026
+  },
+  {
+    "date": "2024-12-23",
+    "strategyNav": 1.51257885,
+    "benchmarkNav": 1.1464428,
+    "excessNav": 1.3363306358,
+    "strategyDrawdown": -0.1481409129
+  },
+  {
+    "date": "2024-12-24",
+    "strategyNav": 1.5314406664,
+    "benchmarkNav": 1.1610502,
+    "excessNav": 1.3359676972,
+    "strategyDrawdown": -0.1375182537
+  },
+  {
+    "date": "2024-12-25",
+    "strategyNav": 1.5404886674,
+    "benchmarkNav": 1.1616156,
+    "excessNav": 1.3432102359,
+    "strategyDrawdown": -0.132422571
+  },
+  {
+    "date": "2024-12-26",
+    "strategyNav": 1.5751900583,
+    "benchmarkNav": 1.1621547,
+    "excessNav": 1.3728443295,
+    "strategyDrawdown": -0.1128793286
+  },
+  {
+    "date": "2024-12-27",
+    "strategyNav": 1.5531988764,
+    "benchmarkNav": 1.1602749,
+    "excessNav": 1.3558987359,
+    "strategyDrawdown": -0.1252643941
+  },
+  {
+    "date": "2024-12-30",
+    "strategyNav": 1.5403052562,
+    "benchmarkNav": 1.1655269,
+    "excessNav": 1.3385054996,
+    "strategyDrawdown": -0.1325258652
+  },
+  {
+    "date": "2024-12-31",
+    "strategyNav": 1.5027833877,
+    "benchmarkNav": 1.1468333,
+    "excessNav": 1.3273674666,
+    "strategyDrawdown": -0.1536575533
+  },
+  {
+    "date": "2025-01-02",
+    "strategyNav": 1.4459290261,
+    "benchmarkNav": 1.1134592,
+    "excessNav": 1.3157773825,
+    "strategyDrawdown": -0.185676978
+  },
+  {
+    "date": "2025-01-03",
+    "strategyNav": 1.420533171,
+    "benchmarkNav": 1.1002738,
+    "excessNav": 1.3082486094,
+    "strategyDrawdown": -0.1999794985
+  },
+  {
+    "date": "2025-01-06",
+    "strategyNav": 1.4078409692,
+    "benchmarkNav": 1.0984697,
+    "excessNav": 1.2987047378,
+    "strategyDrawdown": -0.2071275341
+  },
+  {
+    "date": "2025-01-07",
+    "strategyNav": 1.4506938372,
+    "benchmarkNav": 1.1063797,
+    "excessNav": 1.3288837232,
+    "strategyDrawdown": -0.1829935162
+  },
+  {
+    "date": "2025-01-08",
+    "strategyNav": 1.4402772441,
+    "benchmarkNav": 1.1043717,
+    "excessNav": 1.32175373,
+    "strategyDrawdown": -0.188859967
+  },
+  {
+    "date": "2025-01-09",
+    "strategyNav": 1.4365339915,
+    "benchmarkNav": 1.1016494,
+    "excessNav": 1.3215765746,
+    "strategyDrawdown": -0.1909681042
+  },
+  {
+    "date": "2025-01-10",
+    "strategyNav": 1.3963249029,
+    "benchmarkNav": 1.0878346,
+    "excessNav": 1.3011578894,
+    "strategyDrawdown": -0.2136131898
+  },
+  {
+    "date": "2025-01-13",
+    "strategyNav": 1.3799355223,
+    "benchmarkNav": 1.0849289,
+    "excessNav": 1.2893610074,
+    "strategyDrawdown": -0.2228434146
+  },
+  {
+    "date": "2025-01-14",
+    "strategyNav": 1.4196701772,
+    "benchmarkNav": 1.1134996,
+    "excessNav": 1.2925332066,
+    "strategyDrawdown": -0.2004655222
+  },
+  {
+    "date": "2025-01-15",
+    "strategyNav": 1.3940620046,
+    "benchmarkNav": 1.1063561,
+    "excessNav": 1.2775103432,
+    "strategyDrawdown": -0.2148876162
+  },
+  {
+    "date": "2025-01-16",
+    "strategyNav": 1.4771859929,
+    "benchmarkNav": 1.1076239,
+    "excessNav": 1.35222071,
+    "strategyDrawdown": -0.1680735776
+  },
+  {
+    "date": "2025-01-17",
+    "strategyNav": 1.4922401045,
+    "benchmarkNav": 1.1111096,
+    "excessNav": 1.3617458445,
+    "strategyDrawdown": -0.1595953539
+  },
+  {
+    "date": "2025-01-20",
+    "strategyNav": 1.5276021981,
+    "benchmarkNav": 1.1161633,
+    "excessNav": 1.3878219297,
+    "strategyDrawdown": -0.1396800148
+  },
+  {
+    "date": "2025-01-21",
+    "strategyNav": 1.5327167622,
+    "benchmarkNav": 1.1170173,
+    "excessNav": 1.3914066935,
+    "strategyDrawdown": -0.1367995779
+  },
+  {
+    "date": "2025-01-22",
+    "strategyNav": 1.5684057836,
+    "benchmarkNav": 1.1066445,
+    "excessNav": 1.4367260861,
+    "strategyDrawdown": -0.1167001185
+  },
+  {
+    "date": "2025-01-23",
+    "strategyNav": 1.5873264585,
+    "benchmarkNav": 1.108603,
+    "excessNav": 1.4515155345,
+    "strategyDrawdown": -0.1060443112
+  },
+  {
+    "date": "2025-01-24",
+    "strategyNav": 1.6025637031,
+    "benchmarkNav": 1.11709,
+    "excessNav": 1.4543368352,
+    "strategyDrawdown": -0.0974629501
+  },
+  {
+    "date": "2025-01-27",
+    "strategyNav": 1.5891890654,
+    "benchmarkNav": 1.112491,
+    "excessNav": 1.4481867013,
+    "strategyDrawdown": -0.1049953222
+  },
+  {
+    "date": "2025-02-05",
+    "strategyNav": 1.5753211238,
+    "benchmarkNav": 1.1060791,
+    "excessNav": 1.4438959613,
+    "strategyDrawdown": -0.1128055147
+  },
+  {
+    "date": "2025-02-06",
+    "strategyNav": 1.6122836795,
+    "benchmarkNav": 1.1199958,
+    "excessNav": 1.4596076312,
+    "strategyDrawdown": -0.0919888221
+  },
+  {
+    "date": "2025-02-07",
+    "strategyNav": 1.622888663,
+    "benchmarkNav": 1.1345305,
+    "excessNav": 1.45026634,
+    "strategyDrawdown": -0.0860162729
+  },
+  {
+    "date": "2025-02-10",
+    "strategyNav": 1.6189096745,
+    "benchmarkNav": 1.1369671,
+    "excessNav": 1.4435960586,
+    "strategyDrawdown": -0.0882571726
+  },
+  {
+    "date": "2025-02-11",
+    "strategyNav": 1.6474466202,
+    "benchmarkNav": 1.1317443,
+    "excessNav": 1.4756740236,
+    "strategyDrawdown": -0.0721856426
+  },
+  {
+    "date": "2025-02-12",
+    "strategyNav": 1.6584426639,
+    "benchmarkNav": 1.1424464,
+    "excessNav": 1.4715691722,
+    "strategyDrawdown": -0.0659928548
+  },
+  {
+    "date": "2025-02-13",
+    "strategyNav": 1.6232676525,
+    "benchmarkNav": 1.1381562,
+    "excessNav": 1.4458838263,
+    "strategyDrawdown": -0.0858028324
+  },
+  {
+    "date": "2025-02-14",
+    "strategyNav": 1.6229131703,
+    "benchmarkNav": 1.1480275,
+    "excessNav": 1.4330278261,
+    "strategyDrawdown": -0.0860024708
+  },
+  {
+    "date": "2025-02-17",
+    "strategyNav": 1.6579320797,
+    "benchmarkNav": 1.1504728,
+    "excessNav": 1.4608972022,
+    "strategyDrawdown": -0.0662804073
+  },
+  {
+    "date": "2025-02-18",
+    "strategyNav": 1.6292125163,
+    "benchmarkNav": 1.1403828,
+    "excessNav": 1.4484032675,
+    "strategyDrawdown": -0.0824547846
+  },
+  {
+    "date": "2025-02-19",
+    "strategyNav": 1.6635553264,
+    "benchmarkNav": 1.1483626,
+    "excessNav": 1.4687994031,
+    "strategyDrawdown": -0.0631134889
+  },
+  {
+    "date": "2025-02-20",
+    "strategyNav": 1.6643431333,
+    "benchmarkNav": 1.1450809,
+    "excessNav": 1.4736923459,
+    "strategyDrawdown": -0.0626698092
+  },
+  {
+    "date": "2025-02-21",
+    "strategyNav": 1.7295109382,
+    "benchmarkNav": 1.1595194,
+    "excessNav": 1.5128131979,
+    "strategyDrawdown": -0.0259683924
+  },
+  {
+    "date": "2025-02-24",
+    "strategyNav": 1.7497884442,
+    "benchmarkNav": 1.156978,
+    "excessNav": 1.5338658062,
+    "strategyDrawdown": -0.0145484405
+  },
+  {
+    "date": "2025-02-25",
+    "strategyNav": 1.7840360891,
+    "benchmarkNav": 1.1441337,
+    "excessNav": 1.5809157777,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-02-26",
+    "strategyNav": 1.8569043442,
+    "benchmarkNav": 1.1541275,
+    "excessNav": 1.6316786449,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-02-27",
+    "strategyNav": 1.8350581933,
+    "benchmarkNav": 1.1565117,
+    "excessNav": 1.609111549,
+    "strategyDrawdown": -0.011764823
+  },
+  {
+    "date": "2025-02-28",
+    "strategyNav": 1.7418468594,
+    "benchmarkNav": 1.1337581,
+    "excessNav": 1.5590352651,
+    "strategyDrawdown": -0.061961988
+  },
+  {
+    "date": "2025-03-03",
+    "strategyNav": 1.7238537789,
+    "benchmarkNav": 1.1332976,
+    "excessNav": 1.5435638966,
+    "strategyDrawdown": -0.0716518143
+  },
+  {
+    "date": "2025-03-04",
+    "strategyNav": 1.7355180686,
+    "benchmarkNav": 1.1323503,
+    "excessNav": 1.5552984384,
+    "strategyDrawdown": -0.0653702362
+  },
+  {
+    "date": "2025-03-05",
+    "strategyNav": 1.763740834,
+    "benchmarkNav": 1.1374071,
+    "excessNav": 1.573645001,
+    "strategyDrawdown": -0.0501714105
+  },
+  {
+    "date": "2025-03-06",
+    "strategyNav": 1.787195764,
+    "benchmarkNav": 1.1530492,
+    "excessNav": 1.57293047,
+    "strategyDrawdown": -0.0375402106
+  },
+  {
+    "date": "2025-03-07",
+    "strategyNav": 1.7556497256,
+    "benchmarkNav": 1.1494848,
+    "excessNav": 1.5500289133,
+    "strategyDrawdown": -0.0545287208
+  },
+  {
+    "date": "2025-03-10",
+    "strategyNav": 1.782662003,
+    "benchmarkNav": 1.1450518,
+    "excessNav": 1.5798550896,
+    "strategyDrawdown": -0.0399817801
+  },
+  {
+    "date": "2025-03-11",
+    "strategyNav": 1.7783825892,
+    "benchmarkNav": 1.1487298,
+    "excessNav": 1.5709878855,
+    "strategyDrawdown": -0.0422863758
+  },
+  {
+    "date": "2025-03-12",
+    "strategyNav": 1.7646060655,
+    "benchmarkNav": 1.1445941,
+    "excessNav": 1.5644739109,
+    "strategyDrawdown": -0.0497054568
+  },
+  {
+    "date": "2025-03-13",
+    "strategyNav": 1.736932629,
+    "benchmarkNav": 1.1400329,
+    "excessNav": 1.5461734565,
+    "strategyDrawdown": -0.064608452
+  },
+  {
+    "date": "2025-03-14",
+    "strategyNav": 1.7808150114,
+    "benchmarkNav": 1.1677148,
+    "excessNav": 1.5476926602,
+    "strategyDrawdown": -0.0409764418
+  },
+  {
+    "date": "2025-03-17",
+    "strategyNav": 1.8027365738,
+    "benchmarkNav": 1.1648674,
+    "excessNav": 1.5705185482,
+    "strategyDrawdown": -0.0291710074
+  },
+  {
+    "date": "2025-03-18",
+    "strategyNav": 1.8772197783,
+    "benchmarkNav": 1.1680529,
+    "excessNav": 1.6311124241,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-03-19",
+    "strategyNav": 1.8496302219,
+    "benchmarkNav": 1.168767,
+    "excessNav": 1.6061428075,
+    "strategyDrawdown": -0.0146970305
+  },
+  {
+    "date": "2025-03-20",
+    "strategyNav": 1.8382612851,
+    "benchmarkNav": 1.1585137,
+    "excessNav": 1.6103608447,
+    "strategyDrawdown": -0.0207532936
+  },
+  {
+    "date": "2025-03-21",
+    "strategyNav": 1.7879885637,
+    "benchmarkNav": 1.1409421,
+    "excessNav": 1.590745558,
+    "strategyDrawdown": -0.0475337068
+  },
+  {
+    "date": "2025-03-24",
+    "strategyNav": 1.8341031966,
+    "benchmarkNav": 1.1468148,
+    "excessNav": 1.6235851129,
+    "strategyDrawdown": -0.0229683184
+  },
+  {
+    "date": "2025-03-25",
+    "strategyNav": 1.8017791304,
+    "benchmarkNav": 1.1460717,
+    "excessNav": 1.5960233164,
+    "strategyDrawdown": -0.040187435
+  },
+  {
+    "date": "2025-03-26",
+    "strategyNav": 1.7961677585,
+    "benchmarkNav": 1.1423004,
+    "excessNav": 1.5963046995,
+    "strategyDrawdown": -0.0431766279
+  },
+  {
+    "date": "2025-03-27",
+    "strategyNav": 1.7842365108,
+    "benchmarkNav": 1.1461039,
+    "excessNav": 1.5803859534,
+    "strategyDrawdown": -0.0495324354
+  },
+  {
+    "date": "2025-03-28",
+    "strategyNav": 1.7692963221,
+    "benchmarkNav": 1.1410792,
+    "excessNav": 1.5740812648,
+    "strategyDrawdown": -0.057491114
+  },
+  {
+    "date": "2025-03-31",
+    "strategyNav": 1.74131813,
+    "benchmarkNav": 1.1329594,
+    "excessNav": 1.5603910482,
+    "strategyDrawdown": -0.0723951718
+  },
+  {
+    "date": "2025-04-01",
+    "strategyNav": 1.7196125366,
+    "benchmarkNav": 1.1330671,
+    "excessNav": 1.540792279,
+    "strategyDrawdown": -0.0839577994
+  },
+  {
+    "date": "2025-04-02",
+    "strategyNav": 1.7364408956,
+    "benchmarkNav": 1.1321082,
+    "excessNav": 1.5571746002,
+    "strategyDrawdown": -0.0749932876
+  },
+  {
+    "date": "2025-04-03",
+    "strategyNav": 1.6975416449,
+    "benchmarkNav": 1.1254369,
+    "excessNav": 1.5314673607,
+    "strategyDrawdown": -0.0957150225
+  },
+  {
+    "date": "2025-04-07",
+    "strategyNav": 1.5506899511,
+    "benchmarkNav": 1.0461448,
+    "excessNav": 1.5068812294,
+    "strategyDrawdown": -0.1739433129
+  },
+  {
+    "date": "2025-04-08",
+    "strategyNav": 1.4918485175,
+    "benchmarkNav": 1.0640166,
+    "excessNav": 1.4239594675,
+    "strategyDrawdown": -0.205288302
+  },
+  {
+    "date": "2025-04-09",
+    "strategyNav": 1.5071816542,
+    "benchmarkNav": 1.0745175,
+    "excessNav": 1.4245416478,
+    "strategyDrawdown": -0.197120299
+  },
+  {
+    "date": "2025-04-10",
+    "strategyNav": 1.5757220844,
+    "benchmarkNav": 1.0886034,
+    "excessNav": 1.4706495083,
+    "strategyDrawdown": -0.1606086284
+  },
+  {
+    "date": "2025-04-11",
+    "strategyNav": 1.6195326338,
+    "benchmarkNav": 1.0930916,
+    "excessNav": 1.5054752274,
+    "strategyDrawdown": -0.1372706316
+  },
+  {
+    "date": "2025-04-14",
+    "strategyNav": 1.6378307867,
+    "benchmarkNav": 1.095604,
+    "excessNav": 1.5190245957,
+    "strategyDrawdown": -0.1275231565
+  },
+  {
+    "date": "2025-04-15",
+    "strategyNav": 1.6198792451,
+    "benchmarkNav": 1.096213,
+    "excessNav": 1.5015308518,
+    "strategyDrawdown": -0.1370859908
+  },
+  {
+    "date": "2025-04-16",
+    "strategyNav": 1.5660609086,
+    "benchmarkNav": 1.0995909,
+    "excessNav": 1.4470176048,
+    "strategyDrawdown": -0.1657551627
+  },
+  {
+    "date": "2025-04-17",
+    "strategyNav": 1.5658229496,
+    "benchmarkNav": 1.099416,
+    "excessNav": 1.4470278464,
+    "strategyDrawdown": -0.1658819241
+  },
+  {
+    "date": "2025-04-18",
+    "strategyNav": 1.5982442783,
+    "benchmarkNav": 1.0995034,
+    "excessNav": 1.4768743924,
+    "strategyDrawdown": -0.1486109955
+  },
+  {
+    "date": "2025-04-21",
+    "strategyNav": 1.6496123254,
+    "benchmarkNav": 1.1031057,
+    "excessNav": 1.5195029966,
+    "strategyDrawdown": -0.1212470993
+  },
+  {
+    "date": "2025-04-22",
+    "strategyNav": 1.6205695416,
+    "benchmarkNav": 1.1028346,
+    "excessNav": 1.493124222,
+    "strategyDrawdown": -0.136718268
+  },
+  {
+    "date": "2025-04-23",
+    "strategyNav": 1.7190405944,
+    "benchmarkNav": 1.1036885,
+    "excessNav": 1.5826952117,
+    "strategyDrawdown": -0.0842624746
+  },
+  {
+    "date": "2025-04-24",
+    "strategyNav": 1.6951788104,
+    "benchmarkNav": 1.102954,
+    "excessNav": 1.5617791875,
+    "strategyDrawdown": -0.0969737108
+  },
+  {
+    "date": "2025-04-25",
+    "strategyNav": 1.7399436275,
+    "benchmarkNav": 1.1037205,
+    "excessNav": 1.6019358814,
+    "strategyDrawdown": -0.0731273729
+  },
+  {
+    "date": "2025-04-28",
+    "strategyNav": 1.7226622429,
+    "benchmarkNav": 1.1021554,
+    "excessNav": 1.5882967471,
+    "strategyDrawdown": -0.0823332127
+  },
+  {
+    "date": "2025-04-29",
+    "strategyNav": 1.7255240698,
+    "benchmarkNav": 1.1002493,
+    "excessNav": 1.5936822958,
+    "strategyDrawdown": -0.0808087099
+  },
+  {
+    "date": "2025-04-30",
+    "strategyNav": 1.7552754334,
+    "benchmarkNav": 1.0989349,
+    "excessNav": 1.6230643548,
+    "strategyDrawdown": -0.0649600789
+  },
+  {
+    "date": "2025-05-06",
+    "strategyNav": 1.8440289392,
+    "benchmarkNav": 1.1100012,
+    "excessNav": 1.688788361,
+    "strategyDrawdown": -0.0176808488
+  },
+  {
+    "date": "2025-05-07",
+    "strategyNav": 1.8433826269,
+    "benchmarkNav": 1.1167308,
+    "excessNav": 1.6779577639,
+    "strategyDrawdown": -0.0180251411
+  },
+  {
+    "date": "2025-05-08",
+    "strategyNav": 1.8651087799,
+    "benchmarkNav": 1.1229299,
+    "excessNav": 1.6884197044,
+    "strategyDrawdown": -0.0064515613
+  },
+  {
+    "date": "2025-05-09",
+    "strategyNav": 1.8278713316,
+    "benchmarkNav": 1.1209656,
+    "excessNav": 1.6576635203,
+    "strategyDrawdown": -0.0262880497
+  },
+  {
+    "date": "2025-05-12",
+    "strategyNav": 1.8638530443,
+    "benchmarkNav": 1.1339206,
+    "excessNav": 1.671137097,
+    "strategyDrawdown": -0.007120495
+  },
+  {
+    "date": "2025-05-13",
+    "strategyNav": 1.868562626,
+    "benchmarkNav": 1.1355672,
+    "excessNav": 1.6729328864,
+    "strategyDrawdown": -0.0046116882
+  },
+  {
+    "date": "2025-05-14",
+    "strategyNav": 1.8619538181,
+    "benchmarkNav": 1.1492506,
+    "excessNav": 1.6468572932,
+    "strategyDrawdown": -0.0081322179
+  },
+  {
+    "date": "2025-05-15",
+    "strategyNav": 1.831757966,
+    "benchmarkNav": 1.1387556,
+    "excessNav": 1.6351890673,
+    "strategyDrawdown": -0.0242176291
+  },
+  {
+    "date": "2025-05-16",
+    "strategyNav": 1.8414950054,
+    "benchmarkNav": 1.1334773,
+    "excessNav": 1.6514603695,
+    "strategyDrawdown": -0.0190306821
+  },
+  {
+    "date": "2025-05-19",
+    "strategyNav": 1.8215333455,
+    "benchmarkNav": 1.1299974,
+    "excessNav": 1.6386288449,
+    "strategyDrawdown": -0.0296643118
+  },
+  {
+    "date": "2025-05-20",
+    "strategyNav": 1.8422471317,
+    "benchmarkNav": 1.1361237,
+    "excessNav": 1.6483788526,
+    "strategyDrawdown": -0.0186300225
+  },
+  {
+    "date": "2025-05-21",
+    "strategyNav": 1.8427895467,
+    "benchmarkNav": 1.1414309,
+    "excessNav": 1.6411640566,
+    "strategyDrawdown": -0.0183410765
+  },
+  {
+    "date": "2025-05-22",
+    "strategyNav": 1.8121741995,
+    "benchmarkNav": 1.1406994,
+    "excessNav": 1.6149502037,
+    "strategyDrawdown": -0.0346499539
+  },
+  {
+    "date": "2025-05-23",
+    "strategyNav": 1.7923171318,
+    "benchmarkNav": 1.1314896,
+    "excessNav": 1.6102930322,
+    "strategyDrawdown": -0.045227867
+  },
+  {
+    "date": "2025-05-26",
+    "strategyNav": 1.8145476903,
+    "benchmarkNav": 1.125031,
+    "excessNav": 1.6394575153,
+    "strategyDrawdown": -0.033385589
+  },
+  {
+    "date": "2025-05-27",
+    "strategyNav": 1.7701684565,
+    "benchmarkNav": 1.1189951,
+    "excessNav": 1.6081563534,
+    "strategyDrawdown": -0.0570265256
+  },
+  {
+    "date": "2025-05-28",
+    "strategyNav": 1.7817969982,
+    "benchmarkNav": 1.118074,
+    "excessNav": 1.6200441561,
+    "strategyDrawdown": -0.0508319703
+  },
+  {
+    "date": "2025-05-29",
+    "strategyNav": 1.8044312608,
+    "benchmarkNav": 1.12462,
+    "excessNav": 1.6311389423,
+    "strategyDrawdown": -0.0387746381
+  },
+  {
+    "date": "2025-05-30",
+    "strategyNav": 1.778726531,
+    "benchmarkNav": 1.119237,
+    "excessNav": 1.6157103496,
+    "strategyDrawdown": -0.0524676165
+  },
+  {
+    "date": "2025-06-03",
+    "strategyNav": 1.7906149454,
+    "benchmarkNav": 1.1226702,
+    "excessNav": 1.6215530374,
+    "strategyDrawdown": -0.0461346263
+  },
+  {
+    "date": "2025-06-04",
+    "strategyNav": 1.8210779169,
+    "benchmarkNav": 1.1275461,
+    "excessNav": 1.6420971791,
+    "strategyDrawdown": -0.0299069198
+  },
+  {
+    "date": "2025-06-05",
+    "strategyNav": 1.8309387248,
+    "benchmarkNav": 1.1301167,
+    "excessNav": 1.6472450579,
+    "strategyDrawdown": -0.0246540411
+  },
+  {
+    "date": "2025-06-06",
+    "strategyNav": 1.8379496331,
+    "benchmarkNav": 1.1290733,
+    "excessNav": 1.6550734405,
+    "strategyDrawdown": -0.0209193114
+  },
+  {
+    "date": "2025-06-09",
+    "strategyNav": 1.8570095486,
+    "benchmarkNav": 1.1323578,
+    "excessNav": 1.6674221772,
+    "strategyDrawdown": -0.0107660434
+  },
+  {
+    "date": "2025-06-10",
+    "strategyNav": 1.8241797949,
+    "benchmarkNav": 1.1265929,
+    "excessNav": 1.6464330711,
+    "strategyDrawdown": -0.0282545411
+  },
+  {
+    "date": "2025-06-11",
+    "strategyNav": 1.8213530892,
+    "benchmarkNav": 1.1350917,
+    "excessNav": 1.631461432,
+    "strategyDrawdown": -0.0297603348
+  },
+  {
+    "date": "2025-06-12",
+    "strategyNav": 1.8228863921,
+    "benchmarkNav": 1.1343834,
+    "excessNav": 1.6338528113,
+    "strategyDrawdown": -0.0289435402
+  },
+  {
+    "date": "2025-06-13",
+    "strategyNav": 1.8053418869,
+    "benchmarkNav": 1.1262171,
+    "excessNav": 1.6298896654,
+    "strategyDrawdown": -0.0382895451
+  },
+  {
+    "date": "2025-06-16",
+    "strategyNav": 1.8482184064,
+    "benchmarkNav": 1.1290208,
+    "excessNav": 1.6645417039,
+    "strategyDrawdown": -0.0154491084
+  },
+  {
+    "date": "2025-06-17",
+    "strategyNav": 1.8413164784,
+    "benchmarkNav": 1.1280241,
+    "excessNav": 1.659795157,
+    "strategyDrawdown": -0.0191257839
+  },
+  {
+    "date": "2025-06-18",
+    "strategyNav": 1.888506888,
+    "benchmarkNav": 1.129362,
+    "excessNav": 1.7003648857,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-06-19",
+    "strategyNav": 1.8674488038,
+    "benchmarkNav": 1.1200705,
+    "excessNav": 1.6953939991,
+    "strategyDrawdown": -0.0111506526
+  },
+  {
+    "date": "2025-06-20",
+    "strategyNav": 1.8813208491,
+    "benchmarkNav": 1.1211051,
+    "excessNav": 1.7064218378,
+    "strategyDrawdown": -0.0038051431
+  },
+  {
+    "date": "2025-06-23",
+    "strategyNav": 1.8460961634,
+    "benchmarkNav": 1.1243868,
+    "excessNav": 1.6694768419,
+    "strategyDrawdown": -0.0224572783
+  },
+  {
+    "date": "2025-06-24",
+    "strategyNav": 1.8533755361,
+    "benchmarkNav": 1.1378314,
+    "excessNav": 1.6560973689,
+    "strategyDrawdown": -0.0186027132
+  },
+  {
+    "date": "2025-06-25",
+    "strategyNav": 1.8864094777,
+    "benchmarkNav": 1.1541643,
+    "excessNav": 1.6618428927,
+    "strategyDrawdown": -0.0011106183
+  },
+  {
+    "date": "2025-06-26",
+    "strategyNav": 1.8948871344,
+    "benchmarkNav": 1.1500694,
+    "excessNav": 1.6752074943,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-06-27",
+    "strategyNav": 1.9412985463,
+    "benchmarkNav": 1.1429987,
+    "excessNav": 1.7265374429,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-06-30",
+    "strategyNav": 1.9675906357,
+    "benchmarkNav": 1.1471723,
+    "excessNav": 1.7436164518,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-07-01",
+    "strategyNav": 1.972587737,
+    "benchmarkNav": 1.1491193,
+    "excessNav": 1.7450854889,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-07-02",
+    "strategyNav": 1.9706916036,
+    "benchmarkNav": 1.1493874,
+    "excessNav": 1.7430009246,
+    "strategyDrawdown": -0.0009612416
+  },
+  {
+    "date": "2025-07-03",
+    "strategyNav": 1.9672795006,
+    "benchmarkNav": 1.1564958,
+    "excessNav": 1.7292033257,
+    "strategyDrawdown": -0.0026910014
+  },
+  {
+    "date": "2025-07-04",
+    "strategyNav": 2.0101127084,
+    "benchmarkNav": 1.160614,
+    "excessNav": 1.7606954243,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-07-07",
+    "strategyNav": 1.9988069775,
+    "benchmarkNav": 1.1556506,
+    "excessNav": 1.7583221613,
+    "strategyDrawdown": -0.0056244263
+  },
+  {
+    "date": "2025-07-08",
+    "strategyNav": 2.0391534069,
+    "benchmarkNav": 1.1653502,
+    "excessNav": 1.7790564492,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-07-09",
+    "strategyNav": 2.0391892133,
+    "benchmarkNav": 1.1632954,
+    "excessNav": 1.7822246706,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-07-10",
+    "strategyNav": 2.0121989685,
+    "benchmarkNav": 1.1687222,
+    "excessNav": 1.7503214414,
+    "strategyDrawdown": -0.0132357727
+  },
+  {
+    "date": "2025-07-11",
+    "strategyNav": 1.995326633,
+    "benchmarkNav": 1.1701182,
+    "excessNav": 1.7335542363,
+    "strategyDrawdown": -0.0215098138
+  },
+  {
+    "date": "2025-07-14",
+    "strategyNav": 2.0066612824,
+    "benchmarkNav": 1.1709518,
+    "excessNav": 1.7421668869,
+    "strategyDrawdown": -0.015951404
+  },
+  {
+    "date": "2025-07-15",
+    "strategyNav": 2.0321987801,
+    "benchmarkNav": 1.1713569,
+    "excessNav": 1.7637356387,
+    "strategyDrawdown": -0.0034280454
+  },
+  {
+    "date": "2025-07-16",
+    "strategyNav": 2.0597785728,
+    "benchmarkNav": 1.1679003,
+    "excessNav": 1.7928767338,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-07-17",
+    "strategyNav": 2.1618882229,
+    "benchmarkNav": 1.1758541,
+    "excessNav": 1.8695451852,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-07-18",
+    "strategyNav": 2.1397103572,
+    "benchmarkNav": 1.1828663,
+    "excessNav": 1.8392171866,
+    "strategyDrawdown": -0.0102585626
+  },
+  {
+    "date": "2025-07-21",
+    "strategyNav": 2.2221674925,
+    "benchmarkNav": 1.190753,
+    "excessNav": 1.8978315889,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-07-22",
+    "strategyNav": 2.2044493987,
+    "benchmarkNav": 1.200473,
+    "excessNav": 1.8672078089,
+    "strategyDrawdown": -0.0079733386
+  },
+  {
+    "date": "2025-07-23",
+    "strategyNav": 2.214981665,
+    "benchmarkNav": 1.2007091,
+    "excessNav": 1.8757615545,
+    "strategyDrawdown": -0.003233702
+  },
+  {
+    "date": "2025-07-24",
+    "strategyNav": 2.2084830585,
+    "benchmarkNav": 1.2092398,
+    "excessNav": 1.8569313716,
+    "strategyDrawdown": -0.006158147
+  },
+  {
+    "date": "2025-07-25",
+    "strategyNav": 2.2133699467,
+    "benchmarkNav": 1.2028629,
+    "excessNav": 1.8708330303,
+    "strategyDrawdown": -0.0039589931
+  },
+  {
+    "date": "2025-07-28",
+    "strategyNav": 2.3470555059,
+    "benchmarkNav": 1.2053869,
+    "excessNav": 1.9799040571,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-07-29",
+    "strategyNav": 2.47154917,
+    "benchmarkNav": 1.2101085,
+    "excessNav": 2.0771676165,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-07-30",
+    "strategyNav": 2.4702198179,
+    "benchmarkNav": 1.2098812,
+    "excessNav": 2.0764406327,
+    "strategyDrawdown": -0.0005378619
+  },
+  {
+    "date": "2025-07-31",
+    "strategyNav": 2.4484601524,
+    "benchmarkNav": 1.1878328,
+    "excessNav": 2.0959897541,
+    "strategyDrawdown": -0.0093419212
+  },
+  {
+    "date": "2025-08-01",
+    "strategyNav": 2.4349439503,
+    "benchmarkNav": 1.1818115,
+    "excessNav": 2.095044273,
+    "strategyDrawdown": -0.0148106378
+  },
+  {
+    "date": "2025-08-04",
+    "strategyNav": 2.4591088815,
+    "benchmarkNav": 1.1864076,
+    "excessNav": 2.1076881605,
+    "strategyDrawdown": -0.0050333971
+  },
+  {
+    "date": "2025-08-05",
+    "strategyNav": 2.4721057698,
+    "benchmarkNav": 1.1959524,
+    "excessNav": 2.1018709537,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-08-06",
+    "strategyNav": 2.4855322459,
+    "benchmarkNav": 1.1988786,
+    "excessNav": 2.1081438179,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-08-07",
+    "strategyNav": 2.473258218,
+    "benchmarkNav": 1.1992227,
+    "excessNav": 2.0971285014,
+    "strategyDrawdown": -0.004938189
+  },
+  {
+    "date": "2025-08-08",
+    "strategyNav": 2.4780920242,
+    "benchmarkNav": 1.1963956,
+    "excessNav": 2.1061710086,
+    "strategyDrawdown": -0.0029934119
+  },
+  {
+    "date": "2025-08-11",
+    "strategyNav": 2.5639843811,
+    "benchmarkNav": 1.2015076,
+    "excessNav": 2.1701730433,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-08-12",
+    "strategyNav": 2.6454911544,
+    "benchmarkNav": 1.2077212,
+    "excessNav": 2.2279377748,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-08-13",
+    "strategyNav": 2.7036259871,
+    "benchmarkNav": 1.2172663,
+    "excessNav": 2.259288702,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-08-14",
+    "strategyNav": 2.6726204858,
+    "benchmarkNav": 1.2163132,
+    "excessNav": 2.2351478606,
+    "strategyDrawdown": -0.0114681178
+  },
+  {
+    "date": "2025-08-15",
+    "strategyNav": 2.7050110048,
+    "benchmarkNav": 1.224777,
+    "excessNav": 2.2466832379,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-08-18",
+    "strategyNav": 2.7928746218,
+    "benchmarkNav": 1.2355782,
+    "excessNav": 2.2998463499,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-08-19",
+    "strategyNav": 2.7631798011,
+    "benchmarkNav": 1.2309034,
+    "excessNav": 2.2840949653,
+    "strategyDrawdown": -0.0106323501
+  },
+  {
+    "date": "2025-08-20",
+    "strategyNav": 2.7868298514,
+    "benchmarkNav": 1.2449018,
+    "excessNav": 2.2776687804,
+    "strategyDrawdown": -0.0021643544
+  },
+  {
+    "date": "2025-08-21",
+    "strategyNav": 2.8049182428,
+    "benchmarkNav": 1.2497603,
+    "excessNav": 2.2835633776,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-08-22",
+    "strategyNav": 2.8279996808,
+    "benchmarkNav": 1.2759702,
+    "excessNav": 2.254463708,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-08-25",
+    "strategyNav": 2.9021448204,
+    "benchmarkNav": 1.3025565,
+    "excessNav": 2.266597486,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-08-26",
+    "strategyNav": 2.8700598494,
+    "benchmarkNav": 1.2977096,
+    "excessNav": 2.2499730178,
+    "strategyDrawdown": -0.0110556065
+  },
+  {
+    "date": "2025-08-27",
+    "strategyNav": 2.8135323076,
+    "benchmarkNav": 1.2783399,
+    "excessNav": 2.2392417244,
+    "strategyDrawdown": -0.0305334566
+  },
+  {
+    "date": "2025-08-28",
+    "strategyNav": 2.9214957776,
+    "benchmarkNav": 1.3009708,
+    "excessNav": 2.2855257605,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-08-29",
+    "strategyNav": 2.9507255326,
+    "benchmarkNav": 1.310583,
+    "excessNav": 2.2915060498,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-09-01",
+    "strategyNav": 2.9901389286,
+    "benchmarkNav": 1.3184375,
+    "excessNav": 2.3083808385,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-09-02",
+    "strategyNav": 2.9276986818,
+    "benchmarkNav": 1.3087438,
+    "excessNav": 2.2771491307,
+    "strategyDrawdown": -0.0208820554
+  },
+  {
+    "date": "2025-09-03",
+    "strategyNav": 2.8756416017,
+    "benchmarkNav": 1.2998196,
+    "excessNav": 2.2521871653,
+    "strategyDrawdown": -0.0382916411
+  },
+  {
+    "date": "2025-09-04",
+    "strategyNav": 2.8312414246,
+    "benchmarkNav": 1.2722425,
+    "excessNav": 2.2651956649,
+    "strategyDrawdown": -0.0531405088
+  },
+  {
+    "date": "2025-09-05",
+    "strategyNav": 2.901097225,
+    "benchmarkNav": 1.2999623,
+    "excessNav": 2.2717309466,
+    "strategyDrawdown": -0.0297784503
+  },
+  {
+    "date": "2025-09-08",
+    "strategyNav": 2.8903336587,
+    "benchmarkNav": 1.3020753,
+    "excessNav": 2.2596099228,
+    "strategyDrawdown": -0.033378138
+  },
+  {
+    "date": "2025-09-09",
+    "strategyNav": 2.8584824288,
+    "benchmarkNav": 1.2929498,
+    "excessNav": 2.2505454054,
+    "strategyDrawdown": -0.0440302283
+  },
+  {
+    "date": "2025-09-10",
+    "strategyNav": 2.8972979646,
+    "benchmarkNav": 1.2956021,
+    "excessNav": 2.2764890571,
+    "strategyDrawdown": -0.0310490469
+  },
+  {
+    "date": "2025-09-11",
+    "strategyNav": 3.0761702755,
+    "benchmarkNav": 1.3255254,
+    "excessNav": 2.3644561133,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-09-12",
+    "strategyNav": 3.0875599187,
+    "benchmarkNav": 1.3179389,
+    "excessNav": 2.3867433743,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-09-15",
+    "strategyNav": 3.0538648283,
+    "benchmarkNav": 1.3211623,
+    "excessNav": 2.3548588819,
+    "strategyDrawdown": -0.0109131778
+  },
+  {
+    "date": "2025-09-16",
+    "strategyNav": 3.0889621573,
+    "benchmarkNav": 1.3183295,
+    "excessNav": 2.3869721748,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-09-17",
+    "strategyNav": 3.0989429927,
+    "benchmarkNav": 1.3263968,
+    "excessNav": 2.3800780229,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-09-18",
+    "strategyNav": 3.146235914,
+    "benchmarkNav": 1.3109761,
+    "excessNav": 2.4440711564,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-09-19",
+    "strategyNav": 3.1763357512,
+    "benchmarkNav": 1.3120867,
+    "excessNav": 2.4653830528,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-09-22",
+    "strategyNav": 3.1926064382,
+    "benchmarkNav": 1.3181168,
+    "excessNav": 2.4666816051,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-09-23",
+    "strategyNav": 3.1507844564,
+    "benchmarkNav": 1.317292,
+    "excessNav": 2.4359124499,
+    "strategyDrawdown": -0.0130996358
+  },
+  {
+    "date": "2025-09-24",
+    "strategyNav": 3.2026629216,
+    "benchmarkNav": 1.3307832,
+    "excessNav": 2.4510726578,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-09-25",
+    "strategyNav": 3.3072040105,
+    "benchmarkNav": 1.3387748,
+    "excessNav": 2.5163612893,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-09-26",
+    "strategyNav": 3.3020495988,
+    "benchmarkNav": 1.3261142,
+    "excessNav": 2.536236347,
+    "strategyDrawdown": -0.0015585406
+  },
+  {
+    "date": "2025-09-29",
+    "strategyNav": 3.4109970088,
+    "benchmarkNav": 1.3465157,
+    "excessNav": 2.5808980458,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-09-30",
+    "strategyNav": 3.3965932581,
+    "benchmarkNav": 1.3525312,
+    "excessNav": 2.5584694572,
+    "strategyDrawdown": -0.0042227392
+  },
+  {
+    "date": "2025-10-09",
+    "strategyNav": 3.4308929661,
+    "benchmarkNav": 1.37258,
+    "excessNav": 2.5463808666,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2025-10-10",
+    "strategyNav": 3.2482736299,
+    "benchmarkNav": 1.3455771,
+    "excessNav": 2.4609375084,
+    "strategyDrawdown": -0.0532279316
+  },
+  {
+    "date": "2025-10-13",
+    "strategyNav": 3.2374681505,
+    "benchmarkNav": 1.3389175,
+    "excessNav": 2.4649309745,
+    "strategyDrawdown": -0.0563773972
+  },
+  {
+    "date": "2025-10-14",
+    "strategyNav": 3.0890435101,
+    "benchmarkNav": 1.322911,
+    "excessNav": 2.3813917143,
+    "strategyDrawdown": -0.0996386245
+  },
+  {
+    "date": "2025-10-15",
+    "strategyNav": 3.1371724778,
+    "benchmarkNav": 1.3425053,
+    "excessNav": 2.3832230635,
+    "strategyDrawdown": -0.0856105076
+  },
+  {
+    "date": "2025-10-16",
+    "strategyNav": 3.1145719389,
+    "benchmarkNav": 1.3460406,
+    "excessNav": 2.3597782395,
+    "strategyDrawdown": -0.092197871
+  },
+  {
+    "date": "2025-10-17",
+    "strategyNav": 3.0142891528,
+    "benchmarkNav": 1.3156743,
+    "excessNav": 2.337034147,
+    "strategyDrawdown": -0.1214272253
+  },
+  {
+    "date": "2025-10-20",
+    "strategyNav": 3.0062483118,
+    "benchmarkNav": 1.3226663,
+    "excessNav": 2.3183801165,
+    "strategyDrawdown": -0.1237708837
+  },
+  {
+    "date": "2025-10-21",
+    "strategyNav": 3.1121366354,
+    "benchmarkNav": 1.3429658,
+    "excessNav": 2.3644585384,
+    "strategyDrawdown": -0.0929076873
+  },
+  {
+    "date": "2025-10-22",
+    "strategyNav": 3.1276563058,
+    "benchmarkNav": 1.3385067,
+    "excessNav": 2.38410061,
+    "strategyDrawdown": -0.0883841797
+  },
+  {
+    "date": "2025-10-23",
+    "strategyNav": 3.16390536,
+    "benchmarkNav": 1.34252,
+    "excessNav": 2.4045835954,
+    "strategyDrawdown": -0.0778186929
+  },
+  {
+    "date": "2025-10-24",
+    "strategyNav": 3.1873520451,
+    "benchmarkNav": 1.3583574,
+    "excessNav": 2.3940367223,
+    "strategyDrawdown": -0.0709847038
+  },
+  {
+    "date": "2025-10-27",
+    "strategyNav": 3.3086031827,
+    "benchmarkNav": 1.3744862,
+    "excessNav": 2.4566829565,
+    "strategyDrawdown": -0.0356437186
+  },
+  {
+    "date": "2025-10-28",
+    "strategyNav": 3.282640325,
+    "benchmarkNav": 1.3674769,
+    "excessNav": 2.4499332679,
+    "strategyDrawdown": -0.0432110948
+  },
+  {
+    "date": "2025-10-29",
+    "strategyNav": 3.3396379814,
+    "benchmarkNav": 1.3837603,
+    "excessNav": 2.463299564,
+    "strategyDrawdown": -0.0265980273
+  },
+  {
+    "date": "2025-10-30",
+    "strategyNav": 3.4269629131,
+    "benchmarkNav": 1.3727057,
+    "excessNav": 2.5473889587,
+    "strategyDrawdown": -0.0011454899
+  },
+  {
+    "date": "2025-10-31",
+    "strategyNav": 3.3201241396,
+    "benchmarkNav": 1.3525257,
+    "excessNav": 2.5054206096,
+    "strategyDrawdown": -0.0322857132
+  },
+  {
+    "date": "2025-11-03",
+    "strategyNav": 3.3623983225,
+    "benchmarkNav": 1.3562359,
+    "excessNav": 2.5304487257,
+    "strategyDrawdown": -0.0199640864
+  },
+  {
+    "date": "2025-11-04",
+    "strategyNav": 3.2643444202,
+    "benchmarkNav": 1.3461225,
+    "excessNav": 2.4755254997,
+    "strategyDrawdown": -0.0485437895
+  },
+  {
+    "date": "2025-11-05",
+    "strategyNav": 3.2827736878,
+    "benchmarkNav": 1.3486173,
+    "excessNav": 2.4849133834,
+    "strategyDrawdown": -0.0431722236
+  },
+  {
+    "date": "2025-11-06",
+    "strategyNav": 3.3497757002,
+    "benchmarkNav": 1.3678938,
+    "excessNav": 2.5001126835,
+    "strategyDrawdown": -0.0236431934
+  },
+  {
+    "date": "2025-11-07",
+    "strategyNav": 3.3012519079,
+    "benchmarkNav": 1.3636358,
+    "excessNav": 2.4716793233,
+    "strategyDrawdown": -0.0377863896
+  },
+  {
+    "date": "2025-11-10",
+    "strategyNav": 3.2523187773,
+    "benchmarkNav": 1.3683747,
+    "excessNav": 2.4264530605,
+    "strategyDrawdown": -0.0520488953
+  },
+  {
+    "date": "2025-11-11",
+    "strategyNav": 3.1973689673,
+    "benchmarkNav": 1.3558773,
+    "excessNav": 2.4076176253,
+    "strategyDrawdown": -0.0680650784
+  },
+  {
+    "date": "2025-11-12",
+    "strategyNav": 3.1746585063,
+    "benchmarkNav": 1.3540529,
+    "excessNav": 2.3937562865,
+    "strategyDrawdown": -0.0746844808
+  },
+  {
+    "date": "2025-11-13",
+    "strategyNav": 3.187172315,
+    "benchmarkNav": 1.3704208,
+    "excessNav": 2.3742560791,
+    "strategyDrawdown": -0.0710370896
+  },
+  {
+    "date": "2025-11-14",
+    "strategyNav": 3.14161433,
+    "benchmarkNav": 1.348874,
+    "excessNav": 2.3776480377,
+    "strategyDrawdown": -0.084315844
+  },
+  {
+    "date": "2025-11-17",
+    "strategyNav": 3.1207671066,
+    "benchmarkNav": 1.3401042,
+    "excessNav": 2.3773287764,
+    "strategyDrawdown": -0.0903921698
+  },
+  {
+    "date": "2025-11-18",
+    "strategyNav": 3.0688314159,
+    "benchmarkNav": 1.3314015,
+    "excessNav": 2.3532038395,
+    "strategyDrawdown": -0.1055298297
+  },
+  {
+    "date": "2025-11-19",
+    "strategyNav": 3.0573177108,
+    "benchmarkNav": 1.3372597,
+    "excessNav": 2.3340209089,
+    "strategyDrawdown": -0.1088857213
+  },
+  {
+    "date": "2025-11-20",
+    "strategyNav": 2.9840001951,
+    "benchmarkNav": 1.3304571,
+    "excessNav": 2.2899216972,
+    "strategyDrawdown": -0.1302555269
+  },
+  {
+    "date": "2025-11-21",
+    "strategyNav": 2.9140718005,
+    "benchmarkNav": 1.298007,
+    "excessNav": 2.2921102073,
+    "strategyDrawdown": -0.1506375077
+  },
+  {
+    "date": "2025-11-24",
+    "strategyNav": 2.9121684418,
+    "benchmarkNav": 1.2963866,
+    "excessNav": 2.2934746044,
+    "strategyDrawdown": -0.1511922783
+  },
+  {
+    "date": "2025-11-25",
+    "strategyNav": 2.9754410449,
+    "benchmarkNav": 1.3087295,
+    "excessNav": 2.3214686746,
+    "strategyDrawdown": -0.1327502565
+  },
+  {
+    "date": "2025-11-26",
+    "strategyNav": 3.0213312404,
+    "benchmarkNav": 1.3166655,
+    "excessNav": 2.3431954188,
+    "strategyDrawdown": -0.1193746729
+  },
+  {
+    "date": "2025-11-27",
+    "strategyNav": 3.0359266498,
+    "benchmarkNav": 1.3160156,
+    "excessNav": 2.3556716064,
+    "strategyDrawdown": -0.1151205591
+  },
+  {
+    "date": "2025-11-28",
+    "strategyNav": 3.0754157871,
+    "benchmarkNav": 1.3192974,
+    "excessNav": 2.3804380478,
+    "strategyDrawdown": -0.1036106875
+  },
+  {
+    "date": "2025-12-01",
+    "strategyNav": 3.0789492494,
+    "benchmarkNav": 1.3338205,
+    "excessNav": 2.3569688203,
+    "strategyDrawdown": -0.1025807917
+  },
+  {
+    "date": "2025-12-02",
+    "strategyNav": 3.0625357327,
+    "benchmarkNav": 1.327362,
+    "excessNav": 2.3558169216,
+    "strategyDrawdown": -0.1073648281
+  },
+  {
+    "date": "2025-12-03",
+    "strategyNav": 3.0371555244,
+    "benchmarkNav": 1.320577,
+    "excessNav": 2.3483354522,
+    "strategyDrawdown": -0.1147623798
+  },
+  {
+    "date": "2025-12-04",
+    "strategyNav": 3.0360677204,
+    "benchmarkNav": 1.3251003,
+    "excessNav": 2.3394507459,
+    "strategyDrawdown": -0.1150794413
+  },
+  {
+    "date": "2025-12-05",
+    "strategyNav": 3.0744677604,
+    "benchmarkNav": 1.3361669,
+    "excessNav": 2.3495022129,
+    "strategyDrawdown": -0.1038870082
+  },
+  {
+    "date": "2025-12-08",
+    "strategyNav": 3.1252971114,
+    "benchmarkNav": 1.3470117,
+    "excessNav": 2.3692764866,
+    "strategyDrawdown": -0.0890718124
+  },
+  {
+    "date": "2025-12-09",
+    "strategyNav": 3.197160884,
+    "benchmarkNav": 1.3401538,
+    "excessNav": 2.4358184502,
+    "strategyDrawdown": -0.0681257283
+  },
+  {
+    "date": "2025-12-10",
+    "strategyNav": 3.1665907528,
+    "benchmarkNav": 1.3382914,
+    "excessNav": 2.4159130222,
+    "strategyDrawdown": -0.0770359833
+  },
+  {
+    "date": "2025-12-11",
+    "strategyNav": 3.0634021417,
+    "benchmarkNav": 1.3267353,
+    "excessNav": 2.3580478613,
+    "strategyDrawdown": -0.1071122964
+  },
+  {
+    "date": "2025-12-12",
+    "strategyNav": 3.0944117796,
+    "benchmarkNav": 1.3351204,
+    "excessNav": 2.3670143271,
+    "strategyDrawdown": -0.0980739387
+  },
+  {
+    "date": "2025-12-15",
+    "strategyNav": 3.0651667347,
+    "benchmarkNav": 1.3267003,
+    "excessNav": 2.3595716446,
+    "strategyDrawdown": -0.1065979717
+  },
+  {
+    "date": "2025-12-16",
+    "strategyNav": 3.0084987671,
+    "benchmarkNav": 1.3108133,
+    "excessNav": 2.3442039526,
+    "strategyDrawdown": -0.1231149451
+  },
+  {
+    "date": "2025-12-17",
+    "strategyNav": 3.0944174136,
+    "benchmarkNav": 1.3348085,
+    "excessNav": 2.3682393203,
+    "strategyDrawdown": -0.0980722966
+  },
+  {
+    "date": "2025-12-18",
+    "strategyNav": 3.0306742387,
+    "benchmarkNav": 1.3269131,
+    "excessNav": 2.3334630888,
+    "strategyDrawdown": -0.1166514757
+  },
+  {
+    "date": "2025-12-19",
+    "strategyNav": 3.0670527548,
+    "benchmarkNav": 1.3313985,
+    "excessNav": 2.3535848707,
+    "strategyDrawdown": -0.1060482548
+  },
+  {
+    "date": "2025-12-22",
+    "strategyNav": 3.2238349911,
+    "benchmarkNav": 1.3440592,
+    "excessNav": 2.4515149049,
+    "strategyDrawdown": -0.0603510448
+  },
+  {
+    "date": "2025-12-23",
+    "strategyNav": 3.2285793086,
+    "benchmarkNav": 1.3467143,
+    "excessNav": 2.4502798823,
+    "strategyDrawdown": -0.0589682218
+  },
+  {
+    "date": "2025-12-24",
+    "strategyNav": 3.2288176806,
+    "benchmarkNav": 1.3505993,
+    "excessNav": 2.4433920649,
+    "strategyDrawdown": -0.0588987437
+  },
+  {
+    "date": "2025-12-25",
+    "strategyNav": 3.245322016,
+    "benchmarkNav": 1.3530709,
+    "excessNav": 2.4514102774,
+    "strategyDrawdown": -0.0540882365
+  },
+  {
+    "date": "2025-12-26",
+    "strategyNav": 3.2752652781,
+    "benchmarkNav": 1.3573551,
+    "excessNav": 2.4662664954,
+    "strategyDrawdown": -0.0453606946
+  },
+  {
+    "date": "2025-12-29",
+    "strategyNav": 3.2240638706,
+    "benchmarkNav": 1.3521469,
+    "excessNav": 2.4371751501,
+    "strategyDrawdown": -0.0602843334
+  },
+  {
+    "date": "2025-12-30",
+    "strategyNav": 3.2526284668,
+    "benchmarkNav": 1.355618,
+    "excessNav": 2.4525114131,
+    "strategyDrawdown": -0.0519586303
+  },
+  {
+    "date": "2025-12-31",
+    "strategyNav": 3.1893795969,
+    "benchmarkNav": 1.3493984,
+    "excessNav": 2.4160733324,
+    "strategyDrawdown": -0.0703937347
+  },
+  {
+    "date": "2026-01-05",
+    "strategyNav": 3.2479851217,
+    "benchmarkNav": 1.3749907,
+    "excessNav": 2.414646618,
+    "strategyDrawdown": -0.0533120229
+  },
+  {
+    "date": "2026-01-06",
+    "strategyNav": 3.2139056566,
+    "benchmarkNav": 1.396249,
+    "excessNav": 2.3519787539,
+    "strategyDrawdown": -0.063245141
+  },
+  {
+    "date": "2026-01-07",
+    "strategyNav": 3.2589794894,
+    "benchmarkNav": 1.3921629,
+    "excessNav": 2.3918473746,
+    "strategyDrawdown": -0.0501075022
+  },
+  {
+    "date": "2026-01-08",
+    "strategyNav": 3.1790310651,
+    "benchmarkNav": 1.3807905,
+    "excessNav": 2.3527099114,
+    "strategyDrawdown": -0.0734100141
+  },
+  {
+    "date": "2026-01-09",
+    "strategyNav": 3.2002631906,
+    "benchmarkNav": 1.3869896,
+    "excessNav": 2.3578606121,
+    "strategyDrawdown": -0.0672215012
+  },
+  {
+    "date": "2026-01-12",
+    "strategyNav": 3.2073694422,
+    "benchmarkNav": 1.3960246,
+    "excessNav": 2.3477370164,
+    "strategyDrawdown": -0.0651502469
+  },
+  {
+    "date": "2026-01-13",
+    "strategyNav": 3.1538856258,
+    "benchmarkNav": 1.3876047,
+    "excessNav": 2.3227478071,
+    "strategyDrawdown": -0.0807391379
+  },
+  {
+    "date": "2026-01-14",
+    "strategyNav": 3.1345560579,
+    "benchmarkNav": 1.382038,
+    "excessNav": 2.3178304097,
+    "strategyDrawdown": -0.0863731137
+  },
+  {
+    "date": "2026-01-15",
+    "strategyNav": 3.1951749272,
+    "benchmarkNav": 1.3848069,
+    "excessNav": 2.3580110884,
+    "strategyDrawdown": -0.0687045738
+  },
+  {
+    "date": "2026-01-16",
+    "strategyNav": 3.1795791644,
+    "benchmarkNav": 1.379106,
+    "excessNav": 2.3562086689,
+    "strategyDrawdown": -0.07325026
+  },
+  {
+    "date": "2026-01-19",
+    "strategyNav": 3.2284506564,
+    "benchmarkNav": 1.3798608,
+    "excessNav": 2.3911350751,
+    "strategyDrawdown": -0.05900572
+  },
+  {
+    "date": "2026-01-20",
+    "strategyNav": 3.1864165446,
+    "benchmarkNav": 1.3753201,
+    "excessNav": 2.3678712691,
+    "strategyDrawdown": -0.0712573735
+  },
+  {
+    "date": "2026-01-21",
+    "strategyNav": 3.1529473132,
+    "benchmarkNav": 1.3765411,
+    "excessNav": 2.3408974455,
+    "strategyDrawdown": -0.0810126272
+  },
+  {
+    "date": "2026-01-22",
+    "strategyNav": 3.2636858133,
+    "benchmarkNav": 1.3767276,
+    "excessNav": 2.4227979453,
+    "strategyDrawdown": -0.0487357532
+  },
+  {
+    "date": "2026-01-23",
+    "strategyNav": 3.3899162219,
+    "benchmarkNav": 1.370546,
+    "excessNav": 2.52738367,
+    "strategyDrawdown": -0.0119434633
+  },
+  {
+    "date": "2026-01-26",
+    "strategyNav": 3.2553782867,
+    "benchmarkNav": 1.3718458,
+    "excessNav": 2.4246806128,
+    "strategyDrawdown": -0.0511571422
+  },
+  {
+    "date": "2026-01-27",
+    "strategyNav": 3.2751914638,
+    "benchmarkNav": 1.3714757,
+    "excessNav": 2.4400921748,
+    "strategyDrawdown": -0.0453822092
+  },
+  {
+    "date": "2026-01-28",
+    "strategyNav": 3.3394455161,
+    "benchmarkNav": 1.3750606,
+    "excessNav": 2.481584744,
+    "strategyDrawdown": -0.026654125
+  },
+  {
+    "date": "2026-01-29",
+    "strategyNav": 3.3165555044,
+    "benchmarkNav": 1.3855178,
+    "excessNav": 2.4457025387,
+    "strategyDrawdown": -0.0333258609
+  },
+  {
+    "date": "2026-01-30",
+    "strategyNav": 3.3175417767,
+    "benchmarkNav": 1.3716652,
+    "excessNav": 2.4708823211,
+    "strategyDrawdown": -0.0330383928
+  },
+  {
+    "date": "2026-02-02",
+    "strategyNav": 3.173315782,
+    "benchmarkNav": 1.3424151,
+    "excessNav": 2.4161541592,
+    "strategyDrawdown": -0.0750758437
+  },
+  {
+    "date": "2026-02-03",
+    "strategyNav": 3.2892856277,
+    "benchmarkNav": 1.3581914,
+    "excessNav": 2.4760583355,
+    "strategyDrawdown": -0.041274193
+  },
+  {
+    "date": "2026-02-04",
+    "strategyNav": 3.289356374,
+    "benchmarkNav": 1.3694326,
+    "excessNav": 2.4556182915,
+    "strategyDrawdown": -0.0412535726
+  },
+  {
+    "date": "2026-02-05",
+    "strategyNav": 3.2025707283,
+    "benchmarkNav": 1.3611963,
+    "excessNav": 2.4055988927,
+    "strategyDrawdown": -0.0665489248
+  },
+  {
+    "date": "2026-02-06",
+    "strategyNav": 3.199905304,
+    "benchmarkNav": 1.3533795,
+    "excessNav": 2.4174111844,
+    "strategyDrawdown": -0.0673258141
+  },
+  {
+    "date": "2026-02-09",
+    "strategyNav": 3.3038215823,
+    "benchmarkNav": 1.3753724,
+    "excessNav": 2.4566322934,
+    "strategyDrawdown": -0.0370374084
+  },
+  {
+    "date": "2026-02-10",
+    "strategyNav": 3.3368130965,
+    "benchmarkNav": 1.3768997,
+    "excessNav": 2.4784359609,
+    "strategyDrawdown": -0.0274213946
+  },
+  {
+    "date": "2026-02-11",
+    "strategyNav": 3.32083186,
+    "benchmarkNav": 1.3738452,
+    "excessNav": 2.4720638884,
+    "strategyDrawdown": -0.0320794345
+  },
+  {
+    "date": "2026-02-12",
+    "strategyNav": 3.3997143995,
+    "benchmarkNav": 1.375524,
+    "excessNav": 2.5277640237,
+    "strategyDrawdown": -0.0090875952
+  },
+  {
+    "date": "2026-02-13",
+    "strategyNav": 3.3369728224,
+    "benchmarkNav": 1.358279,
+    "excessNav": 2.5128051371,
+    "strategyDrawdown": -0.0273748393
+  },
+  {
+    "date": "2026-02-24",
+    "strategyNav": 3.4302376872,
+    "benchmarkNav": 1.3720151,
+    "excessNav": 2.5576236849,
+    "strategyDrawdown": -0.0001909937
+  },
+  {
+    "date": "2026-02-25",
+    "strategyNav": 3.5511102034,
+    "benchmarkNav": 1.3802779,
+    "excessNav": 2.632344724,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2026-02-26",
+    "strategyNav": 3.6078264766,
+    "benchmarkNav": 1.377649,
+    "excessNav": 2.6794007463,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2026-02-27",
+    "strategyNav": 3.6335800357,
+    "benchmarkNav": 1.3729216,
+    "excessNav": 2.7077211739,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2026-03-02",
+    "strategyNav": 3.7314488883,
+    "benchmarkNav": 1.3781736,
+    "excessNav": 2.770294245,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2026-03-03",
+    "strategyNav": 3.6172577093,
+    "benchmarkNav": 1.3569647,
+    "excessNav": 2.728148969,
+    "strategyDrawdown": -0.0306023699
+  },
+  {
+    "date": "2026-03-04",
+    "strategyNav": 3.5373868445,
+    "benchmarkNav": 1.3414361,
+    "excessNav": 2.6991299575,
+    "strategyDrawdown": -0.0520071558
+  },
+  {
+    "date": "2026-03-05",
+    "strategyNav": 3.5288178667,
+    "benchmarkNav": 1.3545719,
+    "excessNav": 2.6661608105,
+    "strategyDrawdown": -0.0543035769
+  },
+  {
+    "date": "2026-03-06",
+    "strategyNav": 3.5354579615,
+    "benchmarkNav": 1.358288,
+    "excessNav": 2.6638634156,
+    "strategyDrawdown": -0.0525240818
+  },
+  {
+    "date": "2026-03-09",
+    "strategyNav": 3.454125082,
+    "benchmarkNav": 1.3451786,
+    "excessNav": 2.6282917171,
+    "strategyDrawdown": -0.0743206767
+  },
+  {
+    "date": "2026-03-10",
+    "strategyNav": 3.5599876523,
+    "benchmarkNav": 1.3624617,
+    "excessNav": 2.6750753594,
+    "strategyDrawdown": -0.0459503108
+  },
+  {
+    "date": "2026-03-11",
+    "strategyNav": 3.4837657903,
+    "benchmarkNav": 1.3711294,
+    "excessNav": 2.6007816904,
+    "strategyDrawdown": -0.0663771917
+  },
+  {
+    "date": "2026-03-12",
+    "strategyNav": 3.4653395885,
+    "benchmarkNav": 1.3661922,
+    "excessNav": 2.5963907224,
+    "strategyDrawdown": -0.071315274
+  },
+  {
+    "date": "2026-03-13",
+    "strategyNav": 3.4316532521,
+    "benchmarkNav": 1.3608238,
+    "excessNav": 2.5813540416,
+    "strategyDrawdown": -0.0803429566
+  },
+  {
+    "date": "2026-03-16",
+    "strategyNav": 3.428500905,
+    "benchmarkNav": 1.3615291,
+    "excessNav": 2.5776448143,
+    "strategyDrawdown": -0.0811877617
+  },
+  {
+    "date": "2026-03-17",
+    "strategyNav": 3.3692921198,
+    "benchmarkNav": 1.3515847,
+    "excessNav": 2.5519566497,
+    "strategyDrawdown": -0.0970552671
+  },
+  {
+    "date": "2026-03-18",
+    "strategyNav": 3.4625062684,
+    "benchmarkNav": 1.3576732,
+    "excessNav": 2.6110628122,
+    "strategyDrawdown": -0.0720745823
+  },
+  {
+    "date": "2026-03-19",
+    "strategyNav": 3.3883976849,
+    "benchmarkNav": 1.3357911,
+    "excessNav": 2.5972611835,
+    "strategyDrawdown": -0.0919351206
+  },
+  {
+    "date": "2026-03-20",
+    "strategyNav": 3.3331266469,
+    "benchmarkNav": 1.3310609,
+    "excessNav": 2.5640922389,
+    "strategyDrawdown": -0.1067473395
+  },
+  {
+    "date": "2026-03-23",
+    "strategyNav": 3.2419782451,
+    "benchmarkNav": 1.2876289,
+    "excessNav": 2.5776393457,
+    "strategyDrawdown": -0.1311744199
+  },
+  {
+    "date": "2026-03-24",
+    "strategyNav": 3.3323366782,
+    "benchmarkNav": 1.3041599,
+    "excessNav": 2.6163890604,
+    "strategyDrawdown": -0.1069590452
+  },
+  {
+    "date": "2026-03-25",
+    "strategyNav": 3.4205328644,
+    "benchmarkNav": 1.3224485,
+    "excessNav": 2.648946007,
+    "strategyDrawdown": -0.0833231362
+  },
+  {
+    "date": "2026-03-26",
+    "strategyNav": 3.3581465703,
+    "benchmarkNav": 1.304979,
+    "excessNav": 2.6356250771,
+    "strategyDrawdown": -0.1000421898
+  },
+  {
+    "date": "2026-03-27",
+    "strategyNav": 3.3645213581,
+    "benchmarkNav": 1.3122768,
+    "excessNav": 2.6258889706,
+    "strategyDrawdown": -0.0983337951
+  },
+  {
+    "date": "2026-03-30",
+    "strategyNav": 3.3642310745,
+    "benchmarkNav": 1.3091817,
+    "excessNav": 2.6318558768,
+    "strategyDrawdown": -0.0984115888
+  },
+  {
+    "date": "2026-03-31",
+    "strategyNav": 3.3303234828,
+    "benchmarkNav": 1.2969699,
+    "excessNav": 2.6298791317,
+    "strategyDrawdown": -0.1074985662
+  },
+  {
+    "date": "2026-04-01",
+    "strategyNav": 3.4788859211,
+    "benchmarkNav": 1.3191259,
+    "excessNav": 2.7022693998,
+    "strategyDrawdown": -0.0676849596
+  },
+  {
+    "date": "2026-04-02",
+    "strategyNav": 3.3716776541,
+    "benchmarkNav": 1.3053811,
+    "excessNav": 2.6471505846,
+    "strategyDrawdown": -0.096415962
+  },
+  {
+    "date": "2026-04-03",
+    "strategyNav": 3.3549040407,
+    "benchmarkNav": 1.294271,
+    "excessNav": 2.6565113064,
+    "strategyDrawdown": -0.1009111632
+  },
+  {
+    "date": "2026-04-07",
+    "strategyNav": 3.3775521856,
+    "benchmarkNav": 1.2942214,
+    "excessNav": 2.6745465839,
+    "strategyDrawdown": -0.0948416321
+  },
+  {
+    "date": "2026-04-08",
+    "strategyNav": 3.5788914235,
+    "benchmarkNav": 1.3393787,
+    "excessNav": 2.740660055,
+    "strategyDrawdown": -0.0408842435
+  },
+  {
+    "date": "2026-04-09",
+    "strategyNav": 3.5251189315,
+    "benchmarkNav": 1.3308276,
+    "excessNav": 2.7169793022,
+    "strategyDrawdown": -0.0552948635
+  },
+  {
+    "date": "2026-04-10",
+    "strategyNav": 3.5735047801,
+    "benchmarkNav": 1.3513311,
+    "excessNav": 2.7124131745,
+    "strategyDrawdown": -0.042327823
+  },
+  {
+    "date": "2026-04-13",
+    "strategyNav": 3.4976156574,
+    "benchmarkNav": 1.3541234,
+    "excessNav": 2.649206181,
+    "strategyDrawdown": -0.0626655323
+  },
+  {
+    "date": "2026-04-14",
+    "strategyNav": 3.5416424868,
+    "benchmarkNav": 1.3701909,
+    "excessNav": 2.6511190496,
+    "strategyDrawdown": -0.050866676
+  },
+  {
+    "date": "2026-04-15",
+    "strategyNav": 3.4801281628,
+    "benchmarkNav": 1.3655189,
+    "excessNav": 2.6141115879,
+    "strategyDrawdown": -0.0673520482
+  },
+  {
+    "date": "2026-04-16",
+    "strategyNav": 3.5171250553,
+    "benchmarkNav": 1.3804878,
+    "excessNav": 2.6132460294,
+    "strategyDrawdown": -0.0574371617
+  },
+  {
+    "date": "2026-04-17",
+    "strategyNav": 3.5176591186,
+    "benchmarkNav": 1.3781737,
+    "excessNav": 2.6180233253,
+    "strategyDrawdown": -0.0572940368
+  },
+  {
+    "date": "2026-04-20",
+    "strategyNav": 3.5797581477,
+    "benchmarkNav": 1.3865587,
+    "excessNav": 2.6483123501,
+    "strategyDrawdown": -0.040651968
+  },
+  {
+    "date": "2026-04-21",
+    "strategyNav": 3.6324226718,
+    "benchmarkNav": 1.3896364,
+    "excessNav": 2.6813952741,
+    "strategyDrawdown": -0.0265382749
+  },
+  {
+    "date": "2026-04-22",
+    "strategyNav": 3.6865788499,
+    "benchmarkNav": 1.3988549,
+    "excessNav": 2.7035847541,
+    "strategyDrawdown": -0.01202483
+  },
+  {
+    "date": "2026-04-23",
+    "strategyNav": 3.6038643961,
+    "benchmarkNav": 1.3949786,
+    "excessNav": 2.6504169141,
+    "strategyDrawdown": -0.0341916762
+  },
+  {
+    "date": "2026-04-24",
+    "strategyNav": 3.5912595719,
+    "benchmarkNav": 1.3900356,
+    "excessNav": 2.6505384382,
+    "strategyDrawdown": -0.0375696735
+  },
+  {
+    "date": "2026-04-27",
+    "strategyNav": 3.6169422099,
+    "benchmarkNav": 1.390496,
+    "excessNav": 2.6686158145,
+    "strategyDrawdown": -0.0306869213
+  },
+  {
+    "date": "2026-04-28",
+    "strategyNav": 3.5749365823,
+    "benchmarkNav": 1.386783,
+    "excessNav": 2.644749619,
+    "strategyDrawdown": -0.0419441109
+  },
+  {
+    "date": "2026-04-29",
+    "strategyNav": 3.6578699845,
+    "benchmarkNav": 1.4019791,
+    "excessNav": 2.6771232821,
+    "strategyDrawdown": -0.0197185882
+  },
+  {
+    "date": "2026-04-30",
+    "strategyNav": 3.7251514532,
+    "benchmarkNav": 1.401093,
+    "excessNav": 2.728057179,
+    "strategyDrawdown": -0.0016876649
+  },
+  {
+    "date": "2026-05-06",
+    "strategyNav": 3.8260200409,
+    "benchmarkNav": 1.4214305,
+    "excessNav": 2.7623278916,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2026-05-07",
+    "strategyNav": 3.978258777,
+    "benchmarkNav": 1.4282562,
+    "excessNav": 2.8589772612,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2026-05-08",
+    "strategyNav": 3.9701878081,
+    "benchmarkNav": 1.4199208,
+    "excessNav": 2.8698622464,
+    "strategyDrawdown": -0.0020287692
+  },
+  {
+    "date": "2026-05-11",
+    "strategyNav": 4.0286920237,
+    "benchmarkNav": 1.4432163,
+    "excessNav": 2.8650687231,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2026-05-12",
+    "strategyNav": 4.041354652,
+    "benchmarkNav": 1.4421118,
+    "excessNav": 2.8762666584,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2026-05-13",
+    "strategyNav": 4.0897094769,
+    "benchmarkNav": 1.4567689,
+    "excessNav": 2.8814481333,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2026-05-14",
+    "strategyNav": 3.9994756825,
+    "benchmarkNav": 1.4323629,
+    "excessNav": 2.8661472838,
+    "strategyDrawdown": -0.0220636197
+  },
+  {
+    "date": "2026-05-15",
+    "strategyNav": 4.071902405,
+    "benchmarkNav": 1.4163302,
+    "excessNav": 2.950131906,
+    "strategyDrawdown": -0.0043541166
+  },
+  {
+    "date": "2026-05-18",
+    "strategyNav": 4.103864835,
+    "benchmarkNav": 1.4087322,
+    "excessNav": 2.9891152579,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2026-05-19",
+    "strategyNav": 4.0516417843,
+    "benchmarkNav": 1.4143746,
+    "excessNav": 2.9391054259,
+    "strategyDrawdown": -0.012725334
+  },
+  {
+    "date": "2026-05-20",
+    "strategyNav": 4.1225924323,
+    "benchmarkNav": 1.4137393,
+    "excessNav": 2.9918938188,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2026-05-21",
+    "strategyNav": 4.0477131399,
+    "benchmarkNav": 1.3940372,
+    "excessNav": 2.9792470994,
+    "strategyDrawdown": -0.0181631567
+  },
+  {
+    "date": "2026-05-22",
+    "strategyNav": 4.0947006331,
+    "benchmarkNav": 1.4121071,
+    "excessNav": 2.9752137436,
+    "strategyDrawdown": -0.006765597
+  },
+  {
+    "date": "2026-05-25",
+    "strategyNav": 4.1291414859,
+    "benchmarkNav": 1.4344031,
+    "excessNav": 2.9532624035,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2026-05-26",
+    "strategyNav": 4.1743986586,
+    "benchmarkNav": 1.4420537,
+    "excessNav": 2.9698797304,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2026-05-27",
+    "strategyNav": 4.1333616579,
+    "benchmarkNav": 1.430489,
+    "excessNav": 2.964501244,
+    "strategyDrawdown": -0.0098306377
+  },
+  {
+    "date": "2026-05-28",
+    "strategyNav": 4.1486383105,
+    "benchmarkNav": 1.4322493,
+    "excessNav": 2.971809752,
+    "strategyDrawdown": -0.0061710321
+  },
+  {
+    "date": "2026-05-29",
+    "strategyNav": 4.0331400048,
+    "benchmarkNav": 1.4258112,
+    "excessNav": 2.9024329497,
+    "strategyDrawdown": -0.0338392821
+  },
+  {
+    "date": "2026-06-01",
+    "strategyNav": 4.0069177664,
+    "benchmarkNav": 1.4118624,
+    "excessNav": 2.9119569818,
+    "strategyDrawdown": -0.0401209625
+  },
+  {
+    "date": "2026-06-02",
+    "strategyNav": 4.0309511153,
+    "benchmarkNav": 1.4323514,
+    "excessNav": 2.8871642947,
+    "strategyDrawdown": -0.0343636425
+  },
+  {
+    "date": "2026-06-03",
+    "strategyNav": 4.0089039895,
+    "benchmarkNav": 1.439419,
+    "excessNav": 2.8571268989,
+    "strategyDrawdown": -0.0396451519
+  },
+  {
+    "date": "2026-06-04",
+    "strategyNav": 4.0030948086,
+    "benchmarkNav": 1.4294921,
+    "excessNav": 2.8726908869,
+    "strategyDrawdown": -0.0410367729
+  },
+  {
+    "date": "2026-06-05",
+    "strategyNav": 3.8581638797,
+    "benchmarkNav": 1.403894,
+    "excessNav": 2.8201276016,
+    "strategyDrawdown": -0.0757557686
+  },
+  {
+    "date": "2026-06-08",
+    "strategyNav": 3.7146704322,
+    "benchmarkNav": 1.373793,
+    "excessNav": 2.7757074407,
+    "strategyDrawdown": -0.1101304078
+  },
+  {
+    "date": "2026-06-09",
+    "strategyNav": 3.8402534115,
+    "benchmarkNav": 1.3994901,
+    "excessNav": 2.8176263177,
+    "strategyDrawdown": -0.0800463191
+  },
+  {
+    "date": "2026-06-10",
+    "strategyNav": 3.9451539112,
+    "benchmarkNav": 1.3839792,
+    "excessNav": 2.9258213107,
+    "strategyDrawdown": -0.0549168314
+  },
+  {
+    "date": "2026-06-11",
+    "strategyNav": 3.871637334,
+    "benchmarkNav": 1.376349,
+    "excessNav": 2.8874304303,
+    "strategyDrawdown": -0.0725281291
+  },
+  {
+    "date": "2026-06-12",
+    "strategyNav": 3.9672004177,
+    "benchmarkNav": 1.3923526,
+    "excessNav": 2.9251267166,
+    "strategyDrawdown": -0.0496354704
+  },
+  {
+    "date": "2026-06-15",
+    "strategyNav": 4.1024062702,
+    "benchmarkNav": 1.4256917,
+    "excessNav": 2.9547770472,
+    "strategyDrawdown": -0.0172461699
+  },
+  {
+    "date": "2026-06-16",
+    "strategyNav": 4.1922963448,
+    "benchmarkNav": 1.4235116,
+    "excessNav": 3.0240391067,
+    "strategyDrawdown": 0
+  },
+  {
+    "date": "2026-06-17",
+    "strategyNav": 4.1428809374,
+    "benchmarkNav": 1.4372565,
+    "excessNav": 2.9591952768,
+    "strategyDrawdown": -0.0117871933
+  },
+  {
+    "date": "2026-06-18",
+    "strategyNav": 4.0858044007,
+    "benchmarkNav": 1.4402322,
+    "excessNav": 2.9122995987,
+    "strategyDrawdown": -0.0254018169
+  },
+  {
+    "date": "2026-06-22",
+    "strategyNav": 4.151191011,
+    "benchmarkNav": 1.4746407,
+    "excessNav": 2.8893285173,
+    "strategyDrawdown": -0.0098049686
+  },
+  {
+    "date": "2026-06-23",
+    "strategyNav": 3.9781066511,
+    "benchmarkNav": 1.433759,
+    "excessNav": 2.8489590637,
+    "strategyDrawdown": -0.0510912579
+  },
+  {
+    "date": "2026-06-24",
+    "strategyNav": 3.9874474232,
+    "benchmarkNav": 1.4406459,
+    "excessNav": 2.8419638024,
+    "strategyDrawdown": -0.0488631778
+  },
+  {
+    "date": "2026-06-25",
+    "strategyNav": 3.9564328114,
+    "benchmarkNav": 1.4631108,
+    "excessNav": 2.7755422498,
+    "strategyDrawdown": -0.0562611786
+  },
+  {
+    "date": "2026-06-26",
+    "strategyNav": 3.8304099116,
+    "benchmarkNav": 1.4188453,
+    "excessNav": 2.7711061183,
+    "strategyDrawdown": -0.0863217682
+  },
+  {
+    "date": "2026-06-29",
+    "strategyNav": 3.8327938016,
+    "benchmarkNav": 1.4359534,
+    "excessNav": 2.7394173497,
+    "strategyDrawdown": -0.0857531323
+  },
+  {
+    "date": "2026-06-30",
+    "strategyNav": 3.7458907088,
+    "benchmarkNav": 1.4512575,
+    "excessNav": 2.6481088697,
+    "strategyDrawdown": -0.1064823665
+  },
+  {
+    "date": "2026-07-01",
+    "strategyNav": 3.7771394806,
+    "benchmarkNav": 1.4452974,
+    "excessNav": 2.681075247,
+    "strategyDrawdown": -0.0990285109
+  },
+  {
+    "date": "2026-07-02",
+    "strategyNav": 3.8040466206,
+    "benchmarkNav": 1.4025475,
+    "excessNav": 2.7794768965,
+    "strategyDrawdown": -0.0926102766
+  },
+  {
+    "date": "2026-07-03",
+    "strategyNav": 3.9194308293,
+    "benchmarkNav": 1.4112531,
+    "excessNav": 2.846531709,
+    "strategyDrawdown": -0.0650873634
+  },
+  {
+    "date": "2026-07-06",
+    "strategyNav": 3.962206308,
+    "benchmarkNav": 1.4112035,
+    "excessNav": 2.8776979955,
+    "strategyDrawdown": -0.0548840106
+  },
+  {
+    "date": "2026-07-07",
+    "strategyNav": 3.8734409689,
+    "benchmarkNav": 1.3967068,
+    "excessNav": 2.8427902372,
+    "strategyDrawdown": -0.0760574515
+  },
+  {
+    "date": "2026-07-08",
+    "strategyNav": 3.78618735,
+    "benchmarkNav": 1.3860018,
+    "excessNav": 2.8005415875,
+    "strategyDrawdown": -0.0968702977
+  },
+  {
+    "date": "2026-07-09",
+    "strategyNav": 3.843135553,
+    "benchmarkNav": 1.4212031,
+    "excessNav": 2.7715371189,
+    "strategyDrawdown": -0.0832862859
+  },
+  {
+    "date": "2026-07-10",
+    "strategyNav": 3.8301097709,
+    "benchmarkNav": 1.3933638,
+    "excessNav": 2.8164337112,
+    "strategyDrawdown": -0.0863933616
+  },
+  {
+    "date": "2026-07-13",
+    "strategyNav": 3.6553669051,
+    "benchmarkNav": 1.368471,
+    "excessNav": 2.7382546899,
+    "strategyDrawdown": -0.1280752589
+  },
+  {
+    "date": "2026-07-14",
+    "strategyNav": 3.8154187129,
+    "benchmarkNav": 1.3979425,
+    "excessNav": 2.7991789867,
+    "strategyDrawdown": -0.0898976601
+  },
+  {
+    "date": "2026-07-15",
+    "strategyNav": 3.8790450601,
+    "benchmarkNav": 1.3951097,
+    "excessNav": 2.8515309386,
+    "strategyDrawdown": -0.0747206922
+  },
+  {
+    "date": "2026-07-16",
+    "strategyNav": 3.8280285597,
+    "benchmarkNav": 1.3693601,
+    "excessNav": 2.866658982,
+    "strategyDrawdown": -0.0868897986
+  },
+  {
+    "date": "2026-07-17",
+    "strategyNav": 3.6882935641,
+    "benchmarkNav": 1.3200089,
+    "excessNav": 2.8653303656,
+    "strategyDrawdown": -0.1202211722
+  },
+  {
+    "date": "2026-07-20",
+    "strategyNav": 3.735363324,
+    "benchmarkNav": 1.340183,
+    "excessNav": 2.8581056874,
+    "strategyDrawdown": -0.1089934927
+  },
+  {
+    "date": "2026-07-21",
+    "strategyNav": 3.8477230976,
+    "benchmarkNav": 1.3812513,
+    "excessNav": 2.8564942624,
+    "strategyDrawdown": -0.0821920062
+  },
+  {
+    "date": "2026-07-22",
+    "strategyNav": 3.9063440496,
+    "benchmarkNav": 1.3748424,
+    "excessNav": 2.913267699,
+    "strategyDrawdown": -0.068208989
+  },
+  {
+    "date": "2026-07-23",
+    "strategyNav": 4.0539780357,
+    "benchmarkNav": 1.3779783,
+    "excessNav": 3.0167249432,
+    "strategyDrawdown": -0.0329934474
+  },
+  {
+    "date": "2026-07-24",
+    "strategyNav": 3.9193681967,
+    "benchmarkNav": 1.3550091,
+    "excessNav": 2.9668416274,
+    "strategyDrawdown": -0.0651023033
+  },
+  {
+    "date": "2026-07-27",
+    "strategyNav": 4.0502023011,
+    "benchmarkNav": 1.3705261,
+    "excessNav": 3.0319039459,
+    "strategyDrawdown": -0.0338940838
+  },
+  {
+    "date": "2026-07-28",
+    "strategyNav": 3.6896098065,
+    "benchmarkNav": 1.3317894,
+    "excessNav": 2.8476653565,
+    "strategyDrawdown": -0.1199072053
+  },
+  {
+    "date": "2026-07-29",
+    "strategyNav": 3.6131528506,
+    "benchmarkNav": 1.3407484,
+    "excessNav": 2.7694988421,
+    "strategyDrawdown": -0.1381446936
+  }
+]

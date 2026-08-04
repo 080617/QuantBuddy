@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="QuantBuddy 四屏 onboarding 离线交互预览">
+  <title>QuantBuddy · 四屏像素复刻预览</title>
+  <link rel="stylesheet" href="./QuantBuddy_四屏像素复刻.css">
+  <style>
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .qb-inline-icon{width:36px;height:36px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .qb-level-card .qb-inline-icon{width:98px;height:98px}
+    .qb-header-brand,.qb-home-link{border:0;background:transparent;cursor:pointer}
+    .qb-welcome-center button,.qb-home-link,.qb-next-button,.qb-level-card,.qb-period-options button,.qb-model-trigger,.qb-model-option{font-family:var(--qb-font)}
+    .qb-complete .qb-primary-button{border:0;cursor:pointer}
+    .qb-offline-note{position:absolute;right:18px;bottom:12px;z-index:120;color:#a2a5b3;font-size:11px}
+    @media(max-width:980px){.qb-level-card .qb-inline-icon{width:72px;height:72px}}
+    @media(max-width:640px){.qb-level-card .qb-inline-icon{width:52px;height:52px}.qb-offline-note{display:none}}
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    (() => {
+      "use strict";
+
+      const CONFIG_KEY = "quantbuddy.onboarding.config";
+      const STEP_KEY = "quantbuddy.onboarding.step";
+      const DEFAULT_CONFIG = {
+        knowledgeLevel: null,
+        initialCapital: null,
+        maxLossPercentage: null,
+        investmentPeriod: "medium",
+        modelId: null,
+        strategyId: "csi300-dynamic-default"
+      };
+
+      const MODELS = [
+        ["lightgbm","LightGBM（新手友好）",["梯度提升树","高效训练","表格数据"],"适合处理大量结构化因子，训练速度快，是经典且稳健的量化基线。"],
+        ["xgboost","XGBoost",["梯度提升树","正则化","经典模型"],"逐轮拟合残差，并通过正则化控制复杂度，适合学习非线性因子关系。"],
+        ["catboost","CatBoost",["梯度提升树","有序提升","稳健训练"],"利用有序提升减少过拟合，对类别型与混合特征较友好。"],
+        ["linear","Linear",["线性模型","易解释","训练快速"],"以线性关系连接因子与收益，结构简单，适合作为可解释基线。"],
+        ["mlp","MLP",["神经网络","非线性","表格特征"],"多层全连接网络，可学习多个因子之间的非线性组合关系。"],
+        ["dnn","DNN",["深度网络","多层表示","高容量"],"使用更深的全连接结构学习复杂模式，表达能力强，但需要更多调参。"],
+        ["lstm","LSTM",["循环网络","长期依赖","时间序列"],"通过门控记忆保留较长历史信息，适合学习序列中的长期依赖。"],
+        ["gru","GRU",["循环网络","轻量门控","时间序列"],"以较少的门控结构完成序列记忆，参数通常少于 LSTM，训练更轻量。"],
+        ["alstm","ALSTM",["注意力机制","LSTM","关键时点"],"在 LSTM 基础上加入注意力，为更重要的时间步和信息分配更高权重。"],
+        ["tcn","TCN",["因果卷积","并行训练","长感受野"],"通过扩张因果卷积捕捉长序列模式，同时支持较高效的并行训练。"],
+        ["transformer","Transformer",["自注意力","全局依赖","序列建模"],"通过自注意力直接连接不同时间位置，擅长学习序列中的全局关系。"],
+        ["localformer","Localformer",["局部模式","注意力","短期结构"],"在 Transformer 中强化邻近时间片的局部关系，并兼顾较长范围的信息。"],
+        ["tft","TFT",["时序融合","变量选择","可解释性"],"融合静态与动态变量，并通过变量选择和注意力分析多变量时间序列。"],
+        ["tabnet","TabNet",["表格数据","特征选择","序列注意力"],"在多个决策阶段动态选择重要特征，兼顾非线性建模与特征解释。"],
+        ["sfm","SFM",["频率建模","周期模式","序列记忆"],"在频域中维护状态记忆，用于识别金融序列中的周期和频率模式。"],
+        ["gats","GATs",["图注意力","股票关系","动态权重"],"将股票视为图节点，并通过注意力学习不同股票关系的重要程度。"],
+        ["hist","HIST",["行业概念","隐藏概念","图模型"],"同时利用预定义概念和隐藏概念，融合个股信息与股票间的共享信息。"],
+        ["igmtf","IGMTF",["实例图","动态关系","多变量时序"],"针对不同样本动态构建变量关系图，融合跨股票和跨序列的信息。"],
+        ["master","MASTER",["市场引导","股票关联","动态选因子"],"利用市场状态指导特征选择，并建模股票内部与股票之间的时序关联。"],
+        ["tra","TRA",["多市场状态","动态路由","模式切换"],"使用多个预测器学习不同交易模式，再由路由器选择更合适的模式。"],
+        ["doubleensemble","DoubleEnsemble",["集成学习","样本重加权","特征选择"],"同时进行样本重加权和特征选择，以降低金融数据噪声和过拟合。"],
+        ["add","ADD",["信息解耦","自蒸馏","数据增强"],"分离市场收益与超额收益信息，并通过动态自蒸馏与增强减少干扰。"],
+        ["adarnn","AdaRNN",["分布漂移","自适应时序","域适应"],"刻画并匹配不同时间阶段的数据分布，以适应市场状态随时间变化。"]
+      ];
+      if (MODELS.length !== 23) throw new Error("QuantBuddy must expose exactly 23 selectable models.");
+
+      const PERIODS = [
+        ["short","短期（3个月以内）"],
+        ["medium","中期（3–6个月）"],
+        ["long","长期（6个月以上）"],
+        ["very-long","长期（1年以上）"]
+      ];
+
+      let config = loadConfig();
+      let activeModelIndex = Math.max(0, MODELS.findIndex(model => model[0] === config.modelId));
+      let menuOpen = false;
+
+      function loadConfig() {
+        try {
+          return {...DEFAULT_CONFIG, ...JSON.parse(localStorage.getItem(CONFIG_KEY) || "{}")};
+        } catch {
+          return {...DEFAULT_CONFIG};
+        }
+      }
+
+      function saveConfig() {
+        localStorage.setItem(CONFIG_KEY, JSON.stringify(config));
+      }
+
+      function icon(name, className = "qb-inline-icon") {
+        const paths = {
+          graduation: '<path d="m3 10 9-5 9 5-9 5-9-5Z"/><path d="M7 12v5c3 2 7 2 10 0v-5"/><path d="M21 10v6"/>',
+          chart: '<path d="M4 19V9"/><path d="M9 19v-5"/><path d="M14 19V7"/><path d="M19 19V3"/><path d="m3 8 5-4 5 3 8-7"/>',
+          users: '<circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-7 7-7s7 3 7 7"/><path d="M16 5a4 4 0 0 1 0 7"/><path d="M18 15c3 1 4 3 4 6"/>',
+          zap: '<path d="M13 2 4 14h7l-1 8 9-13h-7l1-7Z"/>',
+          sprout: '<path d="M12 22V10"/><path d="M12 13C7 13 4 10 4 5c5 0 8 3 8 8Z"/><path d="M12 10c0-5 3-8 8-8 0 5-3 8-8 8Z"/><path d="M6 22h12"/>',
+          advanced: '<path d="M4 20v-5M9 20V9M14 20v-8M19 20V5"/><path d="m3 11 5-5 5 3 8-8"/>',
+          arrow: '<path d="M5 12h14"/><path d="m14 7 5 5-5 5"/>',
+          chevron: '<path d="m6 9 6 6 6-6"/>',
+          lock: '<rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>',
+          check: '<path d="m5 12 4 4L19 6"/>'
+        };
+        return `<svg class="${className}" viewBox="0 0 24 24" aria-hidden="true">${paths[name]}</svg>`;
+      }
+
+      function logo(size) {
+        return `<span class="${size === "large" ? "qb-logo-large" : "qb-logo-small"}" aria-hidden="true"><img src="./frontend/public/quantbuddy-logo.png" alt=""></span>`;
+      }
+
+      function header(showBrand = true) {
+        return `<header class="qb-header">
+          ${showBrand ? `<button type="button" class="qb-header-brand" data-home>${logo("small")}<span>QuantBuddy</span></button>` : "<span></span>"}
+          <div class="qb-auth"><button class="qb-login" type="button">登录</button><button class="qb-register" type="button">注册</button></div>
+        </header>`;
+      }
+
+      function progress(step) {
+        return `<nav class="qb-progress qb-progress-step-${step}" aria-label="设置进度"><ol>
+          ${[1,2,3].map((item,index) => `<li><span class="qb-progress-dot ${item === step ? "is-current" : item < step ? "is-complete" : ""}"><span class="sr-only">第 ${item} 步</span></span>${index < 2 ? `<span class="qb-progress-line ${item < step ? "is-complete" : ""}"></span>` : ""}</li>`).join("")}
+        </ol></nav>`;
+      }
+
+      function shell(content, options = {}) {
+        return `<div class="qb-page"><div class="qb-container">${header(options.showBrand !== false)}${options.progress ? progress(options.progress) : ""}${content}<span class="qb-offline-note">离线交互预览</span></div></div>`;
+      }
+
+      function welcome() {
+        return shell(`<main class="qb-welcome">
+          <span class="qb-decoration qb-dot-left"></span><span class="qb-decoration qb-dot-top"></span><span class="qb-decoration qb-diamond"></span>
+          <section class="qb-welcome-center">${logo("large")}<h1>Quant<span>Buddy</span></h1><p>你的量化理财学习伙伴 ✨</p>
+            <button class="qb-primary-button" type="button" data-start>开始你的量化之旅 ${icon("arrow")}</button>
+          </section>
+          <svg class="qb-wave" viewBox="0 0 1440 185" preserveAspectRatio="none"><path d="M-30 15C110 25 145 140 300 141h612c151 0 224-139 558-116"/></svg>
+          <section class="qb-features">
+            ${[["graduation","零基础友好","从入门到进阶"],["chart","策略回测","验证你的想法"],["users","社区共创","分享与学习"],["zap","持续进化","AI 助力成长"]].map(item => `<div class="qb-feature">${icon(item[0])}<div><h2>${item[1]}</h2><p>${item[2]}</p></div></div>`).join("")}
+          </section>
+        </main>`, {showBrand:false});
+      }
+
+      function knowledge() {
+        return shell(`<main class="qb-knowledge">
+          <header class="qb-screen-heading"><h1>你对金融了解多少？</h1><p>选择你的起点，我们将为你提供更合适的学习体验 ✨</p></header>
+          <div class="qb-level-grid">
+            <button class="qb-level-card qb-level-beginner ${config.knowledgeLevel === "beginner" ? "is-selected" : ""}" data-level="beginner">${icon("sprout")}<h2>新手入门</h2><span>零基础也没关系</span><p>从基础开始学习量化投资<br>我们一步步带你上手</p></button>
+            <button class="qb-level-card qb-level-advanced ${config.knowledgeLevel === "advanced" ? "is-selected" : ""}" data-level="advanced">${icon("advanced")}<h2>进阶探索</h2><span>已有一定基础</span><p>深入学习量化策略与模型<br>探索更多可能性</p></button>
+          </div>
+        </main>`, {progress:1});
+      }
+
+      function field(number, label, control, extra = "") {
+        return `<div class="qb-numbered-field ${extra}"><div class="qb-question"><span>${number}</span><p>${label}</p></div><div class="qb-control">${control}</div></div>`;
+      }
+
+      function details() {
+        const selectedModel = MODELS.find(model => model[0] === config.modelId);
+        const valid = isComplete();
+        return shell(`<main class="qb-details">
+          <section class="qb-details-intro"><h1>补充信息</h1><p>为了生成更适合你的投资方案，<br>请完成以下信息填写</p>
+            <div class="qb-chart-decoration"><svg viewBox="0 0 150 100"><path d="M12 82c16-20 24-21 36-7 13 15 22 13 32-7 11-24 22-28 31-10 10 18 16 4 25-19"/><path class="axis" d="M5 10v80h138"/></svg><span style="height:34px"></span><span style="height:67px"></span><span style="height:48px"></span></div>
+          </section>
+          <form class="qb-details-form">
+            ${field(1,"你的初始资金是多少？",`<input id="capital" type="number" min="1" value="${config.initialCapital ?? ""}" placeholder="请输入金额（元）">`)}
+            ${field(2,"你能承受的风险（最大投资损失）是多少？",`<div class="qb-percent-input"><input id="loss" type="text" inputmode="decimal" value="${config.maxLossPercentage ?? ""}" placeholder="请输入百分比（如 20 表示 20%）"><span>%</span></div>`)}
+            ${field(3,"你的投资周期是多长？",`<div class="qb-period-options">${PERIODS.map(period => `<button type="button" data-period="${period[0]}" class="${config.investmentPeriod === period[0] ? "is-selected" : ""}">${period[1]}</button>`).join("")}</div>`,"qb-period-field")}
+            ${field(4,"你选择什么模型？",`<div class="qb-model-select"><button id="model-trigger" type="button" role="combobox" aria-expanded="${menuOpen}" aria-controls="model-list" class="qb-model-trigger"><span class="${selectedModel ? "" : "is-placeholder"}">${selectedModel ? selectedModel[1] : "选择模型（共 23 个）"}</span>${icon("chevron")}</button>${menuOpen ? modelMenu() : ""}</div>`)}
+            ${field(5,"你选择什么策略？",`<div class="qb-locked-input"><span>默认策略（基于模型由系统动态配置）</span>${icon("lock")}</div>`)}
+            <button class="qb-next-button" type="submit" ${valid ? "" : "disabled"}>下一步 ${icon("arrow")}</button>
+          </form>
+        </main>`, {progress:2});
+      }
+
+      function modelMenu() {
+        return `<div id="model-list" class="qb-model-menu" role="listbox">${MODELS.map((model,index) => `<button type="button" role="option" aria-selected="${config.modelId === model[0]}" data-model-index="${index}" class="qb-model-option ${activeModelIndex === index ? "is-active" : ""}"><span class="qb-model-option-top"><strong>${model[1]}</strong>${config.modelId === model[0] ? icon("check") : ""}</span><span class="qb-model-tags">${model[2].map(tag => `<i>${tag}</i>`).join("")}</span><span class="qb-model-description">${model[3]}</span></button>`).join("")}</div>`;
+      }
+
+      function complete() {
+        const model = MODELS.find(item => item[0] === config.modelId);
+        const period = PERIODS.find(item => item[0] === config.investmentPeriod);
+        const rows = [
+          ["初始资金",`${Number(config.initialCapital).toLocaleString("zh-CN")} 元`],
+          ["最大投资损失",`${config.maxLossPercentage}%`],
+          ["投资周期",period ? period[1] : "—"],
+          ["选择模型",model ? model[1] : "—"],
+          ["策略设置","默认策略（动态配置）"]
+        ];
+        return shell(`<main class="qb-complete">
+          <div class="qb-completion-illustration"><span class="qb-confetti qb-confetti-1"></span><span class="qb-confetti qb-confetti-2"></span><span class="qb-confetti qb-confetti-3"></span><span class="qb-confetti qb-confetti-4"></span><span class="qb-confetti qb-confetti-5"></span><span class="qb-confetti qb-confetti-6"></span><div class="qb-check-outer"><div class="qb-check-inner">${icon("check")}</div></div></div>
+          <h1>设置完成！</h1><p class="qb-complete-subtitle">你的个性化投资方案已经准备就绪 ✨</p>
+          <section class="qb-summary"><dl>${rows.map((row,index) => `<div><dt><span>${index + 1}</span>${row[0]}</dt><dd>${row[1]}</dd></div>`).join("")}</dl></section>
+          <button class="qb-primary-button qb-dashboard-button" type="button" data-dashboard>进入我的仪表盘 ${icon("arrow")}</button>
+          <button class="qb-home-link" type="button" data-home>返回首页</button>
+        </main>`);
+      }
+
+      function currentStep() {
+        const raw = new URLSearchParams(location.search).get("step");
+        return raw === "1" || raw === "2" || raw === "3" ? Number(raw) : 0;
+      }
+
+      function isComplete() {
+        return Number(config.initialCapital) > 0 &&
+          Number(config.maxLossPercentage) > 0 &&
+          Number(config.maxLossPercentage) <= 100 &&
+          Boolean(config.modelId);
+      }
+
+      function navigate(step) {
+        menuOpen = false;
+        if (step === 0) {
+          history.pushState({}, "", location.pathname);
+        } else {
+          history.pushState({}, "", `${location.pathname}?step=${step}`);
+          localStorage.setItem(STEP_KEY, String(step));
+        }
+        render();
+      }
+
+      function render() {
+        const step = currentStep();
+        if (step === 3 && !isComplete()) {
+          navigate(2);
+          return;
+        }
+        document.getElementById("app").innerHTML = step === 1 ? knowledge() : step === 2 ? details() : step === 3 ? complete() : welcome();
+        bind();
+      }
+
+      function bind() {
+        document.querySelectorAll("[data-home]").forEach(element => element.addEventListener("click", () => navigate(0)));
+        document.querySelector("[data-start]")?.addEventListener("click", () => navigate(1));
+        document.querySelectorAll("[data-level]").forEach(element => element.addEventListener("click", () => {
+          config.knowledgeLevel = element.dataset.level;
+          saveConfig();
+          render();
+          setTimeout(() => navigate(2), 260);
+        }));
+
+        const capital = document.getElementById("capital");
+        capital?.addEventListener("input", event => {
+          config.initialCapital = event.target.value === "" ? null : Number(event.target.value);
+          saveConfig();
+          updateNext();
+        });
+        const loss = document.getElementById("loss");
+        loss?.addEventListener("input", event => {
+          const normalizedValue = event.target.value.replace(",", ".");
+          if (!/^\d{0,3}(?:\.\d{0,2})?$/.test(normalizedValue)) {
+            event.target.value = config.maxLossPercentage ?? "";
+            return;
+          }
+          event.target.value = normalizedValue;
+          config.maxLossPercentage = normalizedValue === "" ? null : Number(normalizedValue);
+          saveConfig();
+          updateNext();
+        });
+        document.querySelectorAll("[data-period]").forEach(element => element.addEventListener("click", () => {
+          config.investmentPeriod = element.dataset.period;
+          saveConfig();
+          render();
+        }));
+
+        const trigger = document.getElementById("model-trigger");
+        trigger?.addEventListener("click", () => {
+          menuOpen = !menuOpen;
+          render();
+          if (menuOpen) document.getElementById("model-trigger")?.focus();
+        });
+        trigger?.addEventListener("keydown", event => {
+          if (!menuOpen && ["Enter"," ","ArrowDown"].includes(event.key)) {
+            event.preventDefault();
+            menuOpen = true;
+            render();
+            document.getElementById("model-trigger")?.focus();
+            return;
+          }
+          if (!menuOpen) return;
+          if (event.key === "Escape") {
+            event.preventDefault();
+            menuOpen = false;
+            render();
+            document.getElementById("model-trigger")?.focus();
+          } else if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+            event.preventDefault();
+            activeModelIndex = Math.max(0, Math.min(22, activeModelIndex + (event.key === "ArrowDown" ? 1 : -1)));
+            render();
+            document.getElementById("model-trigger")?.focus();
+            document.querySelector(`[data-model-index="${activeModelIndex}"]`)?.scrollIntoView({block:"nearest"});
+          } else if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            chooseModel(activeModelIndex);
+          }
+        });
+        document.querySelectorAll("[data-model-index]").forEach(element => {
+          element.addEventListener("mouseenter", () => activeModelIndex = Number(element.dataset.modelIndex));
+          element.addEventListener("click", () => chooseModel(Number(element.dataset.modelIndex)));
+        });
+        document.querySelector(".qb-model-menu")?.addEventListener("wheel", event => event.stopPropagation());
+
+        document.querySelector(".qb-details-form")?.addEventListener("submit", event => {
+          event.preventDefault();
+          if (isComplete()) navigate(3);
+        });
+        document.querySelector("[data-dashboard]")?.addEventListener("click", () => {
+          alert("离线预览已完成 onboarding。正式 Dashboard 位于 Next.js 项目的 /dashboard。");
+        });
+      }
+
+      function chooseModel(index) {
+        activeModelIndex = index;
+        config.modelId = MODELS[index][0];
+        menuOpen = false;
+        saveConfig();
+        render();
+        document.getElementById("model-trigger")?.focus();
+      }
+
+      function updateNext() {
+        const button = document.querySelector(".qb-next-button");
+        if (button) button.disabled = !isComplete();
+      }
+
+      addEventListener("popstate", render);
+      render();
+    })();
+  </script>
+</body>
+</html>
