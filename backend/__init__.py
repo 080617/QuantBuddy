@@ -1,0 +1,1 @@
+﻿"""QuantBuddy backend package."""
