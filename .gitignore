@@ -24,6 +24,20 @@ __pycache__/
 # Runtime logs
 *.log
 
+# Futu smoke-test local runtime and private outputs
+/.venv-futu/
+/backend/futu_smoke_test/.env*
+/backend/futu_smoke_test/logs/
+/backend/futu_smoke_test/results/
+/backend/futu_smoke_test/*.out
+/backend/futu_smoke_test/*.err
+/backend/futu_smoke_test/*.csv
+/backend/futu_smoke_test/*.json
+/backend/futu_smoke_test/*opend*.xml
+/backend/futu_smoke_test/*opend*.ini
+/backend/futu_smoke_test/*opend*.conf
+/backend/futu_smoke_test/*opend*.config
+
 # Editor and operating-system files
 .DS_Store
 Thumbs.db
