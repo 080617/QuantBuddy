@@ -82,6 +82,7 @@ def collect_readonly_shadow_snapshot(plan: ExecutionPlan, execution_date: date) 
                 lot_size=item.lot_size,
                 suspended=item.suspended,
                 update_time=item.update_time,
+                price_spread=item.price_spread,
             )
             for item in raw_quotes
         }
@@ -316,13 +317,43 @@ def _parser() -> argparse.ArgumentParser:
     shadow = subparsers.add_parser("shadow-run", help="run a read-only shadow execution")
     shadow.add_argument("--plan-id", required=True)
     shadow.add_argument("--shadow-date", help="shadow-only test clock; never available to an execution mode")
+    preflight = subparsers.add_parser("canary-preflight", help="read-only one-lot canary validation")
+    preflight.add_argument("--plan-id", required=True)
+    canary = subparsers.add_parser("canary-execute", help="interactive, controlled one-lot simulated canary")
+    canary.add_argument("--plan-id", required=True)
+    status = subparsers.add_parser("canary-status", help="query an existing canary order without resubmitting")
+    status.add_argument("--session-id", required=True)
+    reconcile = subparsers.add_parser("canary-reconcile", help="query/reconcile an existing canary session")
+    reconcile.add_argument("--session-id", required=True)
     return parser
 
 
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
-    if args.command != "shadow-run":
-        raise PlanningError("Only shadow-run is available in Phase 2D-A.")
+    if args.command.startswith("canary-"):
+        from .canary import CanaryConfig, CanaryOrchestrator
+
+        runner = CanaryOrchestrator(config=CanaryConfig.from_env())
+        if args.command == "canary-status":
+            session = runner.status(args.session_id)
+            print(json.dumps(session.to_dict(), ensure_ascii=False, indent=2))
+            return 0
+        if args.command == "canary-reconcile":
+            session = runner.reconcile(args.session_id)
+            print(json.dumps(session.to_dict(), ensure_ascii=False, indent=2))
+            return 0
+        plan = load_execution_plan(args.plan_id)
+        artifact = load_execution_artifact(find_latest_artifact(plan.strategy_id))
+        if args.command == "canary-preflight":
+            session = runner.preflight(plan, artifact.source_hash)
+            print("CONTROLLED SIMULATED CANARY PREFLIGHT / NO ORDER SUBMITTED")
+            print(json.dumps(session.to_dict(), ensure_ascii=False, indent=2))
+            return 0 if not session.blockers else 2
+        session = runner.execute(plan, artifact.source_hash)
+        print(f"Canary Session ID: {session.session_id}")
+        print(f"State: {session.state.value}")
+        print("FULL PLAN COMPLETED: false")
+        return 0 if session.state.value not in {"FAILED", "UNKNOWN_REQUIRES_REVIEW"} else 2
     plan = load_execution_plan(args.plan_id)
     artifact = load_execution_artifact(find_latest_artifact(plan.strategy_id))
     orchestrator = ShadowOrchestrator()

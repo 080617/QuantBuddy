@@ -1,6 +1,7 @@
-"""Qlib-to-Futu dry-run execution planning.
+"""Qlib-to-Futu planning and explicitly gated simulated-canary execution.
 
-This package has no order submission, modification, or cancellation entry point.
+Importing this package is inert. The only write path is the interactive,
+one-order/one-lot CN SIMULATE canary command guarded by two environment flags.
 """
 
 from .models import ExecutionArtifact, ExecutionPlan, PlanningConfig

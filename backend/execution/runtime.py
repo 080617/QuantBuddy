@@ -63,6 +63,7 @@ def build_readonly_futu_plan(
                 lot_size=snapshot.lot_size,
                 suspended=snapshot.suspended,
                 update_time=snapshot.update_time,
+                price_spread=snapshot.price_spread,
             )
             for snapshot in snapshots
         }

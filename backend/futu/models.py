@@ -54,6 +54,15 @@ class QuoteSnapshot:
     lot_size: int
     suspended: bool
     update_time: str | None = None
+    price_spread: float | None = None
+
+
+@dataclass(frozen=True, slots=True)
+class OrderBookTop:
+    code: str
+    best_ask: float
+    ask_volume: float
+    server_time: str | None
 
 
 @dataclass(frozen=True, slots=True)
@@ -88,6 +97,7 @@ class PlaceOrderRequest:
     side: OrderSide
     quantity: int
     price: float
+    remark: str | None = None
 
 
 @dataclass(frozen=True, slots=True)

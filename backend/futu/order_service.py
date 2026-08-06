@@ -138,6 +138,7 @@ class OrderService:
                 order_type=self.client.sdk.OrderType.NORMAL,
                 trd_env=self.client.sdk.TrdEnv.SIMULATE,
                 acc_id=account.account_id,
+                remark=request.remark or "",
             ),
             "place_simulated_limit_order",
         )
