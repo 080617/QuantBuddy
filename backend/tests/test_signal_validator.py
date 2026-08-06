@@ -57,6 +57,13 @@ class SignalValidatorTests(unittest.TestCase):
         self.assertIsNone(result.planned_execution_date)
         self.assertIn("EXECUTION_DATE_NOT_IN_CALENDAR", {item.code for item in result.blockers})
 
+    def test_weekend_is_not_used_as_execution_day(self) -> None:
+        calendar = self.root / "data/qlib/cn_data/calendars/day.txt"
+        calendar.write_text("2026-07-31\n2026-08-03\n", encoding="utf-8")
+        item = artifact(signal_date="2026-07-31", data_as_of="2026-07-31")
+        result = self.validate(item, as_of=date(2026, 7, 31))
+        self.assertEqual(result.planned_execution_date, "2026-08-03")
+
     def test_duplicate_and_illegal_codes_are_rejected(self) -> None:
         duplicate = signals()
         duplicate[-1] = replace(duplicate[-1], code=duplicate[0].code)

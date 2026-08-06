@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import asdict
+from dataclasses import asdict, replace
 import hashlib
 import json
 import math
@@ -84,8 +84,21 @@ def build_execution_plan(
         blockers.append(ExecutionBlocker("TOO_MANY_MANAGED_POSITIONS", "Managed holdings exceed Top-5."))
 
     relevant_codes = set(transition.sell).union(transition.buy).union(transition.keep)
+    unfinished_orders = [order for order in recent_orders if _unfinished(order)]
+    initial_eligible = (
+        not actual_managed
+        and not current_positions
+        and not unfinished_orders
+        and account.market == "CN"
+        and account.trading_environment == "SIMULATE"
+        and account.status == "ACTIVE"
+        and account.cash > 0
+        and metadata.strategy_id in config.allowed_strategy_ids
+        and not artifact_validation.blockers
+    )
+    plan_mode = "INITIAL_DEPLOYMENT" if initial_eligible else "REBALANCE"
     for order in recent_orders:
-        if _unfinished(order) and order.code in relevant_codes:
+        if _unfinished(order) and (order.code in relevant_codes or not actual_managed):
             blockers.append(
                 ExecutionBlocker(
                     "UNFINISHED_ORDER_CONFLICT",
@@ -144,6 +157,7 @@ def build_execution_plan(
     cash_reserved = cash_after_sells * (1.0 - metadata.risk_degree)
     buy_pool = cash_after_sells * metadata.risk_degree
     budget_per_buy = buy_pool / len(transition.buy) if transition.buy else 0.0
+    weight_by_code = {item.code: item.target_weight for item in artifact.signals}
     buy_orders: list[PlannedOrder] = []
     for code in transition.buy:
         quote = quotes.get(code)
@@ -163,7 +177,12 @@ def build_execution_plan(
         if lot_size <= 0:
             blockers.append(ExecutionBlocker("INVALID_LOT_SIZE", "Quote returned an invalid lot size.", code))
             continue
-        quantity = math.floor(budget_per_buy / quote.last_price / lot_size) * lot_size
+        code_budget = (
+            account.total_assets * weight_by_code.get(code, 0.0)
+            if plan_mode == "INITIAL_DEPLOYMENT"
+            else budget_per_buy
+        )
+        quantity = math.floor(code_budget / quote.last_price / lot_size) * lot_size
         if quantity < lot_size:
             blockers.append(
                 ExecutionBlocker("INSUFFICIENT_CASH_FOR_ONE_LOT", "Allocated cash cannot buy one board lot.", code)
@@ -171,7 +190,7 @@ def build_execution_plan(
             continue
         while quantity >= lot_size:
             candidate_value = quantity * quote.last_price
-            if candidate_value + _fee(candidate_value, metadata.open_cost, metadata.min_cost) <= budget_per_buy:
+            if candidate_value + _fee(candidate_value, metadata.open_cost, metadata.min_cost) <= code_budget:
                 break
             quantity -= lot_size
         if quantity < lot_size:
@@ -225,11 +244,27 @@ def build_execution_plan(
     estimated_cash_after = cash_after_sells - buy_cash
     turnover_value = sum(order.estimated_value for order in sell_orders + buy_orders)
     estimated_turnover = turnover_value / account.total_assets if account.total_assets > 0 else float("inf")
-    if not math.isfinite(estimated_turnover) or estimated_turnover > config.max_turnover_ratio:
+    if plan_mode == "INITIAL_DEPLOYMENT":
+        top_weights = [item.target_weight for item in artifact.signals if item.rank <= metadata.topk]
+        applied_single = account.total_assets * max(top_weights, default=0.0)
+        applied_daily = account.total_assets * sum(top_weights)
+        applied_turnover = sum(top_weights)
+        applied_config = replace(
+            config,
+            max_single_order_amount=applied_single,
+            max_daily_planned_amount=applied_daily,
+            max_turnover_ratio=applied_turnover,
+        )
+    else:
+        applied_config = config
+        applied_single = config.max_single_order_amount
+        applied_daily = config.max_daily_planned_amount
+        applied_turnover = config.max_turnover_ratio
+    if not math.isfinite(estimated_turnover) or estimated_turnover > applied_turnover + 1e-9:
         blockers.append(
             ExecutionBlocker(
                 "TURNOVER_LIMIT_EXCEEDED",
-                f"Estimated turnover {estimated_turnover:.4f} exceeds {config.max_turnover_ratio:.4f}.",
+                f"Estimated turnover {estimated_turnover:.4f} exceeds {applied_turnover:.4f}.",
             )
         )
     if len(transition.desired_membership) > config.max_positions:
@@ -240,7 +275,7 @@ def build_execution_plan(
             account=account,
             strategy_id=metadata.strategy_id,
             orders=sell_orders + buy_orders,
-            config=config,
+            config=applied_config,
             dry_run=True,
         )
     )
@@ -266,11 +301,14 @@ def build_execution_plan(
             estimated_market_value=quantity * price,
             estimated_weight=(quantity * price / account.total_assets if account.total_assets > 0 else 0.0),
             transition=transition_name,
+            requested_weight=(weight_by_code.get(code, 0.0) if code in transition.desired_membership else 0.0),
+            requested_amount=(account.total_assets * weight_by_code.get(code, 0.0) if code in transition.desired_membership else 0.0),
         )
         for code, (quantity, price, transition_name) in sorted(projected.items())
     ]
 
     id_payload = {
+        "planner_policy": "phase2c1-initial-deployment-v1",
         "strategy_id": metadata.strategy_id,
         "signal_date": artifact.signal_date,
         "source_hash": artifact.source_hash,
@@ -288,7 +326,7 @@ def build_execution_plan(
         "planning_config": asdict(config),
     }
     return ExecutionPlan(
-        schema_version="quantbuddy.execution-plan.v1",
+        schema_version="quantbuddy.execution-plan.v1.1",
         plan_id=_stable_plan_id(id_payload),
         strategy_id=metadata.strategy_id,
         signal_date=artifact.signal_date,
@@ -314,4 +352,8 @@ def build_execution_plan(
         blockers=blockers,
         executable=not blockers,
         dry_run=True,
+        plan_mode=plan_mode,
+        applied_max_single_order_amount=applied_single,
+        applied_max_daily_planned_amount=applied_daily,
+        applied_max_turnover_ratio=applied_turnover,
     )

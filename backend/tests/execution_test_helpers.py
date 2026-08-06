@@ -46,7 +46,13 @@ def metadata(**changes):
 def signals(count: int = 7):
     codes = ["SH600000", "SH600009", "SH600010", "SH600011", "SH600015", "SH600016", "SH600018"]
     return [
-        SignalRecord(code=code, score=1.0 - index / 10, rank=index + 1, score_percentile=1 - index / 20)
+        SignalRecord(
+            code=code,
+            score=1.0 - index / 10,
+            rank=index + 1,
+            score_percentile=1 - index / 20,
+            target_weight=0.19 if index < 5 else 0.0,
+        )
         for index, code in enumerate(codes[:count])
     ]
 
@@ -66,6 +72,7 @@ def artifact(**changes):
         universe_path="data/qlib/cn_data/instruments/csi300.txt",
         metadata=metadata(),
         signals=signals(),
+        data_as_of="2026-07-30",
     )
     values.update(changes)
     return ExecutionArtifact(**values)

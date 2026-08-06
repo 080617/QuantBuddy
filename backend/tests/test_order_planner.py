@@ -38,9 +38,37 @@ class OrderPlannerTests(unittest.TestCase):
 
     def test_empty_portfolio_buys_top_five_in_board_lots(self) -> None:
         plan = self.build()
+        self.assertEqual(plan.plan_mode, "INITIAL_DEPLOYMENT")
         self.assertEqual(len(plan.planned_buys), 5)
         self.assertTrue(all(order.quantity > 0 and order.quantity % order.lot_size == 0 for order in plan.planned_buys))
         self.assertTrue(all(order.phase == "BUY_AFTER_SELL_CONFIRMATION" for order in plan.planned_buys))
+
+    def test_positions_use_rebalance_limits_without_relaxation(self) -> None:
+        held = [CurrentPosition("SH600000", 100, 100, 10, 1000, True)]
+        plan = self.build(current_positions=held, managed_codes={"SH600000"})
+        self.assertEqual(plan.plan_mode, "REBALANCE")
+        self.assertEqual(plan.applied_max_turnover_ratio, permissive_config().max_turnover_ratio)
+
+    def test_unfinished_order_prevents_initial_deployment(self) -> None:
+        pending = OrderRecord("masked", "SH600018", None, "BUY", "NORMAL", "SUBMITTED", 100, 10, 0, None, None, None, None)
+        plan = self.build(recent_orders=[pending])
+        self.assertEqual(plan.plan_mode, "REBALANCE")
+        self.assertIn("UNFINISHED_ORDER_CONFLICT", {item.code for item in plan.blockers})
+
+    def test_initial_limits_are_derived_from_verified_target_weights(self) -> None:
+        plan = self.build(config=permissive_config(max_single_order_amount=1.0, max_daily_planned_amount=1.0, max_turnover_ratio=0.01))
+        self.assertEqual(plan.applied_max_single_order_amount, 19_000.0)
+        self.assertEqual(plan.applied_max_daily_planned_amount, 95_000.0)
+        self.assertAlmostEqual(plan.applied_max_turnover_ratio, 0.95)
+        self.assertAlmostEqual(plan.cash_reserved, 5_000.0)
+
+    def test_initial_single_name_limit_still_applies(self) -> None:
+        changed = artifact()
+        changed_signals = list(changed.signals)
+        changed_signals[0] = replace(changed_signals[0], target_weight=0.10)
+        changed_signals[1] = replace(changed_signals[1], target_weight=0.28)
+        plan = self.build(artifact=replace(changed, signals=changed_signals))
+        self.assertLessEqual(max(order.estimated_value for order in plan.planned_buys), 28_000.0)
 
     def test_below_one_lot_and_maximum_quantity_are_blocked(self) -> None:
         low_cash = self.build(account=account(cash=100.0, total_assets=100.0))

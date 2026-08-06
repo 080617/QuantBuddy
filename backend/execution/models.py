@@ -37,6 +37,7 @@ class SignalRecord:
     score: float
     rank: int
     score_percentile: float
+    target_weight: float = 0.0
 
 
 @dataclass(frozen=True, slots=True)
@@ -54,6 +55,7 @@ class ExecutionArtifact:
     universe_path: str
     metadata: StrategyExecutionMetadata
     signals: list[SignalRecord]
+    data_as_of: str = ""
 
 
 @dataclass(frozen=True, slots=True)
@@ -64,6 +66,8 @@ class TargetPosition:
     estimated_market_value: float
     estimated_weight: float
     transition: Literal["KEEP", "BUY", "SELL"]
+    requested_weight: float = 0.0
+    requested_amount: float = 0.0
 
 
 @dataclass(frozen=True, slots=True)
@@ -133,6 +137,7 @@ class PlanningConfig:
     max_daily_planned_amount: float = 500_000.0
     max_turnover_ratio: float = 0.50
     max_positions: int = 5
+    initial_cash_reserve_ratio: float = 0.05
 
 
 @dataclass(frozen=True, slots=True)
@@ -163,6 +168,10 @@ class ExecutionPlan:
     blockers: list[ExecutionBlocker] = field(default_factory=list)
     executable: bool = False
     dry_run: bool = True
+    plan_mode: Literal["INITIAL_DEPLOYMENT", "REBALANCE"] = "REBALANCE"
+    applied_max_single_order_amount: float = 0.0
+    applied_max_daily_planned_amount: float = 0.0
+    applied_max_turnover_ratio: float = 0.0
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)

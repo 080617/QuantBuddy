@@ -73,7 +73,7 @@ def validate_execution_artifact(
     """Raise for malformed/untrusted artifacts; return blockers for time-dependent safety stops."""
     if artifact.schema_version != "quantbuddy.execution-artifact.v1":
         raise ArtifactError("Unsupported execution artifact schema.")
-    if artifact.is_mock or artifact.source_kind != "backend_qlib_recorder_export":
+    if artifact.is_mock or artifact.source_kind not in {"backend_qlib_recorder_export", "backend_qlib_forward_inference"}:
         raise ArtifactError("Mock or non-backend artifacts cannot drive execution planning.")
     if any("frontend/public/data" in item.replace("\\", "/").lower() for item in artifact.source_artifact):
         raise ArtifactError("Frontend display JSON cannot be an execution source.")
@@ -86,6 +86,8 @@ def validate_execution_artifact(
     except ValueError as exc:
         raise ArtifactError("generated_at must be an ISO timestamp.") from exc
     signal_date = _parse_date(artifact.signal_date, "signal_date")
+    if _parse_date(artifact.data_as_of or artifact.signal_date, "data_as_of") != signal_date:
+        raise ArtifactError("data_as_of must match signal_date for forward execution artifacts.")
     metadata = artifact.metadata
     if metadata.market != "CN" or metadata.universe.lower() != "csi300":
         raise ArtifactError("Only the frozen CN CSI300 strategy is supported.")
@@ -117,6 +119,12 @@ def validate_execution_artifact(
     top = sorted(artifact.signals, key=lambda item: item.rank)[: metadata.topk]
     if [item.rank for item in top] != list(range(1, metadata.topk + 1)):
         raise ArtifactError("Top-5 count/ranks do not match strategy configuration.")
+    weights = [item.target_weight for item in top]
+    if artifact.source_kind == "backend_qlib_forward_inference":
+        if any(not math.isfinite(value) or value <= 0 for value in weights):
+            raise ArtifactError("Forward Top-5 target weights must be finite and positive.")
+        if not math.isclose(sum(weights), metadata.risk_degree, rel_tol=0, abs_tol=1e-9):
+            raise ArtifactError("Forward Top-5 target weights must sum to risk_degree.")
 
     universe_path = project_root / artifact.universe_path
     active_universe = _load_universe(universe_path, signal_date)

@@ -21,6 +21,7 @@ from .models import ExecutionArtifact, SignalRecord, StrategyExecutionMetadata
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_BACKTEST_DIR = PROJECT_ROOT / "outputs" / "backtest" / "v2"
+DEFAULT_FORWARD_DIR = PROJECT_ROOT / "outputs" / "forward" / "v1"
 DEFAULT_ARTIFACT_DIR = PROJECT_ROOT / "outputs" / "execution_artifacts"
 DEFAULT_CALENDAR_PATH = PROJECT_ROOT / "data" / "qlib" / "cn_data" / "calendars" / "day.txt"
 DEFAULT_UNIVERSE_PATH = PROJECT_ROOT / "data" / "qlib" / "cn_data" / "instruments" / "csi300.txt"
@@ -107,6 +108,8 @@ def export_execution_artifact(
     project_root: Path = PROJECT_ROOT,
 ) -> Path:
     """Create a normalized artifact from backend Qlib recorder exports, without retraining."""
+    if backtest_dir == DEFAULT_BACKTEST_DIR and (DEFAULT_FORWARD_DIR / "artifact_manifest.json").exists():
+        backtest_dir = DEFAULT_FORWARD_DIR
     task_path = backtest_dir / "task_config.json"
     predictions_path = backtest_dir / "predictions.csv"
     top5_path = backtest_dir / "top5_predictions.csv"
@@ -134,6 +137,7 @@ def export_execution_artifact(
             score=_finite_float(row["score"], "score"),
             rank=int(_finite_float(row["rank_desc"], "rank")),
             score_percentile=_finite_float(row["score_percentile"], "score_percentile"),
+            target_weight=_finite_float(row.get("target_weight", 0.0), "target_weight"),
         )
         for _, row in latest.iterrows()
     ]
@@ -144,7 +148,7 @@ def export_execution_artifact(
     ).replace(microsecond=0).isoformat()
     artifact = ExecutionArtifact(
         schema_version="quantbuddy.execution-artifact.v1",
-        source_kind="backend_qlib_recorder_export",
+        source_kind=("backend_qlib_forward_inference" if backtest_dir == DEFAULT_FORWARD_DIR else "backend_qlib_recorder_export"),
         is_mock=False,
         generated_at=generated_at,
         signal_date=signal_date.strftime("%Y-%m-%d"),
@@ -156,6 +160,7 @@ def export_execution_artifact(
         universe_path=_relative(universe_path, project_root),
         metadata=metadata,
         signals=signals,
+        data_as_of=str(manifest.get("data_as_of", signal_date.strftime("%Y-%m-%d"))),
     )
     output_dir.mkdir(parents=True, exist_ok=True)
     output_path = output_dir / f"{metadata.strategy_id}_{artifact.signal_date}_{source_hash[:12]}.json"
@@ -182,6 +187,7 @@ def artifact_from_dict(payload: dict[str, Any]) -> ExecutionArtifact:
             universe_path=str(payload["universe_path"]),
             metadata=StrategyExecutionMetadata(**payload["metadata"]),
             signals=[SignalRecord(**item) for item in payload["signals"]],
+            data_as_of=str(payload.get("data_as_of", payload["signal_date"])),
         )
     except (KeyError, TypeError, ValueError) as exc:
         raise ArtifactError("Execution artifact is missing required fields or has invalid types.") from exc
