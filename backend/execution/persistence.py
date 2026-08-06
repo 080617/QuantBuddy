@@ -6,7 +6,15 @@ import json
 from pathlib import Path
 
 from .exceptions import PlanningError
-from .models import ExecutionPlan
+from .models import (
+    CurrentPosition,
+    ExecutionBlocker,
+    ExecutionPlan,
+    ExecutionWarning,
+    PlannedOrder,
+    ReconciliationItem,
+    TargetPosition,
+)
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -73,3 +81,22 @@ def find_plan(plan_id: str, output_dir: Path = DEFAULT_PLAN_DIR) -> Path:
     if not path.exists():
         raise PlanningError(f"Plan not found: {plan_id}")
     return path
+
+
+def load_execution_plan(plan_id: str, output_dir: Path = DEFAULT_PLAN_DIR) -> ExecutionPlan:
+    payload = json.loads(find_plan(plan_id, output_dir).read_text(encoding="utf-8"))
+    try:
+        return ExecutionPlan(
+            **{
+                **payload,
+                "target_positions": [TargetPosition(**item) for item in payload["target_positions"]],
+                "current_positions": [CurrentPosition(**item) for item in payload["current_positions"]],
+                "reconciliation": [ReconciliationItem(**item) for item in payload["reconciliation"]],
+                "planned_sells": [PlannedOrder(**item) for item in payload["planned_sells"]],
+                "planned_buys": [PlannedOrder(**item) for item in payload["planned_buys"]],
+                "warnings": [ExecutionWarning(**item) for item in payload.get("warnings", [])],
+                "blockers": [ExecutionBlocker(**item) for item in payload.get("blockers", [])],
+            }
+        )
+    except (KeyError, TypeError, ValueError) as exc:
+        raise PlanningError(f"Invalid execution plan artifact: {plan_id}") from exc
