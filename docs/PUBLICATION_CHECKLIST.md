@@ -6,8 +6,8 @@
 - Data/Qlib utilities are grouped under `scripts/` and `configs/`.
 - Historical UI sources are contained in `docs/prototypes/`.
 - Engineering reports are contained in `docs/reports/`.
-- Current Community verification captures are contained in `docs/screenshots/community/`.
-- The root `QuantBuddy_Community_Final.html` is the canonical bilingual standalone prototype; the superseded single-language copy was removed.
+- Current English-mode product verification captures are contained in `docs/screenshots/prototype/`.
+- The root `QuantBuddy.html` is the canonical bilingual standalone product prototype; superseded and Community-only names were removed.
 - Local datasets, environments, caches, logs, and generated outputs are excluded by `.gitignore`.
 - A filename/content pattern scan found no private keys, common API-token formats, or hard-coded password assignments in the publishable tree.
 
@@ -24,5 +24,5 @@
 - Frontend production build: passed; all 24 Next.js routes completed static/dynamic build analysis.
 - Backend: all 143 tests passed in the isolated `.venv-futu` environment.
 - Repository safety checks: no accidentally tracked local environment/build directories, private-key/token pattern hits, publishable files over 50 MB, broken primary README links, or `git diff --check` errors.
-- Standalone Community HTML: bilingual language-layer syntax and canonical-file checks passed. Historical interaction and responsive-layout captures remain under `docs/screenshots/community/`.
+- Standalone product HTML: bilingual language-layer syntax and canonical-file checks passed. Current English interaction and responsive-layout captures are stored under `docs/screenshots/prototype/`.
 

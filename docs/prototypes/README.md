@@ -10,5 +10,5 @@ Key references:
 - The retained backtest research source — backtest research visual reference.
 - The retained onboarding HTML and stylesheet — onboarding/application-shell reference.
 
-Superseded intermediate integrations and duplicate workspace drafts were removed during repository cleanup. Use the repository-root `QuantBuddy_Community_Final.html` for the current standalone Community demo, and `frontend/` for the formal application.
+Superseded intermediate integrations and duplicate workspace drafts were removed during repository cleanup. Use the repository-root `QuantBuddy.html` for the current standalone product prototype, and `frontend/` for the formal application.
 

@@ -31,4 +31,4 @@ pnpm start
 - Paper/simulated-account UI: `src/components/paper/`
 - Client adapters and API access: `src/services/`
 
-The standalone `QuantBuddy_Community_Final.html` in the repository root is a separate bilingual, browser-local demonstration and does not replace the formal Next.js application.
+The standalone `QuantBuddy.html` in the repository root is a separate bilingual, browser-local product demonstration and does not replace the formal Next.js application.
