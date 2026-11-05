@@ -23,7 +23,7 @@ const APP_NAV_ITEMS = [
   { label: "回测研究", href: "/backtest", icon: ChartNoAxesCombined },
   { label: "模拟盘", href: "/paper", icon: MonitorUp },
   { label: "社区", href: "/community", icon: MessageCircle },
-  { label: "QuantBuddy", href: "/quantbuddy", icon: Bot },
+  { label: "我的 Quant Buddy", href: "/quantbuddy", icon: Bot },
   { label: "设置", href: "/settings", icon: Settings },
 ] as const;
 

@@ -66,6 +66,24 @@ class OrderBookTop:
 
 
 @dataclass(frozen=True, slots=True)
+class OrderBookDiagnostics:
+    subscription_succeeded: bool
+    order_book_attempt_count: int
+    first_order_book_ask_time: str | None
+    final_order_book_ask_time: str | None
+    final_order_book_age_seconds: float | None
+    best_ask: float | None
+    freshness_threshold_seconds: int
+    acquisition_timeout_seconds: int
+
+
+@dataclass(frozen=True, slots=True)
+class OrderBookAcquisition:
+    order_book: OrderBookTop | None
+    diagnostics: OrderBookDiagnostics
+
+
+@dataclass(frozen=True, slots=True)
 class OrderRecord:
     order_id: str
     code: str

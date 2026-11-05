@@ -7,12 +7,19 @@
 node_modules/
 .next/
 .pnpm-store/
+dist/
+coverage/
+.turbo/
 *.tsbuildinfo
 
 # Python caches
 __pycache__/
 *.py[cod]
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
 
 # Local datasets and generated experiment artifacts
 /data/
@@ -26,6 +33,8 @@ __pycache__/
 
 # Futu smoke-test local runtime and private outputs
 /.venv-futu/
+/.venv*/
+/.qa-edge-*/
 /backend/futu_smoke_test/.env*
 /backend/futu_smoke_test/logs/
 /backend/futu_smoke_test/results/
@@ -43,3 +52,6 @@ __pycache__/
 Thumbs.db
 .vscode/
 .idea/
+
+# Local QA exports that are not curated documentation
+/QuantBuddy_Community_Final_QA/

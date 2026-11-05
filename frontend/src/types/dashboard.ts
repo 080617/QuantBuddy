@@ -77,15 +77,15 @@ export interface LatestSignals {
 export interface OperationCandidate {
   stock: string;
   stockName: string;
-  score: number;
-  rank: number;
+  score: number | null;
+  rank: number | null;
 }
 
 export interface OperationPreview {
   type: string;
   label: string;
-  buyCandidate: OperationCandidate;
-  sellCandidate: OperationCandidate;
+  buyCandidate: OperationCandidate | null;
+  sellCandidate: OperationCandidate | null;
   previewOnly: boolean;
   note: string;
 }

@@ -22,6 +22,7 @@ from zoneinfo import ZoneInfo
 from backend.futu import AccountService, FutuClient, OrderService, QuoteService
 from backend.futu.code_mapper import futu_to_qlib, qlib_to_futu
 from backend.futu.models import (
+    OrderBookDiagnostics,
     OrderBookTop,
     OrderRecord,
     OrderSide,
@@ -47,6 +48,8 @@ TERMINAL_ORDER_STATES = {"FILLED", "CANCELLED", "REJECTED", "FAILED"}
 
 class CanarySessionState(str, Enum):
     CREATED = "CREATED"
+    PRECHECKING = "PRECHECKING"
+    READY = "READY"
     PREFLIGHT_READY = "PREFLIGHT_READY"
     AWAITING_CONFIRMATION = "AWAITING_CONFIRMATION"
     ABORTED_BY_USER = "ABORTED_BY_USER"
@@ -61,6 +64,16 @@ class CanarySessionState(str, Enum):
     PAUSED = "PAUSED"
     FAILED = "FAILED"
     UNKNOWN_REQUIRES_REVIEW = "UNKNOWN_REQUIRES_REVIEW"
+
+
+RESUMABLE_PREFLIGHT_STATES = {
+    CanarySessionState.CREATED,
+    CanarySessionState.PRECHECKING,
+    CanarySessionState.READY,
+    CanarySessionState.PREFLIGHT_READY,  # backward-compatible Phase 2D-B1 artifact
+    CanarySessionState.PAUSED,
+    CanarySessionState.ABORTED_BY_USER,
+}
 
 
 @dataclass(frozen=True, slots=True)
@@ -148,6 +161,7 @@ class CanarySession:
     first_snapshot_hash: str
     final_snapshot_hash: str
     candidate: CanaryCandidate | None
+    order_book_diagnostics: OrderBookDiagnostics | None = None
     blockers: list[ExecutionBlocker] = field(default_factory=list)
     warnings: list[ExecutionWarning] = field(default_factory=list)
     place_attempted: bool = False
@@ -179,6 +193,7 @@ class CanarySession:
 class CanaryPrecheck:
     snapshot: ShadowSnapshot
     order_book: OrderBookTop | None
+    order_book_diagnostics: OrderBookDiagnostics
     candidate: CanaryCandidate | None
     blockers: list[ExecutionBlocker]
     warnings: list[ExecutionWarning]
@@ -249,11 +264,28 @@ def build_canary_precheck(
     now: datetime,
     config: CanaryConfig,
     session_has_order_id: bool = False,
+    order_book_diagnostics: OrderBookDiagnostics | None = None,
 ) -> CanaryPrecheck:
     blockers: list[ExecutionBlocker] = []
     warnings: list[ExecutionWarning] = []
     order = select_canary_order(plan)
     quote = snapshot.quotes.get(order.code)
+    if order_book_diagnostics is None:
+        parsed_book_time = _parse_time(order_book.server_time) if order_book else None
+        book_age = (
+            abs((now.astimezone(timezone.utc) - parsed_book_time).total_seconds())
+            if parsed_book_time else None
+        )
+        order_book_diagnostics = OrderBookDiagnostics(
+            subscription_succeeded=True,
+            order_book_attempt_count=1,
+            first_order_book_ask_time=order_book.server_time if order_book else None,
+            final_order_book_ask_time=order_book.server_time if order_book else None,
+            final_order_book_age_seconds=book_age,
+            best_ask=order_book.best_ask if order_book else None,
+            freshness_threshold_seconds=config.order_book_max_age_seconds,
+            acquisition_timeout_seconds=10,
+        )
     if plan.plan_id == "" or plan.source_hash != expected_source_hash:
         blockers.append(ExecutionBlocker("SOURCE_HASH_CHANGED", "Plan/source identity changed."))
     if plan.strategy_id != "strategy-hs300-lightgbm-top5":
@@ -281,7 +313,15 @@ def build_canary_precheck(
         blockers.append(ExecutionBlocker("SUSPENDED_SECURITY", "Target security is suspended.", order.code))
     elif quote.lot_size <= 0:
         blockers.append(ExecutionBlocker("INVALID_LOT_SIZE", "Current lot size is invalid.", order.code))
-    elif order_book is None or not _finite_positive(order_book.best_ask):
+    elif order_book is None:
+        if (
+            order_book_diagnostics.best_ask is not None
+            and _finite_positive(order_book_diagnostics.best_ask)
+        ):
+            blockers.append(ExecutionBlocker("ORDER_BOOK_STALE", "Order book server time is missing or stale.", order.code))
+        else:
+            blockers.append(ExecutionBlocker("BEST_ASK_MISSING", "Order book has no valid best ask; no last-price fallback is allowed.", order.code))
+    elif not _finite_positive(order_book.best_ask):
         blockers.append(ExecutionBlocker("BEST_ASK_MISSING", "Order book has no valid best ask; no last-price fallback is allowed.", order.code))
     else:
         if order_book.code != order.code:
@@ -321,29 +361,42 @@ def build_canary_precheck(
                 selection_reason="minimum estimated_value, then code, then sequence",
                 remark=f"QB-CANARY-{session_suffix}",
             )
-    return CanaryPrecheck(snapshot, order_book, candidate, blockers, warnings)
+    return CanaryPrecheck(snapshot, order_book, order_book_diagnostics, candidate, blockers, warnings)
 
 
-def collect_canary_snapshot(plan: ExecutionPlan, execution_date: date) -> tuple[ShadowSnapshot, OrderBookTop | None]:
+def collect_canary_snapshot(
+    plan: ExecutionPlan,
+    execution_date: date,
+) -> tuple[ShadowSnapshot, OrderBookTop | None, OrderBookDiagnostics]:
     snapshot = collect_readonly_shadow_snapshot(plan, execution_date)
     order = select_canary_order(plan)
     with FutuClient() as client:
         futu_code = qlib_to_futu(order.code)
-        book = QuoteService(client).get_order_book_top(futu_code)
-        maximum = OrderService(client).get_max_tradable_quantity(futu_code, book.best_ask)
-    normalized_maximum = TradableQuantity(
-        code=order.code,
-        price=maximum.price,
-        maximum_cash_buy=maximum.maximum_cash_buy,
-        maximum_position_sell=maximum.maximum_position_sell,
-        lot_size=maximum.lot_size,
-    )
+        acquisition = QuoteService(client).acquire_fresh_order_book_top(
+            futu_code,
+            freshness_threshold_seconds=15,
+            acquisition_timeout_seconds=10,
+            poll_interval_seconds=1,
+            maximum_attempts=10,
+        )
+        book = acquisition.order_book
+        maximum = (
+            OrderService(client).get_max_tradable_quantity(futu_code, book.best_ask)
+            if book else None
+        )
+    maximum_quantities = dict(snapshot.maximum_quantities)
+    if maximum is not None:
+        maximum_quantities[order.code] = TradableQuantity(
+            code=order.code,
+            price=maximum.price,
+            maximum_cash_buy=maximum.maximum_cash_buy,
+            maximum_position_sell=maximum.maximum_position_sell,
+            lot_size=maximum.lot_size,
+        )
     return (
-        replace(
-            snapshot,
-            maximum_quantities={**snapshot.maximum_quantities, order.code: normalized_maximum},
-        ),
-        replace(book, code=futu_to_qlib(book.code)),
+        replace(snapshot, maximum_quantities=maximum_quantities),
+        replace(book, code=futu_to_qlib(book.code)) if book else None,
+        acquisition.diagnostics,
     )
 
 
@@ -356,6 +409,10 @@ def _session_from_dict(payload: dict) -> CanarySession:
         **payload,
         "state": CanarySessionState(payload["state"]),
         "candidate": CanaryCandidate(**payload["candidate"]) if payload.get("candidate") else None,
+        "order_book_diagnostics": (
+            OrderBookDiagnostics(**payload["order_book_diagnostics"])
+            if payload.get("order_book_diagnostics") else None
+        ),
         "blockers": [ExecutionBlocker(**item) for item in payload.get("blockers", [])],
         "warnings": [ExecutionWarning(**item) for item in payload.get("warnings", [])],
         "reconciliation": CanaryReconciliation(**payload["reconciliation"]) if payload.get("reconciliation") else None,
@@ -420,28 +477,86 @@ class CanaryOrchestrator:
         session.events.append({"sequence": len(session.events) + 1, "at": self.clock().isoformat(), "type": kind, "message": message})
         session.updated_at = self.clock().isoformat()
 
+    def _snapshot(self, plan: ExecutionPlan) -> tuple[ShadowSnapshot, OrderBookTop | None, OrderBookDiagnostics | None]:
+        result = self.snapshot_provider(plan, self.clock().date())
+        if len(result) == 2:
+            snapshot, order_book = result
+            return snapshot, order_book, None
+        snapshot, order_book, diagnostics = result
+        return snapshot, order_book, diagnostics
+
+    def _record_order_book_diagnostic(self, session: CanarySession) -> None:
+        diagnostic = session.order_book_diagnostics
+        if diagnostic and (
+            diagnostic.order_book_attempt_count > 1
+            or not diagnostic.first_order_book_ask_time
+        ):
+            self._event(
+                session,
+                "ORDER_BOOK_FRESHNESS_ACQUISITION",
+                "Bounded ORDER_BOOK acquisition waited for a timestamped fresh ask."
+            )
+
+    @staticmethod
+    def _require_preflight_resume_safe(
+        session: CanarySession,
+        plan: ExecutionPlan,
+        expected_source_hash: str,
+    ) -> None:
+        if session.plan_id != plan.plan_id:
+            raise PlanningError("Existing canary session belongs to a different plan.")
+        if (
+            session.plan_digest != plan_digest(plan)
+            or session.plan_source_hash != plan.source_hash
+            or plan.source_hash != expected_source_hash
+        ):
+            raise PlanningError("Existing canary session cannot resume because the plan or source hash changed.")
+        has_order_history = any((
+            session.order_id is not None,
+            session.place_attempted,
+            session.place_call_count > 0,
+            session.submitted_at is not None,
+            session.initial_status is not None,
+            session.final_status is not None,
+        ))
+        if has_order_history or session.state not in RESUMABLE_PREFLIGHT_STATES:
+            raise PlanningError(
+                "Existing canary session has order history or is not in a resumable preflight state; "
+                "use canary-status or canary-reconcile."
+            )
+
     def preflight(self, plan: ExecutionPlan, expected_source_hash: str) -> CanarySession:
         existing = find_canary_session(plan.plan_id, self.session_dir)
-        if existing and (existing.order_id or existing.place_attempted or existing.state not in {CanarySessionState.ABORTED_BY_USER, CanarySessionState.PAUSED, CanarySessionState.FAILED}):
-            raise PlanningError("Existing canary session cannot create another order attempt.")
-        snap, book = self.snapshot_provider(plan, self.clock().date())
+        if existing:
+            self._require_preflight_resume_safe(existing, plan, expected_source_hash)
+            session = existing
+        else:
+            now = self.clock().isoformat()
+            session = CanarySession(
+                schema_version="quantbuddy.canary-session.v1",
+                session_id=_stable_id("canary", {"plan": plan.plan_id, "source": plan.source_hash,
+                                                  "account": plan.account_id_masked}),
+                plan_id=plan.plan_id, plan_digest=plan_digest(plan), plan_source_hash=plan.source_hash,
+                strategy_id=plan.strategy_id, execution_mode="CANARY", canary_order_limit=1,
+                full_plan_completed=False, created_at=now, updated_at=now,
+                state=CanarySessionState.CREATED, account_id_masked=plan.account_id_masked,
+                first_snapshot_hash="", final_snapshot_hash="", candidate=None,
+            )
+        session.state = CanarySessionState.PRECHECKING
+        self._event(session, "PREFLIGHT_STARTED", "Fresh read-only canary preflight started.")
+        save_canary_session(session, self.session_dir)
+        snap, book, diagnostics = self._snapshot(plan)
         result = build_canary_precheck(plan, snap, book, expected_source_hash=expected_source_hash,
                                        now=self.clock(), config=self.config,
-                                       session_has_order_id=bool(existing and existing.order_id))
-        now = self.clock().isoformat()
-        session = existing or CanarySession(
-            schema_version="quantbuddy.canary-session.v1",
-            session_id=_stable_id("canary", {"plan": plan.plan_id, "source": plan.source_hash,
-                                              "account": snap.account.account_id_masked}),
-            plan_id=plan.plan_id, plan_digest=plan_digest(plan), plan_source_hash=plan.source_hash,
-            strategy_id=plan.strategy_id, execution_mode="CANARY", canary_order_limit=1,
-            full_plan_completed=False, created_at=now, updated_at=now,
-            state=CanarySessionState.CREATED, account_id_masked=snap.account.account_id_masked,
-            first_snapshot_hash=snapshot_hash(snap), final_snapshot_hash="", candidate=result.candidate,
-        )
+                                       session_has_order_id=bool(existing and existing.order_id),
+                                       order_book_diagnostics=diagnostics)
+        if not session.first_snapshot_hash:
+            session.first_snapshot_hash = snapshot_hash(snap)
         session.candidate=result.candidate; session.blockers=result.blockers; session.warnings=result.warnings
-        session.state=CanarySessionState.PREFLIGHT_READY if not result.blockers else CanarySessionState.PAUSED
-        self._event(session, "PREFLIGHT", "Read-only canary preflight completed.")
+        session.order_book_diagnostics=result.order_book_diagnostics
+        session.state=CanarySessionState.READY if not result.blockers else CanarySessionState.PAUSED
+        self._record_order_book_diagnostic(session)
+        self._event(session, "PREFLIGHT_COMPLETED", "Fresh read-only canary preflight completed.")
         save_canary_session(session, self.session_dir)
         return session
 
@@ -475,11 +590,14 @@ class CanaryOrchestrator:
             self._event(session, "FINAL_PRECHECK_BLOCKED", "Persisted plan identity changed after confirmation.")
             save_canary_session(session, self.session_dir)
             return session
-        snap, book = self.snapshot_provider(fresh_plan, self.clock().date())
+        snap, book, diagnostics = self._snapshot(fresh_plan)
         final = build_canary_precheck(fresh_plan, snap, book, expected_source_hash=expected_source_hash,
                                       now=self.clock(), config=self.config,
-                                      session_has_order_id=bool(session.order_id))
+                                      session_has_order_id=bool(session.order_id),
+                                      order_book_diagnostics=diagnostics)
         session.final_snapshot_hash=snapshot_hash(snap); session.blockers=final.blockers
+        session.order_book_diagnostics=final.order_book_diagnostics
+        self._record_order_book_diagnostic(session)
         if final.blockers or not final.candidate:
             session.state=CanarySessionState.PAUSED; self._event(session,"FINAL_PRECHECK_BLOCKED","Final fresh precheck failed.")
             save_canary_session(session,self.session_dir); return session
@@ -548,7 +666,7 @@ class CanaryOrchestrator:
             latest=final; dealt=int(final.dealt_quantity); remaining=session.candidate.canary_qty-dealt
             mapped=map_order_status(final.status); session.final_status=mapped
         session.state=CanarySessionState.RECONCILING
-        after,_=self.snapshot_provider(plan,self.clock().date())
+        after,_,_=self._snapshot(plan)
         before_qty=next((item.quantity for item in before.positions if item.code==session.candidate.code),0)
         after_qty=next((item.quantity for item in after.positions if item.code==session.candidate.code),0)
         actual=after_qty-before_qty; difference=actual-dealt
@@ -589,7 +707,7 @@ class CanaryOrchestrator:
         if plan_digest(plan) != session.plan_digest or plan.source_hash != session.plan_source_hash:
             raise PlanningError("Cannot reconcile because the persisted plan changed.")
         item=self.gateway.get_order(session.order_id)
-        snapshot,_=self.snapshot_provider(plan,self.clock().date())
+        snapshot,_,_=self._snapshot(plan)
         if item is None or session.candidate is None:
             session.state=CanarySessionState.UNKNOWN_REQUIRES_REVIEW
             session.final_status="UNKNOWN"

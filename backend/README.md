@@ -19,7 +19,7 @@ This backend package wraps the previously verified Futu smoke-test operations be
 
 ## Python environment
 
-From `D:\QuantBuddy` in PowerShell:
+From the repository root in PowerShell:
 
 ```powershell
 python -m venv .venv-futu
@@ -45,6 +45,18 @@ python -m backend.futu.smoke_readonly
 ```
 
 It performs a health check, account selection, funds, positions, one quote snapshot, and current/historical order reads. It cannot submit or cancel an order.
+
+## Local read-only Web API
+
+Install the backend requirements, keep FutuOpenD signed in, and start the API from the repository root:
+
+```powershell
+.\.venv-futu\Scripts\python.exe -m uvicorn backend.api.main:app --host 127.0.0.1 --port 8000
+```
+
+The API exposes only five `GET` endpoints under `/api/futu`: `status`, `account`, `positions`, `orders`, and `portfolio`. It is restricted to the existing CN simulated-account services, masks account and order identifiers, and allows browser requests only from `http://localhost:3000`. No order placement, cancellation, modification, Canary, or execution route is exposed.
+
+The frontend reads the API base URL from `NEXT_PUBLIC_BACKEND_URL` (default local value: `http://127.0.0.1:8000`).
 
 ## Explicit simulated order enablement
 

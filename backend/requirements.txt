@@ -1,2 +1,5 @@
 ﻿futu-api==10.9.6908
 pandas>=2.2,<4
+fastapi>=0.115,<1
+uvicorn>=0.30,<1
+httpx>=0.27,<1

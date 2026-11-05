@@ -11,6 +11,7 @@ import {
   adaptLatestSignals,
   adaptMonthlyReturns,
   adaptNavCurve,
+  adaptOperationPreview,
   adaptStrategyCard,
   adaptStrategyConfig,
   type DashboardJsonSource,
@@ -27,6 +28,7 @@ import type {
   LatestSignals,
   MonthlyReturn,
   NavPoint,
+  OperationPreview,
   StrategyConfig,
 } from "@/types/dashboard";
 import type { Strategy } from "@/types/strategy";
@@ -46,6 +48,7 @@ export interface DashboardService {
   getMonthlyReturns(): Promise<readonly MonthlyReturn[]>;
   getCurrentHoldings(): Promise<HistoricalHoldings>;
   getLatestSignals(): Promise<LatestSignals>;
+  getOperationPreview(): Promise<OperationPreview>;
   getStrategies(): Promise<readonly Strategy[]>;
 }
 
@@ -68,5 +71,7 @@ export const dashboardService: DashboardService = {
   getCurrentHoldings: () =>
     Promise.resolve(adaptHistoricalHoldings(holdingsSource)),
   getLatestSignals: () => Promise.resolve(adaptLatestSignals(signalsSource)),
+  getOperationPreview: () =>
+    Promise.resolve(adaptOperationPreview(operationSource)),
   getStrategies: () => Promise.resolve([adaptStrategyCard(dashboardSource)]),
 };

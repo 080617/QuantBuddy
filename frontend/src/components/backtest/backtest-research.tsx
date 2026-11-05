@@ -15,6 +15,8 @@ import { EquityCurveChart } from "@/components/backtest/equity-curve-chart";
 import { MetricCard } from "@/components/backtest/metric-card";
 import { MetricExplanation } from "@/components/backtest/metric-explanation";
 import { MonthlyReturnHeatmap } from "@/components/backtest/monthly-return-heatmap";
+import { BacktestResearchInsights } from "@/components/backtest/backtest-research-insights";
+import type { BacktestInsightsState } from "@/services/backtest-insights-service";
 import type { BacktestMetrics, HistoricalHoldings, MonthlyReturn, NavPoint, StrategyConfig } from "@/types/dashboard";
 
 const percent = new Intl.NumberFormat("zh-CN", { style: "percent", minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -29,12 +31,14 @@ export function BacktestResearch({
   navCurve,
   monthlyReturns,
   holdings,
+  insights,
 }: {
   strategy: StrategyConfig | null;
   metrics: BacktestMetrics | null;
   navCurve: readonly NavPoint[];
   monthlyReturns: readonly MonthlyReturn[];
   holdings: HistoricalHoldings | null;
+  insights: BacktestInsightsState;
 }) {
   return (
     <div className="qb-backtest-page">
@@ -72,8 +76,9 @@ export function BacktestResearch({
         <EquityCurveChart points={navCurve} />
         <MetricExplanation />
       </div>
-      <div className="qb-backtest-bottom-grid">
+      <div className="qb-research-flow">
         <MonthlyReturnHeatmap returns={monthlyReturns} />
+        <BacktestResearchInsights state={insights} />
         <BacktestHoldingsTable data={holdings} />
       </div>
       <BacktestDisclosure />

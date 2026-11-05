@@ -1,5 +1,12 @@
-import { beforeEach, describe, expect, it } from "vitest";
+import { readFile } from "node:fs/promises";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+import {
+  hasHistoricalSignals,
+  hasOperationPreviewData,
+  loadBacktestInsightsForContext,
+} from "@/services/backtest-insights-service";
 import { communityService } from "@/services/community-service";
+import { dashboardService } from "@/services/dashboard-service";
 import {
   createFactorPublishPrefill,
   createModulePublishPrefill,
@@ -107,5 +114,72 @@ describe("Factor Set Service 校验", () => {
     await expectCode(["builtin-mom20", "builtin-mom20"], "FACTOR_SET_TOO_SMALL");
     await expectCode(["qlib-alpha158", "builtin-mom20"], "FACTOR_SET_NESTING_NOT_ALLOWED");
     await expectCode(["builtin-mom20", "deleted-factor"], "FACTOR_SET_REFERENCE_NOT_FOUND");
+  });
+});
+
+describe("Backtest Phase 1D-B 历史研究数据", () => {
+  it("通过正式 Dashboard Service 返回最新模型信号，而不是在组件中硬编码 Top-5", async () => {
+    const signals = await dashboardService.getLatestSignals();
+    expect(signals.status).toBe("historical-model-output");
+    expect(signals.signals).toHaveLength(5);
+
+    const componentSource = await readFile(
+      new URL("../components/backtest/backtest-research-insights.tsx", import.meta.url),
+      "utf8",
+    );
+    signals.signals.forEach((signal) => {
+      expect(componentSource).not.toContain(signal.stock);
+    });
+  });
+
+  it("通过正式 Dashboard Service 返回历史操作预览及 previewOnly 状态", async () => {
+    const preview = await dashboardService.getOperationPreview();
+    expect(preview.previewOnly).toBe(true);
+    expect(preview.type).toBeTruthy();
+    expect(preview.buyCandidate?.stock).toBeTruthy();
+    expect(preview.sellCandidate?.stock).toBeTruthy();
+  });
+
+  it("ready 策略可以读取历史信号和操作预览", async () => {
+    const context = await workspaceService.resolveBacktestContext("strategy-hs300-lightgbm-top5");
+    expect(context.status).toBe("ready");
+    const insights = await loadBacktestInsightsForContext(context, dashboardService);
+    expect(insights?.signals.status).toBe("ready");
+    expect(insights?.operationPreview.status).toBe("ready");
+  });
+
+  it("not_backtested 不读取基准信号，not_found 不读取基准操作预览", async () => {
+    const source = {
+      getLatestSignals: vi.fn(dashboardService.getLatestSignals),
+      getOperationPreview: vi.fn(dashboardService.getOperationPreview),
+    };
+    const draft = await workspaceService.createCompleteStrategy({
+      name: "Phase 1D-B 未回测策略",
+      universe: "沪深300",
+      factorAssetIds: ["builtin-mom20"],
+      modelId: "linear",
+      modelName: "Linear",
+      moduleSelections: {},
+      status: "draft",
+    });
+    const notBacktested = await workspaceService.resolveBacktestContext(draft.id);
+    expect(await loadBacktestInsightsForContext(notBacktested, source)).toBeNull();
+    expect(source.getLatestSignals).not.toHaveBeenCalled();
+
+    const notFound = await workspaceService.resolveBacktestContext("missing-strategy");
+    expect(await loadBacktestInsightsForContext(notFound, source)).toBeNull();
+    expect(source.getOperationPreview).not.toHaveBeenCalled();
+  });
+
+  it("空信号和无操作数据能够进入空状态", () => {
+    expect(hasHistoricalSignals({ date: "2026-07-30", status: "historical-model-output", signals: [] })).toBe(false);
+    expect(hasOperationPreviewData({
+      type: "",
+      label: "",
+      buyCandidate: null,
+      sellCandidate: null,
+      previewOnly: true,
+      note: "",
+    })).toBe(false);
   });
 });

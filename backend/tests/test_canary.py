@@ -10,12 +10,20 @@ import unittest
 from backend.execution.canary import (
     CONFIRMATION, CanaryConfig, CanaryOrchestrator, CanarySessionState,
     RealCanaryGateway, build_canary_precheck, collect_canary_snapshot,
-    legalize_tick, load_canary_session, map_order_status, select_canary_order,
+    legalize_tick, load_canary_session, map_order_status, save_canary_session,
+    select_canary_order,
 )
 from backend.execution.exceptions import PlanningError
 from backend.execution.models import CurrentPosition
 from backend.execution.order_planner import build_execution_plan
-from backend.futu.models import OrderBookTop, OrderRecord, PlaceOrderResult, QuoteSnapshot, TradableQuantity
+from backend.futu.models import (
+    OrderBookDiagnostics,
+    OrderBookTop,
+    OrderRecord,
+    PlaceOrderResult,
+    QuoteSnapshot,
+    TradableQuantity,
+)
 
 from backend.tests.execution_test_helpers import account, artifact, permissive_config, validation
 
@@ -109,6 +117,10 @@ class CanaryTests(unittest.TestCase):
             snapshot_provider=provider or Provider(self.plan),session_dir=self.directory,
             plan_loader=lambda _plan_id: self.plan,
             clock=self.clock,sleeper=self.clock.sleep)
+    def paused_unsubmitted(self,gateway=None,provider=None):
+        runner=self.runner(gateway,provider); session=runner.preflight(self.plan,self.plan.source_hash)
+        session.state=CanarySessionState.PAUSED; save_canary_session(session,self.directory)
+        return runner,session
 
     def test_01_stable_smallest_estimated_value_selection(self):
         expected=min(self.plan.planned_buys,key=lambda x:(x.estimated_value,x.code,x.sequence))
@@ -226,6 +238,90 @@ class CanaryTests(unittest.TestCase):
         recovered=self.runner(gateway,Provider(self.plan,before=after,after=after)).reconcile(session.session_id)
         self.assertEqual(recovered.state,CanarySessionState.CANARY_FILLED)
         self.assertEqual((gateway.place_count,gateway.cancel_count,gateway.query_count),(0,0,1))
+    def test_34_preflight_persists_safe_order_book_diagnostics(self):
+        snapshot=make_snapshot(self.plan); order_book=book(self.plan)
+        diagnostic=OrderBookDiagnostics(True,2,None,"2026-07-31 09:30:00",0,10,15,10)
+        provider=lambda _plan,_day:(snapshot,order_book,diagnostic)
+        session=self.runner(provider=provider).preflight(self.plan,self.plan.source_hash)
+        payload=session.to_dict()
+        self.assertEqual(payload["order_book_diagnostics"]["order_book_attempt_count"],2)
+        self.assertIn("ORDER_BOOK_FRESHNESS_ACQUISITION",{event["type"] for event in payload["events"]})
+    def test_35_positive_ask_without_fresh_time_is_order_book_stale(self):
+        diagnostic=OrderBookDiagnostics(True,10,None,None,None,10,15,10)
+        result=build_canary_precheck(
+            self.plan,make_snapshot(self.plan),None,
+            expected_source_hash=self.plan.source_hash,now=FIXED,config=config(),
+            order_book_diagnostics=diagnostic,
+        )
+        codes={blocker.code for blocker in result.blockers}
+        self.assertIn("ORDER_BOOK_STALE",codes)
+        self.assertNotIn("BEST_ASK_MISSING",codes)
+    def test_36_paused_never_submitted_session_can_preflight_again(self):
+        runner,_=self.paused_unsubmitted()
+        resumed=runner.preflight(self.plan,self.plan.source_hash)
+        self.assertEqual(resumed.state,CanarySessionState.READY)
+    def test_37_repeated_preflight_reuses_session_id(self):
+        runner,session=self.paused_unsubmitted()
+        self.assertEqual(runner.preflight(self.plan,self.plan.source_hash).session_id,session.session_id)
+    def test_38_repeated_preflight_preserves_and_appends_events(self):
+        runner,session=self.paused_unsubmitted(); original=list(session.events)
+        resumed=runner.preflight(self.plan,self.plan.source_hash)
+        self.assertEqual(resumed.events[:len(original)],original)
+        self.assertEqual([event["type"] for event in resumed.events[-2:]],
+                         ["PREFLIGHT_STARTED","PREFLIGHT_COMPLETED"])
+    def test_39_repeated_preflight_never_places(self):
+        gateway=Gateway(); runner,_=self.paused_unsubmitted(gateway)
+        runner.preflight(self.plan,self.plan.source_hash)
+        self.assertEqual(gateway.place_count,0)
+    def test_40_repeated_preflight_never_cancels_or_modifies(self):
+        gateway=Gateway(); runner,_=self.paused_unsubmitted(gateway)
+        runner.preflight(self.plan,self.plan.source_hash)
+        self.assertEqual(gateway.cancel_count,0)
+        self.assertNotIn("modify",inspect.getsource(CanaryOrchestrator.preflight))
+    def test_41_repeated_preflight_keeps_place_count_zero(self):
+        runner,_=self.paused_unsubmitted(); resumed=runner.preflight(self.plan,self.plan.source_hash)
+        self.assertEqual(resumed.place_call_count,0)
+        self.assertFalse(resumed.place_attempted)
+    def test_42_repeated_preflight_creates_no_second_intent_or_session(self):
+        runner,session=self.paused_unsubmitted(); resumed=runner.preflight(self.plan,self.plan.source_hash)
+        self.assertEqual(resumed.candidate.code,session.candidate.code)
+        self.assertEqual(len(list(self.directory.glob("*.canary.json"))),1)
+    def test_43_successful_recheck_moves_paused_session_to_ready(self):
+        runner,_=self.paused_unsubmitted()
+        self.assertEqual(runner.preflight(self.plan,self.plan.source_hash).state,CanarySessionState.READY)
+    def test_44_failed_recheck_remains_paused(self):
+        stale=book(self.plan,when="2026-07-31 09:00:00")
+        provider=Provider(self.plan,orderbook=stale); runner=self.runner(provider=provider)
+        first=runner.preflight(self.plan,self.plan.source_hash)
+        self.assertEqual(first.state,CanarySessionState.PAUSED)
+        second=runner.preflight(self.plan,self.plan.source_hash)
+        self.assertEqual(second.state,CanarySessionState.PAUSED)
+    def test_45_existing_order_id_blocks_preflight(self):
+        runner,session=self.paused_unsubmitted(); session.order_id="known-order"; save_canary_session(session,self.directory)
+        with self.assertRaises(PlanningError): runner.preflight(self.plan,self.plan.source_hash)
+    def test_46_place_attempted_blocks_preflight(self):
+        runner,session=self.paused_unsubmitted(); session.place_attempted=True; save_canary_session(session,self.directory)
+        with self.assertRaises(PlanningError): runner.preflight(self.plan,self.plan.source_hash)
+    def test_47_positive_place_call_count_blocks_preflight(self):
+        runner,session=self.paused_unsubmitted(); session.place_call_count=1; save_canary_session(session,self.directory)
+        with self.assertRaises(PlanningError): runner.preflight(self.plan,self.plan.source_hash)
+    def test_48_source_hash_change_blocks_resume(self):
+        runner,_=self.paused_unsubmitted(); changed=replace(self.plan,source_hash="changed")
+        with self.assertRaises(PlanningError): runner.preflight(changed,changed.source_hash)
+    def test_49_completed_session_cannot_preflight_again(self):
+        runner,session=self.paused_unsubmitted(); session.state=CanarySessionState.CANARY_FILLED
+        save_canary_session(session,self.directory)
+        with self.assertRaises(PlanningError): runner.preflight(self.plan,self.plan.source_hash)
+    def test_50_submission_metadata_blocks_preflight(self):
+        for field_name,value in [("submitted_at",FIXED.isoformat()),("initial_status","SUBMITTED"),("final_status","CANCELLED")]:
+            with self.subTest(field=field_name):
+                with tempfile.TemporaryDirectory(dir=Path.cwd()) as directory:
+                    runner=CanaryOrchestrator(config=config(),gateway=Gateway(),snapshot_provider=Provider(self.plan),
+                        session_dir=Path(directory),plan_loader=lambda _plan_id:self.plan,
+                        clock=self.clock,sleeper=self.clock.sleep)
+                    session=runner.preflight(self.plan,self.plan.source_hash); session.state=CanarySessionState.PAUSED
+                    setattr(session,field_name,value); save_canary_session(session,Path(directory))
+                    with self.assertRaises(PlanningError): runner.preflight(self.plan,self.plan.source_hash)
 
 
 if __name__ == "__main__": unittest.main()

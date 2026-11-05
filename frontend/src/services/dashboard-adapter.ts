@@ -87,20 +87,17 @@ export interface SignalsJsonSource {
 export interface OperationJsonSource {
   type: string;
   label: string;
-  buyCandidate: {
-    rank: number;
-    instrument: string;
-    name: string;
-    score: number;
-  };
-  sellCandidate: {
-    instrument: string;
-    name: string;
-    score: number;
-    rank: number;
-  };
+  buyCandidate?: OperationCandidateJsonSource | null;
+  sellCandidate?: OperationCandidateJsonSource | null;
   previewOnly: boolean;
   note: string;
+}
+
+interface OperationCandidateJsonSource {
+  rank?: number | null;
+  instrument?: string | null;
+  name?: string | null;
+  score?: number | null;
 }
 
 function universeName(source: DashboardJsonSource): string {
@@ -219,21 +216,23 @@ export function adaptLatestSignals(source: SignalsJsonSource): LatestSignals {
 export function adaptOperationPreview(
   source: OperationJsonSource,
 ): OperationPreview {
+  const adaptCandidate = (
+    candidate: OperationCandidateJsonSource | null | undefined,
+  ): OperationPreview["buyCandidate"] => {
+    if (!candidate || (!candidate.instrument && !candidate.name)) return null;
+    return {
+      stock: candidate.instrument ?? "",
+      stockName: candidate.name ?? "",
+      score: candidate.score ?? null,
+      rank: candidate.rank ?? null,
+    };
+  };
+
   return {
     type: source.type,
     label: source.label,
-    buyCandidate: {
-      stock: source.buyCandidate.instrument,
-      stockName: source.buyCandidate.name,
-      score: source.buyCandidate.score,
-      rank: source.buyCandidate.rank,
-    },
-    sellCandidate: {
-      stock: source.sellCandidate.instrument,
-      stockName: source.sellCandidate.name,
-      score: source.sellCandidate.score,
-      rank: source.sellCandidate.rank,
-    },
+    buyCandidate: adaptCandidate(source.buyCandidate),
+    sellCandidate: adaptCandidate(source.sellCandidate),
     previewOnly: source.previewOnly,
     note: source.note,
   };
