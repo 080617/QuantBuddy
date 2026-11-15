@@ -6,7 +6,7 @@ QuantBuddy is a bilingual quantitative research workspace for learning, building
 
 [Open the live bilingual prototype](https://080617.github.io/QuantBuddy/) · [Browse the source](https://github.com/080617/QuantBuddy)
 
-![QuantBuddy English prototype](docs/screenshots/prototype/09-community-recommended.png)
+![QuantBuddy Backtest Research dashboard](docs/screenshots/prototype/08-backtest-research.png)
 
 ## Product scope
 
